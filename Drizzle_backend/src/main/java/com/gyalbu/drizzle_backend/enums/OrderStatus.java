@@ -1,5 +1,8 @@
 package com.gyalbu.drizzle_backend.enums;
 
 public enum OrderStatus {
-    ACTIVE
+    PLACED,
+    CONFIRMED,
+    SHIPPED,
+    CANCELLED, PENDING, DELIVERED
 }
