@@ -6,6 +6,7 @@ import com.gyalbu.drizzle_backend.exception.UserException;
 import com.gyalbu.drizzle_backend.repository.UserRepository;
 import com.gyalbu.drizzle_backend.resources.request.LoginRequest;
 import com.gyalbu.drizzle_backend.resources.response.AuthResponse;
+import com.gyalbu.drizzle_backend.service.CartService;
 import com.gyalbu.drizzle_backend.service.impl.CustomUserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final JwtProvider jwtProvider;
+    private final CartService cartService;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final CustomUserServiceImpl customUserService;
@@ -51,6 +53,7 @@ public class AuthController {
         createdUser.setLastName(lastName);
 
         User savedUser = userRepository.save(createdUser);
+        cartService.createCart(savedUser);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser.getEmail(), savedUser.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);
