@@ -53,7 +53,7 @@ public class AdminOrderController {
 
     @PutMapping("/{orderId}/cancel")
     public ResponseEntity<Order> cancelOrderHandler(@PathVariable Long orderId,
-                                                     @RequestHeader("Authorization") String jwt) throws OrderException {
+                                                    @RequestHeader("Authorization") String jwt) throws OrderException {
         Order order = orderService.cancelledOrder(orderId);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
