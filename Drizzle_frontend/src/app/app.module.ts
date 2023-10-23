@@ -9,6 +9,11 @@ import { MainCarouselComponent } from './home/main-carousel/main-carousel.compon
 import { ProductSliderComponent } from './home/product-slider/product-slider.component';
 import { HomeProductCardComponent } from './home/home-product-card/home-product-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavContentComponent } from './navbar/nav-content/nav-content.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -16,13 +21,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     MainCarouselComponent,
     ProductSliderComponent,
-    HomeProductCardComponent
+    HomeProductCardComponent,
+    NavbarComponent,
+    NavContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
