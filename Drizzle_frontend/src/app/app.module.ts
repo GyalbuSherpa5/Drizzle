@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { MainCarouselComponent } from './home/main-carousel/main-carousel.component';
 import { ProductSliderComponent } from './home/product-slider/product-slider.component';
 import { HomeProductCardComponent } from './home/home-product-card/home-product-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeProductCardComponent } from './home/home-product-card/home-product-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
