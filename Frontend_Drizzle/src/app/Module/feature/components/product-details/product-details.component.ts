@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
+  selectedSize: any;
 
+  handleAddToCart() {
+
+  }
 }

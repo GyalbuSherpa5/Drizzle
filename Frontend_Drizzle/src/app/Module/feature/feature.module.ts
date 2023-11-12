@@ -20,6 +20,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     MatIconModule,
     MatCheckboxModule,
     MatRadioModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports:[
     FeatureComponent,
