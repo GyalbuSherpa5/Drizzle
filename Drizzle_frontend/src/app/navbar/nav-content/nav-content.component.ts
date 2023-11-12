@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-nav-content',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-content.component.scss']
 })
 export class NavContentComponent {
+  category: any;
+  @Input() selectedSection: any;
+  navigation: any;
 
+  ngOnInit(){
+    this.category = this.navigation;
+  }
 }

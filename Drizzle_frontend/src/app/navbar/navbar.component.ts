@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +7,37 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  openNavbarContent(menu: string) {
+  currentSection: any;
+  isNavbarContentOpen: any;
 
+  openNavbarContent(section: string) {
+    this.isNavbarContentOpen = true;
+    this.currentSection = section;
+  }
+
+  closeNavbarContent() {
+    this.isNavbarContentOpen = false;
   }
 
   navigateTo(path: string) {
 
+  }
+
+  @HostListener('document:click', [`$event`])
+  onDocumentClick(event: MouseEvent) {
+    const modalContainer = document.querySelector(".modal-container");
+    const openButtons = document.querySelectorAll(".open-button");
+
+    let clickInsideButton = false;
+
+    openButtons.forEach((button:Element)=>{
+      if(button.contains(event.target as Node)){
+        clickInsideButton = true;
+      }
+    })
+
+    if(modalContainer && !clickInsideButton && this.isNavbarContentOpen){
+      this.closeNavbarContent();
+    }
   }
 }

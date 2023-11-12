@@ -1,5 +1,5 @@
-<div class="fixed top-0 z-50 right-0 left-0 h-16 bg-[#0f0f0f] text-grey-800 px-5 lg:px-20">
-  <div class="h-16 flex items-center justify-between">
+<div class="fixed top-0 z-50 right-0 left-0 h-16 bg-[#0f0f0f] text-grey-800">
+  <div class="px-5 lg:px-20 h-16 flex items-center justify-between">
 
     <div class="flex items-center">
       <img class="w-8 mr-5" src="assets/logo.png" alt="Drizzle logo">
@@ -10,10 +10,10 @@
             Drizzle
           </a>
           <div>
-            <button (click)="openNavbarContent('smart phone')" mat-button>Smart Phone</button>
+            <button class="open-button" (click)="openNavbarContent('smart phone')" mat-button>Smart Phone</button>
           </div>
           <div>
-            <button (click)="openNavbarContent('laptop')" mat-button>Laptop</button>
+            <button class="open-button" (click)="openNavbarContent('laptop')" mat-button>Laptop</button>
           </div>
         </div>
       </div>
@@ -41,5 +41,10 @@
         </div>
       </div>
     </div>
+
+  </div>
+
+  <div *ngIf="isNavbarContentOpen" class="absolute right-0 left-0 modal-container">
+    <app-nav-content [selectedSection]="currentSection"></app-nav-content>
   </div>
 </div>
