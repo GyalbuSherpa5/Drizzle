@@ -29,6 +29,7 @@ import {AddressFormComponent} from './components/checkout/address-form/address-f
 import {AddressCardComponent} from './components/address-card/address-card.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { OrderCardComponent } from './components/order/order-card/order-card.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {MatInputModule} from "@angular/material/input";
     OrderDetailsComponent,
     ProductReviewCardComponent,
     AddressFormComponent,
-    AddressCardComponent
+    AddressCardComponent,
+    OrderCardComponent
   ],
   imports: [
     CommonModule,

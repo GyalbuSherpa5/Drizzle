@@ -1,4 +1,5 @@
 import {Component, HostListener} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,11 @@ export class NavbarComponent {
   currentSection: any;
   isNavbarContentOpen: any;
 
+  constructor(
+    private router: Router,
+  ) {
+  }
+
   openNavbarContent(section: string) {
     this.isNavbarContentOpen = true;
     this.currentSection = section;
@@ -20,7 +26,7 @@ export class NavbarComponent {
   }
 
   navigateTo(path: string) {
-
+    this.router.navigate([path]).then(value => console.log("route success"));
   }
 
   @HostListener('document:click', [`$event`])
@@ -30,13 +36,13 @@ export class NavbarComponent {
 
     let clickInsideButton = false;
 
-    openButtons.forEach((button:Element)=>{
-      if(button.contains(event.target as Node)){
+    openButtons.forEach((button: Element) => {
+      if (button.contains(event.target as Node)) {
         clickInsideButton = true;
       }
     })
 
-    if(modalContainer && !clickInsideButton && this.isNavbarContentOpen){
+    if (modalContainer && !clickInsideButton && this.isNavbarContentOpen) {
       this.closeNavbarContent();
     }
   }

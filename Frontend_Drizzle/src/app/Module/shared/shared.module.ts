@@ -9,6 +9,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { OrderTrackerComponent } from './components/order-tracker/order-tracker.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -17,20 +19,23 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     FooterComponent,
     ProductCardComponent,
     StarRatingComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrderTrackerComponent
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     ProductCardComponent,
     StarRatingComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrderTrackerComponent
   ]
 })
 export class SharedModule { }
