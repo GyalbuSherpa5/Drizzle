@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {lehngacholiPage2} from "../../../../../Data/Saree/lenghaCholiPage2";
 
 @Component({
   selector: 'app-product-details',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ProductDetailsComponent {
   selectedSize: any;
+  reviews = [1, 1, 1];
+  relatedProducts: any;
+
+  ngOnInit(){
+    this.relatedProducts = lehngacholiPage2;
+  }
 
   handleAddToCart() {
 

@@ -7,13 +7,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     NavContentComponent,
     FooterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    StarRatingComponent
   ],
   imports: [
     CommonModule,
@@ -21,10 +23,11 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     MatMenuModule,
     MatButtonModule
   ],
-  exports:[
-    NavbarComponent,
-    FooterComponent,
-    ProductCardComponent
-  ]
+    exports: [
+        NavbarComponent,
+        FooterComponent,
+        ProductCardComponent,
+        StarRatingComponent
+    ]
 })
 export class SharedModule { }

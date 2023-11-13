@@ -21,6 +21,8 @@ import { PaymentSuccessComponent } from './components/payment-success/payment-su
 import { OrderComponent } from './components/order/order.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import {FormsModule} from "@angular/forms";
+import { ProductReviewCardComponent } from './components/product-details/product-review-card/product-review-card.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {FormsModule} from "@angular/forms";
     PaymentComponent,
     PaymentSuccessComponent,
     OrderComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    ProductReviewCardComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +50,8 @@ import {FormsModule} from "@angular/forms";
     MatCheckboxModule,
     MatRadioModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule
   ],
   exports:[
     FeatureComponent,
