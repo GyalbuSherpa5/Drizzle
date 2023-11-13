@@ -4,7 +4,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Regular Mid Rise Blue Jeans",
         "color": "blue",
-        "discountedPrice": 591,
+        "selling_price": 591,
         "price": 1159,
         "size": [
             {
@@ -33,7 +33,7 @@ export const mensPantsPage1=[
         "brand": "V-MART",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 398,
+        "selling_price": 398,
         "price": 3999,
         "size": [
             {
@@ -61,7 +61,7 @@ export const mensPantsPage1=[
         "brand": "KILLER",
         "title": "Men Slim Mid Rise Dark Blue Jeans",
         "color": "",
-        "discountedPrice": 959,
+        "selling_price": 959,
         "price": 319,
         "size": [
             {
@@ -90,7 +90,7 @@ export const mensPantsPage1=[
         "brand": "BEN MARTIN",
         "title": "Men Regular Mid Rise Dark Blue Jeans",
         "color": "",
-        "discountedPrice": 499,
+        "selling_price": 499,
         "price": 1399,
         "size": [
             {
@@ -119,7 +119,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "511 Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1499,
+        "selling_price": 1499,
         "price": 3199,
         "size": [
             {
@@ -148,7 +148,7 @@ export const mensPantsPage1=[
         "brand": "BEING HUMAN",
         "title": "Men Slim Mid Rise Black Jeans",
         "color": "",
-        "discountedPrice": 899,
+        "selling_price": 899,
         "price": 2999,
         "size": [
             {
@@ -177,7 +177,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "511 Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1199,
+        "selling_price": 1199,
         "price": 2899,
         "size": [
             {
@@ -206,7 +206,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Regular Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 549,
+        "selling_price": 549,
         "price": 1699,
         "size": [
             {
@@ -235,7 +235,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "511 Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3199,
         "size": [
             {
@@ -264,7 +264,7 @@ export const mensPantsPage1=[
         "brand": "PETER ENGLAND",
         "title": "Men Skinny Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 799,
+        "selling_price": 799,
         "price": 1999,
         "size": [
             {
@@ -293,7 +293,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Skinny Mid Rise Black Jeans",
         "color": "",
-        "discountedPrice": 674,
+        "selling_price": 674,
         "price": 1799,
         "size": [
             {
@@ -322,7 +322,7 @@ export const mensPantsPage1=[
         "brand": "V-MART",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 359,
+        "selling_price": 359,
         "price": 399,
         "size": [
             {
@@ -351,7 +351,7 @@ export const mensPantsPage1=[
         "brand": "U.S. POLO ASSN.",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 919,
+        "selling_price": 919,
         "price": 2299,
         "size": [
             {
@@ -380,7 +380,7 @@ export const mensPantsPage1=[
         "brand": "KILLER",
         "title": "Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1149,
+        "selling_price": 1149,
         "price": 3299,
         "size": [
             {
@@ -409,7 +409,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "511 Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1199,
+        "selling_price": 1199,
         "price": 2899,
         "size": [
             {
@@ -438,7 +438,7 @@ export const mensPantsPage1=[
         "brand": "Pepe Jeans",
         "title": "Men Regular Low Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3599,
         "size": [
             {
@@ -467,7 +467,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Regular Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 644,
+        "selling_price": 644,
         "price": 1499,
         "size": [
             {
@@ -496,7 +496,7 @@ export const mensPantsPage1=[
         "brand": "V-MART",
         "title": "Men Regular Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 549,
+        "selling_price": 549,
         "price": 599,
         "size": [
             {
@@ -525,7 +525,7 @@ export const mensPantsPage1=[
         "brand": "BEN MARTIN",
         "title": "Men Regular Mid Rise White Jeans",
         "color": "",
-        "discountedPrice": 499,
+        "selling_price": 499,
         "price": 2999,
         "size": [
             {
@@ -554,7 +554,7 @@ export const mensPantsPage1=[
         "brand": "Spykar",
         "title": "Men Slim Low Rise Dark Blue Jeans",
         "color": "",
-        "discountedPrice": 1149,
+        "selling_price": 1149,
         "price": 3299,
         "size": [
             {
@@ -583,7 +583,7 @@ export const mensPantsPage1=[
         "brand": "V-MART",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 379,
+        "selling_price": 379,
         "price": 399,
         "size": [
             {
@@ -612,7 +612,7 @@ export const mensPantsPage1=[
         "brand": "STUDIO NEXX",
         "title": "Men Regular Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 579,
+        "selling_price": 579,
         "price": 1499,
         "size": [
             {
@@ -641,7 +641,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "512 Men Tapered Fit Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1499,
+        "selling_price": 1499,
         "price": 3199,
         "size": [
             {
@@ -670,7 +670,7 @@ export const mensPantsPage1=[
         "brand": "HIGHLANDER",
         "title": "Men Slim Mid Rise Black Jeans",
         "color": "",
-        "discountedPrice": 475,
+        "selling_price": 475,
         "price": 1299,
         "size": [
             {
@@ -699,7 +699,7 @@ export const mensPantsPage1=[
         "brand": "Peter England University",
         "title": "Men Skinny Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 719,
+        "selling_price": 719,
         "price": 1799,
         "size": [
             {
@@ -728,7 +728,7 @@ export const mensPantsPage1=[
         "brand": "Pepe Jeans",
         "title": "Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3599,
         "size": [
             {
@@ -757,7 +757,7 @@ export const mensPantsPage1=[
         "brand": "KILLER",
         "title": "Men Slim Mid Rise Dark Blue Jeans",
         "color": "",
-        "discountedPrice": 1149,
+        "selling_price": 1149,
         "price": 3299,
         "size": [
             {
@@ -786,7 +786,7 @@ export const mensPantsPage1=[
         "brand": "Shio",
         "title": "Men Slim Mid Rise Dark Grey Jeans",
         "color": "",
-        "discountedPrice": 159,
+        "selling_price": 159,
         "price": 799,
         "size": [
             {
@@ -815,7 +815,7 @@ export const mensPantsPage1=[
         "brand": "Peter England University",
         "title": "Men Tapered Fit Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 809,
+        "selling_price": 809,
         "price": 1799,
         "size": [
             {
@@ -844,7 +844,7 @@ export const mensPantsPage1=[
         "brand": "LEE",
         "title": "Men Skinny Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 839,
+        "selling_price": 839,
         "price": 2799,
         "size": [
             {
@@ -873,7 +873,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Regular Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 644,
+        "selling_price": 644,
         "price": 1499,
         "size": [
             {
@@ -902,7 +902,7 @@ export const mensPantsPage1=[
         "brand": "Shio",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 159,
+        "selling_price": 159,
         "price": 799,
         "size": [
             {
@@ -931,7 +931,7 @@ export const mensPantsPage1=[
         "brand": "PETER ENGLAND",
         "title": "Men Skinny Mid Rise Dark Blue Jeans",
         "color": "",
-        "discountedPrice": 804,
+        "selling_price": 804,
         "price": 2299,
         "size": [
             {
@@ -960,7 +960,7 @@ export const mensPantsPage1=[
         "brand": "KETCH",
         "title": "Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 524,
+        "selling_price": 524,
         "price": 1799,
         "size": [
             {
@@ -989,7 +989,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "512 Men Tapered Fit Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1499,
+        "selling_price": 1499,
         "price": 3199,
         "size": [
             {
@@ -1018,7 +1018,7 @@ export const mensPantsPage1=[
         "brand": "Pepe Jeans",
         "title": "Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3599,
         "size": [
             {
@@ -1047,7 +1047,7 @@ export const mensPantsPage1=[
         "brand": "U.S. POLO ASSN.",
         "title": "Men Slim Mid Rise Black Jeans",
         "color": "",
-        "discountedPrice": 999,
+        "selling_price": 999,
         "price": 1999,
         "size": [
             {
@@ -1076,7 +1076,7 @@ export const mensPantsPage1=[
         "brand": "Roadster",
         "title": "Men Slim Mid Rise Grey Jeans",
         "color": "",
-        "discountedPrice": 719,
+        "selling_price": 719,
         "price": 1499,
         "size": [
             {
@@ -1105,7 +1105,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "511 Men Slim Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3199,
         "size": [
             {
@@ -1134,7 +1134,7 @@ export const mensPantsPage1=[
         "brand": "LEVI'S",
         "title": "512 Men Tapered Fit Mid Rise Blue Jeans",
         "color": "",
-        "discountedPrice": 1099,
+        "selling_price": 1099,
         "price": 3199,
         "size": [
             {

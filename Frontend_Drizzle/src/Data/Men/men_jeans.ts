@@ -4,7 +4,7 @@ export const menJeans = [
     "brand": "LAHEJA",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 599,
+    "selling_price": 599,
     "price": 1999,
     "discountPersent": 70 ,
     "size": [
@@ -32,7 +32,7 @@ export const menJeans = [
     "brand": "COPER BUCK",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 898,
+    "selling_price": 898,
     "price": 2399,
     "discountPersent": 62 ,
     "size": [
@@ -60,7 +60,7 @@ export const menJeans = [
     "brand": "Spykar",
     "title": "Men Skinny Low Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1099,
+    "selling_price": 1099,
     "price": 2799,
     "discountPersent": 62 ,
     "size": [
@@ -88,7 +88,7 @@ export const menJeans = [
     "brand": "UNITED DENIM",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 429,
+    "selling_price": 429,
     "price": 1749,
     "discountPersent": 75 ,
     "size": [
@@ -116,7 +116,7 @@ export const menJeans = [
     "brand": "comfits",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 399,
+    "selling_price": 399,
     "price": 1299,
     "discountPersent": 69 ,
     "size": [
@@ -144,7 +144,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Men Tapered Fit Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 701,
+    "selling_price": 701,
     "price": 1799,
     "discountPersent": 61 ,
     "size": [
@@ -172,7 +172,7 @@ export const menJeans = [
     "brand": "Crishtaliyo 2fashion",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 494,
+    "selling_price": 494,
     "price": 1799,
     "discountPersent": 72 ,
     "size": [
@@ -200,7 +200,7 @@ export const menJeans = [
     "brand": "COPER BUCK",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 898,
+    "selling_price": 898,
     "price": 2399,
     "discountPersent": 62 ,
     "size": [
@@ -228,7 +228,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Men Tapered Fit Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 610,
+    "selling_price": 610,
     "price": 1299,
     "discountPersent": 53 ,
     "size": [
@@ -256,7 +256,7 @@ export const menJeans = [
     "brand": "Urbano Fashion",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 699,
+    "selling_price": 699,
     "price": 1399,
     "discountPersent": 50 ,
     "size": [
@@ -284,7 +284,7 @@ export const menJeans = [
     "brand": "ZAYSH",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 380,
+    "selling_price": 380,
     "price": 1299,
     "discountPersent": 70 ,
     "size": [
@@ -312,7 +312,7 @@ export const menJeans = [
     "brand": "COPER BUCK",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 799,
+    "selling_price": 799,
     "price": 2499,
     "discountPersent": 68 ,
     "size": [
@@ -340,7 +340,7 @@ export const menJeans = [
     "brand": "QARSH",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 410,
+    "selling_price": 410,
     "price": 1799,
     "discountPersent": 77 ,
     "size": [
@@ -368,7 +368,7 @@ export const menJeans = [
     "brand": "linaria",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 349,
+    "selling_price": 349,
     "price": 1099,
     "discountPersent": 68 ,
     "size": [
@@ -396,7 +396,7 @@ export const menJeans = [
     "brand": "LOUIS PHILIPPE",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1799,
+    "selling_price": 1799,
     "price": 2999,
     "discountPersent": 42 ,
     "size": [
@@ -424,7 +424,7 @@ export const menJeans = [
     "brand": "QARSH",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 430,
+    "selling_price": 430,
     "price": 1799,
     "discountPersent": 76 ,
     "size": [
@@ -452,7 +452,7 @@ export const menJeans = [
     "brand": "ZAYSH",
     "title": "Men Jogger Fit Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 400,
+    "selling_price": 400,
     "price": 1299,
     "discountPersent": 69 ,
     "size": [
@@ -480,7 +480,7 @@ export const menJeans = [
     "brand": "LAHEJA",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 599,
+    "selling_price": 599,
     "price": 1999,
     "discountPersent": 70 ,
     "size": [
@@ -508,7 +508,7 @@ export const menJeans = [
     "brand": "linaria",
     "title": "Men Slim Mid Rise Black, White Jeans",
     "color": "black",
-    "discountedPrice": 899,
+    "selling_price": 899,
     "price": 1899,
     "discountPersent": 52 ,
     "size": [
@@ -536,7 +536,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 721,
+    "selling_price": 721,
     "price": 1849,
     "discountPersent": 61 ,
     "size": [
@@ -564,7 +564,7 @@ export const menJeans = [
     "brand": "ZAYSH",
     "title": "Men Jogger Fit Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 429,
+    "selling_price": 429,
     "price": 1299,
     "discountPersent": 66 ,
     "size": [
@@ -592,7 +592,7 @@ export const menJeans = [
     "brand": "Veirdo",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1399,
+    "selling_price": 1399,
     "price": 2999,
     "discountPersent": 55 ,
     "size": [
@@ -620,7 +620,7 @@ export const menJeans = [
     "brand": "Calvin Klein Jeans",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 4399,
+    "selling_price": 4399,
     "price": 7999,
     "discountPersent": 45 ,
     "size": [
@@ -648,7 +648,7 @@ export const menJeans = [
     "brand": "Roadster",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 660,
+    "selling_price": 660,
     "price": 1999,
     "discountPersent": 66 ,
     "size": [
@@ -676,7 +676,7 @@ export const menJeans = [
     "brand": "Styzon",
     "title": "Men Boyfriend Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 739,
+    "selling_price": 739,
     "price": 1799,
     "discountPersent": 58 ,
     "size": [
@@ -704,7 +704,7 @@ export const menJeans = [
     "brand": "Roadster",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 561,
+    "selling_price": 561,
     "price": 1699,
     "discountPersent": 66 ,
     "size": [
@@ -732,7 +732,7 @@ export const menJeans = [
     "brand": "stylophile",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 899,
+    "selling_price": 899,
     "price": 1499,
     "discountPersent": 40 ,
     "size": [
@@ -760,7 +760,7 @@ export const menJeans = [
     "brand": "CANTABIL",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1399,
+    "selling_price": 1399,
     "price": 2999,
     "discountPersent": 55 ,
     "size": [
@@ -788,7 +788,7 @@ export const menJeans = [
     "brand": "linaria",
     "title": "Men Slim Mid Rise Black, White Jeans",
     "color": "black",
-    "discountedPrice": 899,
+    "selling_price": 899,
     "price": 1899,
     "discountPersent": 52 ,
     "size": [
@@ -816,7 +816,7 @@ export const menJeans = [
     "brand": "Supernova Inc.",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 1399,
     "discountPersent": 64 ,
     "size": [
@@ -844,7 +844,7 @@ export const menJeans = [
     "brand": "Veirdo",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1399,
+    "selling_price": 1399,
     "price": 2999,
     "discountPersent": 55 ,
     "size": [
@@ -872,7 +872,7 @@ export const menJeans = [
     "brand": "CANTABIL",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 1149,
+    "selling_price": 1149,
     "price": 2499,
     "discountPersent": 55 ,
     "size": [
@@ -900,7 +900,7 @@ export const menJeans = [
     "brand": "Supernova Inc.",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 1399,
     "discountPersent": 64 ,
     "size": [
@@ -928,7 +928,7 @@ export const menJeans = [
     "brand": "LEVI'S",
     "title": "Men Skinny Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 2099,
+    "selling_price": 2099,
     "price": 3999,
     "discountPersent": 48 ,
     "size": [
@@ -956,7 +956,7 @@ export const menJeans = [
     "brand": "linaria",
     "title": "Men Slim Mid Rise Black, White Jeans",
     "color": "black",
-    "discountedPrice": 899,
+    "selling_price": 899,
     "price": 1899,
     "discountPersent": 52 ,
     "size": [
@@ -984,7 +984,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 662,
+    "selling_price": 662,
     "price": 1699,
     "discountPersent": 61 ,
     "size": [
@@ -1012,7 +1012,7 @@ export const menJeans = [
     "brand": "0-DEGREE",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 916,
+    "selling_price": 916,
     "price": 3999,
     "discountPersent": 77 ,
     "size": [
@@ -1040,7 +1040,7 @@ export const menJeans = [
     "brand": "STUDIO NEXX",
     "title": "Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 739,
+    "selling_price": 739,
     "price": 1499,
     "discountPersent": 50 ,
     "size": [
@@ -1068,7 +1068,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Plus Size Men Regular Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 697,
+    "selling_price": 697,
     "price": 2249,
     "discountPersent": 69 ,
     "size": [
@@ -1096,7 +1096,7 @@ export const menJeans = [
     "brand": "HIGHLANDER",
     "title": "Men Slim Mid Rise Black Jeans",
     "color": "black",
-    "discountedPrice": 721,
+    "selling_price": 721,
     "price": 1849,
     "discountPersent": 61 ,
     "size": [

@@ -5,7 +5,7 @@ export const dressPage1 = [
     "brand": "MADAME",
     "title": "Women Asymmetric Pink Dress",
     "color": "",
-    "discountedPrice": 1299,
+    "selling_price": 1299,
     "price": 2499,
     "discountPersent": 50,
     "size": [
@@ -35,7 +35,7 @@ export const dressPage1 = [
     "brand": "Daevish",
     "title": "Women Maxi Blue Dress",
     "color": "",
-    "discountedPrice": 341,
+    "selling_price": 341,
     "price": 1899,
     "discountPersent": 82,
     "size": [
@@ -65,7 +65,7 @@ export const dressPage1 = [
     "brand": "ZWERLON",
     "title": "Women A-line Purple Dress",
     "color": "",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 1999,
     "discountPersent": 75,
     "size": [
@@ -95,7 +95,7 @@ export const dressPage1 = [
     "brand": "Purshottam Wala",
     "title": "Women Fit and Flare Black Dress",
     "color": "",
-    "discountedPrice": 359,
+    "selling_price": 359,
     "price": 2099,
     "discountPersent": 82,
     "size": [
@@ -119,14 +119,14 @@ export const dressPage1 = [
     "description":
       "Make a statement with this stylish purple A-line dress from ZWERLON. Made with high-quality fabric, this dress is perfect for any occasion."
   },
-  
+
   {
     "imageUrl":
       "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/e/a/p/s-pwd322-purshottam-wala-original-imagm6ywr7vz95sz.jpeg?q=70",
     "brand": "Purshottam Wala",
     "title": "Women Fit and Flare Blue Dress",
     "color": "",
-    "discountedPrice": 359,
+    "selling_price": 359,
     "price": 2099,
     "discountPersent": 82,
     "size": [
@@ -156,7 +156,7 @@ export const dressPage1 = [
     "brand": "NEYSA",
     "title": "Women Two Piece Dress Light Green Dress",
     "color": "",
-    "discountedPrice": 827,
+    "selling_price": 827,
     "price": 1799,
     "discountPersent": 54,
     "size": [
@@ -186,7 +186,7 @@ export const dressPage1 = [
     "brand": "Leriya Fashion",
     "title": "Women A-line Maroon Dress",
     "color": "",
-    "discountedPrice": 351,
+    "selling_price": 351,
     "price": 1599,
     "discountPersent": 78,
     "size": [
@@ -216,7 +216,7 @@ export const dressPage1 = [
     "brand": "Selvia",
     "title": "Women A-line Black Dress",
     "color": "",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 2497,
     "discountPersent": 80,
     "size": [
@@ -246,7 +246,7 @@ export const dressPage1 = [
     "brand": "BuyNewTrend",
     "title": "Women Sheath Dark Blue Dress",
     "color": "",
-    "discountedPrice": 449,
+    "selling_price": 449,
     "price": 1499,
     "discountPersent": 70,
     "size": [
@@ -276,7 +276,7 @@ export const dressPage1 = [
     "brand": "W",
     "title": "Women A-line Green, White Dress",
     "color": "",
-    "discountedPrice": 719,
+    "selling_price": 719,
     "price": 1999,
     "discountPersent": 64,
     "size": [
@@ -306,7 +306,7 @@ export const dressPage1 = [
     "brand": "Sheetal Associates",
     "title": "Women Maxi Grey Dress",
     "color": "",
-    "discountedPrice": 349,
+    "selling_price": 349,
     "price": 1999,
     "discountPersent": 65,
     "size": [
@@ -336,7 +336,7 @@ export const dressPage1 = [
     "brand": "Selvia",
     "title": "Women Asymmetric Black Dress",
     "color": "",
-    "discountedPrice": 299,
+    "selling_price": 299,
     "price": 1997,
     "discountPersent": 85,
     "size": [
@@ -366,7 +366,7 @@ export const dressPage1 = [
     "brand": "Selvia",
     "title": "Women A-line Pink Dress",
     "color": "",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 2330,
     "discountPersent": 78,
     "size": [
@@ -396,7 +396,7 @@ export const dressPage1 = [
     "brand": "Purshottam Wala",
     "title": "Women Fit and Flare Blue Dress",
     "color": "",
-    "discountedPrice": 359,
+    "selling_price": 359,
     "price": 1799,
     "discountPersent": 80,
     "size": [
@@ -426,7 +426,7 @@ export const dressPage1 = [
     "brand": "OK QUEST",
     "title": "Women Fit and Flare Black, Red Dress",
     "color": "",
-    "discountedPrice": 474,
+    "selling_price": 474,
     "price": 1289,
     "discountPersent": 47,
     "size": [
@@ -456,7 +456,7 @@ export const dressPage1 = [
     "brand": "W",
     "title": "Women A-line Yellow Dress",
     "color": "",
-    "discountedPrice": 827,
+    "selling_price": 827,
     "price": 2799,
     "discountPersent": 70,
     "size": [
@@ -486,7 +486,7 @@ export const dressPage1 = [
     "brand": "Leriya Fashion",
     "title": "Women A-line Pink Dress",
     "color": "",
-    "discountedPrice": 351,
+    "selling_price": 351,
     "price": 2999,
     "discountPersent": 64,
     "size": [
@@ -516,7 +516,7 @@ export const dressPage1 = [
     "brand": "Purshottam Wala",
     "title": "Women Ethnic Dress Black Dress",
     "color": "",
-    "discountedPrice": 359,
+    "selling_price": 359,
     "price": 1799,
     "discountPersent": 80,
     "size": [
@@ -546,7 +546,7 @@ export const dressPage1 = [
     "brand": "BuyNewTrend",
     "title": "Women Bodycon Black Dress",
     "color": "",
-    "discountedPrice": 449,
+    "selling_price": 449,
     "price": 1499,
     "discountPersent": 70,
     "size": [
@@ -576,7 +576,7 @@ export const dressPage1 = [
     "brand": "Dressberry",
     "title": "Women Fit and Flare Blue Dress",
     "color": "",
-    "discountedPrice": 959,
+    "selling_price": 959,
     "price": 1999,
     "discountPersent": 52,
     "size": [
@@ -606,7 +606,7 @@ export const dressPage1 = [
     "brand": "ZWERLON",
     "title": "Women A-line Light Green, White Dress",
     "color": "",
-    "discountedPrice": 499,
+    "selling_price": 499,
     "price": 1999,
     "discountPersent": 75,
     "size": [
@@ -636,7 +636,7 @@ export const dressPage1 = [
     "brand": "PURVAJA",
     "title": "Women Fit and Flare Multicolor Dress",
     "color": "",
-    "discountedPrice": 371,
+    "selling_price": 371,
     "price": 2699,
     "discountPersent": 86,
     "size": [
@@ -666,7 +666,7 @@ export const dressPage1 = [
     "brand": "Rudraaksha",
     "title": "Women Fit and Flare Pink Dress With Mask",
     "color": "",
-    "discountedPrice": 348,
+    "selling_price": 348,
     "price": 1999,
     "discountPersent": 82,
     "size": [
@@ -696,7 +696,7 @@ export const dressPage1 = [
     "brand": "J TURRITOPSIS",
     "title": "Women Skater Multicolor Dress",
     "color": "",
-    "discountedPrice": 495,
+    "selling_price": 495,
     "price": 1199,
     "discountPersent": 58,
     "size": [
@@ -726,7 +726,7 @@ export const dressPage1 = [
     "brand": "W",
     "title": "Women Gown Blue Dress",
     "color": "",
-    "discountedPrice": 2699,
+    "selling_price": 2699,
     "price": 5999,
     "discountPersent": 55,
     "size": [
@@ -750,14 +750,14 @@ export const dressPage1 = [
     "description":
       "Make a statement with this stylish purple A-line dress from ZWERLON. Made with high-quality fabric, this dress is perfect for any occasion."
   },
-  
+
   {
     "imageUrl":
       "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/7/m/2/xl-aa-00153-maroon-aayu-original-imagz844bgkeehx5.jpeg?q=70",
     "brand": "AAYU",
     "title": "Women A-line Maroon, White Dress",
     "color": "",
-    "discountedPrice": 439,
+    "selling_price": 439,
     "price": 1499,
     "discountPersent": 70,
     "size": [
@@ -787,7 +787,7 @@ export const dressPage1 = [
     "brand": "Vaani Creation",
     "title": "Women Shift Beige Dress",
     "color": "",
-    "discountedPrice": 299,
+    "selling_price": 299,
     "price": 1999,
     "discountPersent": 85,
     "size": [
@@ -817,7 +817,7 @@ export const dressPage1 = [
     "brand": "Aurelia",
     "title": "Women Fit and Flare Grey Dress",
     "color": "",
-    "discountedPrice": 1599,
+    "selling_price": 1599,
     "price": 3999,
     "discountPersent": 60,
     "size": [
@@ -847,7 +847,7 @@ export const dressPage1 = [
     "brand": "W",
     "title": "Women Fit and Flare Yellow Dress",
     "color": "",
-    "discountedPrice": 1779,
+    "selling_price": 1779,
     "price": 4999,
     "discountPersent": 64,
     "size": [
@@ -877,7 +877,7 @@ export const dressPage1 = [
     "brand": "Daevish",
     "title": "Women Maxi Maroon Dress",
     "color": "",
-    "discountedPrice": 341,
+    "selling_price": 341,
     "price": 1899,
     "discountPersent": 82,
     "size": [
@@ -907,7 +907,7 @@ export const dressPage1 = [
     "brand": "Sheetal Associates",
     "title": "Women A-line Purple Dress",
     "color": "",
-    "discountedPrice": 349,
+    "selling_price": 349,
     "price": 3999,
     "discountPersent": 65,
     "size": [
@@ -937,7 +937,7 @@ export const dressPage1 = [
     "brand": "Miss Chase",
     "title": "Women Gown Brown Dress",
     "color": "",
-    "discountedPrice": 899,
+    "selling_price": 899,
     "price": 2899,
     "discountPersent": 68,
     "size": [
@@ -967,7 +967,7 @@ export const dressPage1 = [
     "brand": "Selvia",
     "title": "Women Ruffled Brown Dress",
     "color": "",
-    "discountedPrice": 349,
+    "selling_price": 349,
     "price": 2063,
     "discountPersent": 83,
     "size": [
@@ -997,7 +997,7 @@ export const dressPage1 = [
     "brand": "MomToBe",
     "title": "Women Fit and Flare Maroon Dress",
     "color": "",
-    "discountedPrice": 845,
+    "selling_price": 845,
     "price": 2798,
     "discountPersent": 69,
     "size": [
@@ -1027,7 +1027,7 @@ export const dressPage1 = [
     "brand": "W",
     "title": "Women Maxi Purple Dress",
     "color": "",
-    "discountedPrice": 1558,
+    "selling_price": 1558,
     "price": 4599,
     "discountPersent": 65,
     "size": [
@@ -1057,7 +1057,7 @@ export const dressPage1 = [
     "brand": "Leriya Fashion",
     "title": "Women A-line Blue Dress",
     "color": "",
-    "discountedPrice": 351,
+    "selling_price": 351,
     "price": 4999,
     "discountPersent": 64,
     "size": [
@@ -1087,7 +1087,7 @@ export const dressPage1 = [
     "brand": "Daevish",
     "title": "Women Maxi Black Dress",
     "color": "",
-    "discountedPrice": 341,
+    "selling_price": 341,
     "price": 1899,
     "discountPersent": 82,
     "size": [

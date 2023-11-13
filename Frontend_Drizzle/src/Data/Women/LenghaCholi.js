@@ -5,7 +5,7 @@ export const lengha_page1 = [
     "brand": "AstonBlue",
    "title": "Self Design Semi Stitched Lehenga Choli",
     "color": "Yellow",
-    discountedPrice: "₹35,999",
+    selling_price: "₹35,999",
     price: "₹39,999",
     size: [
       {
@@ -34,7 +34,7 @@ export const lengha_page1 = [
     "brand": "rayie collection",
    "title": "Embroidered Stitched Lehenga & Crop Top",
     "color": "Black",
-    discountedPrice: "₹19,124",
+    selling_price: "₹19,124",
     price: "₹35,999",
     size: [
       {
@@ -60,7 +60,7 @@ export const lengha_page1 = [
     "brand": "Liva",
    "title": "Embroidered Stitched Lehenga & Crop Top",
     "color": "Black",
-    discountedPrice: "₹13,999",
+    selling_price: "₹13,999",
     price: "₹20,000",
     size: [
       {
@@ -85,7 +85,7 @@ export const lengha_page1 = [
     "brand": "soch",
    "title": "Embellished Stitched Lehenga Choli",
     "color": "Yellow",
-    discountedPrice: "₹12,998",
+    selling_price: "₹12,998",
     price: "",
     size: [
       {
@@ -109,7 +109,7 @@ export const lengha_page1 = [
     "brand": "Liva",
    "title": "Embroidered Stitched Lehenga & Crop Top",
     "color": "Green",
-    discountedPrice: "₹9,999",
+    selling_price: "₹9,999",
     price: "₹18,000",
     size: [
       {
@@ -134,7 +134,7 @@ export const lengha_page1 = [
     "brand": "soch",
    "title": "Solid Stitched Lehenga Choli",
     "color": "Dark Blue",
-    discountedPrice: "₹9,998",
+    selling_price: "₹9,998",
     price: "",
     size: [
       {
@@ -152,14 +152,14 @@ export const lengha_page1 = [
     ],
     "discountPersent": "30% off",
   },
- 
+
 {
     "imageUrl":
       "https://rukminim1.flixcart.com/imageUrl/612/612/l16rde80/lehenga-choli/h/r/t/free-3-4-sleeve-r1-5-aminia-original-imagct7ghhpgrm48.jpeg?q=70",
     "brand": "AMINIA",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹8,600",
+    selling_price: "₹8,600",
     price: "₹10,950",
     size: [
       {
@@ -184,7 +184,7 @@ export const lengha_page1 = [
     "brand": "mjo fashion",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹7,999",
+    selling_price: "₹7,999",
     price: "₹9,550",
     size: [
       {
@@ -209,7 +209,7 @@ export const lengha_page1 = [
     "brand": "rashora",
    "title": "Self Design Semi Stitched Lehenga Choli",
     "color": "Gold, Orange",
-    discountedPrice: "₹7,999",
+    selling_price: "₹7,999",
     price: "₹9,999",
     size: [
       {
@@ -234,7 +234,7 @@ export const lengha_page1 = [
     "brand": "Vervee Couture",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Blue",
-    discountedPrice: "₹7,629",
+    selling_price: "₹7,629",
     price: "₹15,239",
     size: [
       {
@@ -259,7 +259,7 @@ export const lengha_page1 = [
     "brand": "soch",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹6,999",
+    selling_price: "₹6,999",
     price: "₹13,998",
     size: [
       {
@@ -284,7 +284,7 @@ export const lengha_page1 = [
     "brand": "kajtosh",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Red",
-    discountedPrice: "₹6,599",
+    selling_price: "₹6,599",
     price: "₹33,999",
     size: [
       {
@@ -309,7 +309,7 @@ export const lengha_page1 = [
     "brand": "soch",
    "title": "Embroidered Stitched Lehenga Choli",
     "color": "Green",
-    discountedPrice: "₹5,999",
+    selling_price: "₹5,999",
     price: "₹14,998",
     size: [
       {
@@ -334,7 +334,7 @@ export const lengha_page1 = [
     "brand": "LIBAS",
    "title": "Solid Stitched Lehenga Choli",
     "color": "Green",
-    discountedPrice: "₹5,439",
+    selling_price: "₹5,439",
     price: "₹7,999",
     size: [
       {
@@ -359,7 +359,7 @@ export const lengha_page1 = [
     "brand": "PERHAPS",
    "title": "Embroidered Stitched Lehenga & Crop Top",
     "color": "Black, Grey",
-    discountedPrice: "₹5,240",
+    selling_price: "₹5,240",
     price: "₹13,000",
     size: [
       {
@@ -384,7 +384,7 @@ export const lengha_page1 = [
     "brand": "PERHAPS",
    "title": "Embroidered, Embellished Stitched Lehenga Choli",
     "color": "Multicolor",
-    discountedPrice: "₹5,000",
+    selling_price: "₹5,000",
     price: "₹13,000",
     size: [
       {
@@ -409,7 +409,7 @@ export const lengha_page1 = [
     "brand": "Bhavyam",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Light Blue",
-    discountedPrice: "₹4,999",
+    selling_price: "₹4,999",
     price: "₹14,999",
     size: [
       {
@@ -434,7 +434,7 @@ export const lengha_page1 = [
     "brand": "Shivanya Fashion",
    "title": "Embellished Stitched Lehenga Choli",
     "color": "Purple",
-    discountedPrice: "₹4,999",
+    selling_price: "₹4,999",
     price: "₹9,999",
     size: [
       {
@@ -459,7 +459,7 @@ export const lengha_page1 = [
     "brand": "Bhavyam",
    "title": "Embroidered, Self Design Semi Stitched Lehenga Choli",
     "color": "Light Blue, Multicolor",
-    discountedPrice: "₹4,999",
+    selling_price: "₹4,999",
     price: "₹14,999",
     size: [
       {
@@ -484,7 +484,7 @@ export const lengha_page1 = [
     "brand": "VAMSE",
    "title": "Embellished Semi Stitched Lehenga Choli",
     "color": "Pink",
-    discountedPrice: "₹4,999",
+    selling_price: "₹4,999",
     price: "₹14,999",
     size: [
       {
@@ -509,7 +509,7 @@ export const lengha_page1 = [
     "brand": "ABCD",
    "title": "Self Design Semi Stitched Lehenga Choli",
     "color": "Multicolor",
-    discountedPrice: "₹4,920",
+    selling_price: "₹4,920",
     price: "₹8,000",
     size: [
       {
@@ -534,7 +534,7 @@ export const lengha_page1 = [
     "brand": "Shivanya Fashion",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Green",
-    discountedPrice: "₹4,599",
+    selling_price: "₹4,599",
     price: "₹8,999",
     size: [
       {
@@ -559,7 +559,7 @@ export const lengha_page1 = [
     "brand": "Bhavyam",
    "title": "Embroidered, Self Design Semi Stitched Lehenga Choli",
     "color": "Blue",
-    discountedPrice: "₹4,599",
+    selling_price: "₹4,599",
     price: "₹11,999",
     size: [
       {
@@ -584,7 +584,7 @@ export const lengha_page1 = [
     "brand": "Bhavyam",
    "title": "Embroidered, Self Design Semi Stitched Lehenga Choli",
     "color": "Blue",
-    discountedPrice: "₹4,599",
+    selling_price: "₹4,599",
     price: "₹11,999",
     size: [
       {
@@ -609,7 +609,7 @@ export const lengha_page1 = [
     "brand": "Hathka",
    "title": "Self Design Semi Stitched Rajasthani Poshak",
     "color": "Purple, Yellow",
-    discountedPrice: "₹4,550",
+    selling_price: "₹4,550",
     price: "₹5,500",
     size: [
       {
@@ -634,7 +634,7 @@ export const lengha_page1 = [
     "brand": "CAMPAIGN TRENDS",
    "title": "Self Design Semi Stitched Lehenga Choli",
     "color": "Blue",
-    discountedPrice: "₹4,549",
+    selling_price: "₹4,549",
     price: "₹15,499",
     size: [
       {
@@ -659,7 +659,7 @@ export const lengha_page1 = [
     "brand": "KIYA",
    "title": "Embellished Stitched Lehenga Choli",
     "color": "Black",
-    discountedPrice: "₹4,504",
+    selling_price: "₹4,504",
     price: "₹13,239",
     size: [
       {
@@ -684,7 +684,7 @@ export const lengha_page1 = [
     "brand": "Geetanjali",
    "title": "Embellished Semi Stitched Lehenga Choli",
     "color": "Yellow",
-    discountedPrice: "₹4,500",
+    selling_price: "₹4,500",
     price: "₹10,000",
     size: [
       {
@@ -709,7 +709,7 @@ export const lengha_page1 = [
     "brand": "Rajshree Fashion Fab",
    "title": "Embroidered, Embellished Semi Stitched Lehenga Choli",
     "color": "Red",
-    discountedPrice: "₹4,500",
+    selling_price: "₹4,500",
     price: "₹9,999",
     size: [
       {
@@ -734,7 +734,7 @@ export const lengha_page1 = [
     "brand": "Geetanjali",
    "title": "Embellished Semi Stitched Lehenga Choli",
     "color": "Orange",
-    discountedPrice: "₹4,500",
+    selling_price: "₹4,500",
     price: "₹10,000",
     size: [
       {
@@ -759,7 +759,7 @@ export const lengha_page1 = [
     "brand": "DIVENA",
    "title": "Printed Stitched Lehenga Choli",
     "color": "Red",
-    discountedPrice: "₹4,499",
+    selling_price: "₹4,499",
     price: "₹11,999",
     size: [
       {
@@ -784,7 +784,7 @@ export const lengha_page1 = [
     "brand": "soch",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Red",
-    discountedPrice: "₹4,499",
+    selling_price: "₹4,499",
     price: "₹8,998",
     size: [
       {
@@ -809,7 +809,7 @@ export const lengha_page1 = [
     "brand": "LookNbook art",
    "title": "Printed Semi Stitched Lehenga Choli",
     "color": "Dark Blue",
-    discountedPrice: "₹4,499",
+    selling_price: "₹4,499",
     price: "₹5,400",
     size: [
       {
@@ -834,7 +834,7 @@ export const lengha_page1 = [
     "brand": "FESTIVE SHOPEE",
    "title": "Embroidered, Embellished, Self Design Stitched Lehenga ...",
     "color": "Blue",
-    discountedPrice: "₹4,499",
+    selling_price: "₹4,499",
     price: "₹7,449",
     size: [
       {
@@ -859,7 +859,7 @@ export const lengha_page1 = [
     "brand": "CAMPAIGN TRENDS",
    "title": "Self Design Semi Stitched Lehenga Choli",
     "color": "Purple",
-    discountedPrice: "₹4,399",
+    selling_price: "₹4,399",
     price: "₹14,799",
     size: [
       {
@@ -884,7 +884,7 @@ export const lengha_page1 = [
     "brand": "Shadow & Saining",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹4,389",
+    selling_price: "₹4,389",
     price: "₹17,196",
     size: [
       {
@@ -909,7 +909,7 @@ export const lengha_page1 = [
     "brand": "Shadow & Saining",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹4,389",
+    selling_price: "₹4,389",
     price: "₹17,196",
     size: [
       {
@@ -934,7 +934,7 @@ export const lengha_page1 = [
     "brand": "Shadow & Saining",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹4,389",
+    selling_price: "₹4,389",
     price: "₹17,196",
     size: [
       {
@@ -959,7 +959,7 @@ export const lengha_page1 = [
     "brand": "Shadow & Saining",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Maroon",
-    discountedPrice: "₹4,389",
+    selling_price: "₹4,389",
     price: "₹17,196",
     size: [
       {
@@ -984,7 +984,7 @@ export const lengha_page1 = [
     "brand": "Love Purple",
    "title": "Embroidered Semi Stitched Lehenga Choli",
     "color": "Black",
-    discountedPrice: "₹4,299",
+    selling_price: "₹4,299",
     price: "₹5,999",
     size: [
       {
