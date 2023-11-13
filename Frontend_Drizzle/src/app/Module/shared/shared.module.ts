@@ -8,6 +8,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     NavContentComponent,
     FooterComponent,
     ProductCardComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    CartItemComponent
   ],
   imports: [
     CommonModule,
@@ -23,11 +25,12 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     MatMenuModule,
     MatButtonModule
   ],
-    exports: [
-        NavbarComponent,
-        FooterComponent,
-        ProductCardComponent,
-        StarRatingComponent
-    ]
+  exports: [
+    NavbarComponent,
+    FooterComponent,
+    ProductCardComponent,
+    StarRatingComponent,
+    CartItemComponent
+  ]
 })
 export class SharedModule { }

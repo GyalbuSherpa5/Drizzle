@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: "admin", loadChildren: () => import("./Module/admin/admin-routing.module")
       .then(m => AdminRoutingModule)},
   {path: "", component: HomeComponent},
-  {path: "card", component: CartComponent},
+  {path: "cart", component: CartComponent},
   {path: "product-details/:id", component: ProductDetailsComponent},
   {path: "checkout", component: CheckoutComponent},
   {path: "checkout/payment/:id", component: PaymentComponent},
