@@ -24,9 +24,9 @@
         <mat-icon>shopping_cart</mat-icon>
       </button>
 
-      <button *ngIf="false" mat-raised-button color="accent">LOGIN</button>
+      <button (click)="handleOpenLoginModel()" *ngIf="true" mat-raised-button color="accent">LOGIN</button>
 
-      <div *ngIf="true" class="relative ml-3 flex items-center">
+      <div *ngIf="false" class="relative ml-3 flex items-center">
         <div class="flex items-center space-x-5">
           <span class="font-bold text-lg">Don</span>
           <button mat-button [matMenuTriggerFor]="profileMenu">

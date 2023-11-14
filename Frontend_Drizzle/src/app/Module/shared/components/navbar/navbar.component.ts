@@ -1,5 +1,7 @@
 import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {AuthComponent} from "../../../auth/auth.component";
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +15,7 @@ export class NavbarComponent {
 
   constructor(
     private router: Router,
+    private dialog: MatDialog
   ) {
   }
 
@@ -45,5 +48,12 @@ export class NavbarComponent {
     if (modalContainer && !clickInsideButton && this.isNavbarContentOpen) {
       this.closeNavbarContent();
     }
+  }
+
+  handleOpenLoginModel() {
+    this.dialog.open(AuthComponent, {
+      width: '400px',
+      disableClose: false
+    })
   }
 }

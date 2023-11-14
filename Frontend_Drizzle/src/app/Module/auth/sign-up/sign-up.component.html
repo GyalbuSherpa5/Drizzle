@@ -1,0 +1,52 @@
+<div class="container">
+  <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+    <h1>Sign Up</h1>
+
+    <div>
+      <mat-form-field class="w-full">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required firstName>
+        <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">First name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required lastName>
+        <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">Last name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required email>
+        <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="signUpForm.controls['email'].hasError('email')">Email not valid!</mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required password>
+        <mat-error *ngIf="signUpForm.controls['password']
+        .hasError('required')">Password is required
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls['password']
+        .hasError('minlength')">Password should be at least 8 characters long
+        </mat-error>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button
+                class="w-full"
+                style="padding:1.7rem"
+                color="accent">
+          REGISTER
+        </button>
+
+        <div class="pt-5">
+          <span>Already have account?</span>
+          <button mat-button
+                  (click)="changeTemplate()"
+                  color="accent">
+            LOGIN
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
