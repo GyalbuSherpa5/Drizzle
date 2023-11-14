@@ -10,7 +10,7 @@ import {getUserProfileFailure, getUserProfileSuccess} from "./user.action";
 })
 export class UserService {
 
-  private apiUrl = BASE_API_URL + "/api";
+  private apiUrl = BASE_API_URL + "/auth";
   headers: any;
 
   constructor(
@@ -22,7 +22,7 @@ export class UserService {
   }
 
   getUserProfile() {
-    return this.http.get(`${this.apiUrl}/profile`, {headers: this.headers})
+    return this.http.get(`${this.apiUrl}/users/profile`, {headers: this.headers})
       .pipe(
         map((user: any) => {
           console.log("User Profile Success ", user)

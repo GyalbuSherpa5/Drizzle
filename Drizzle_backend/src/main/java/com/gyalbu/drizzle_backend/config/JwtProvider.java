@@ -17,15 +17,15 @@ public class JwtProvider {
 
     public String generateToken(Authentication auth) {
         return Jwts.builder()
-                .issuedAt(new Date())
-                .expiration(new Date(new Date().getTime() + 846000000))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(new Date().getTime() + 846000000))
                 .claim("email", auth.getName())
                 .signWith(key).compact();
     }
 
     public String getEmailFromToken(String jwt) {
-        jwt = jwt.substring(7);
-        Claims claims = Jwts.parser().verifyWith(key).build().parseUnsecuredClaims(jwt).getPayload();
+        jwt = jwt.replace("Bearer ", "");
+        Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
         return String.valueOf(claims.get("email"));
     }
 }

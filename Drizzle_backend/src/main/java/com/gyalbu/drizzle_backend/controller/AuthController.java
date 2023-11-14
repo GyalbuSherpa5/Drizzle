@@ -33,7 +33,7 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final CustomUserServiceImpl customUserService;
 
-    @PostMapping("/signUp")
+    @PostMapping("/sign_up")
     public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
 
         String email = user.getEmail();
@@ -65,7 +65,7 @@ public class AuthController {
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 
-    @PostMapping("/signIn")
+    @PostMapping("/sign_in")
     public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody LoginRequest loginRequest){
 
         String username = loginRequest.getEmail();

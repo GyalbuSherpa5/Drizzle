@@ -2,6 +2,9 @@ import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {AuthComponent} from "../../../auth/auth.component";
+import {UserService} from "../../../../State/User/user.service";
+import {select, Store} from "@ngrx/store";
+import {AppState} from "../../../../Models/AppState";
 
 @Component({
   selector: 'app-navbar',
@@ -12,11 +15,28 @@ export class NavbarComponent {
 
   currentSection: any;
   isNavbarContentOpen: any;
+  userProfile: any;
 
   constructor(
     private router: Router,
+    private userService: UserService,
+    private store: Store<AppState>,
     private dialog: MatDialog
   ) {
+  }
+
+  ngOnInit() {
+    if (localStorage.getItem("jwt")) {
+      this.userService.getUserProfile();
+      this.store.pipe(select((store) => store.user))
+        .subscribe((user) => {
+          this.userProfile = user.userProfile;
+
+          if(user.userProfile){
+            this.dialog.closeAll();
+          }
+        })
+    }
   }
 
   openNavbarContent(section: string) {

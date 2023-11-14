@@ -24,11 +24,11 @@
         <mat-icon>shopping_cart</mat-icon>
       </button>
 
-      <button (click)="handleOpenLoginModel()" *ngIf="true" mat-raised-button color="accent">LOGIN</button>
+      <button (click)="handleOpenLoginModel()" *ngIf="!userProfile" mat-raised-button color="accent">LOGIN</button>
 
-      <div *ngIf="false" class="relative ml-3 flex items-center">
+      <div *ngIf="userProfile" class="relative ml-3 flex items-center">
         <div class="flex items-center space-x-5">
-          <span class="font-bold text-lg">Don</span>
+          <span class="font-bold text-lg">{{userProfile.firstName}}</span>
           <button mat-button [matMenuTriggerFor]="profileMenu">
             <img class="h-7 w-7" src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659651_640.png" alt="">
           </button>
