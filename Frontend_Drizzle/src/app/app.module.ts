@@ -10,7 +10,8 @@ import {StoreModule} from '@ngrx/store';
 import {AuthModule} from "./Module/auth/auth.module";
 import {authReducer} from "./State/Auth/auth.reducer";
 import {userReducer} from "./State/User/user.reducer";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptor} from "./config/auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
     StoreModule.forRoot({auth: authReducer, user: userReducer}),
     HttpClientModule
   ],
-  providers: [],
+  providers: [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule {

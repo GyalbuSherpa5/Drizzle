@@ -25,8 +25,8 @@ public class SecurityConfig {
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(new JwtValidator(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new CorsFilter(), ChannelProcessingFilter.class)
+                .addFilterBefore(new JwtValidator(), BasicAuthenticationFilter.class)
                 .csrf(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults());
