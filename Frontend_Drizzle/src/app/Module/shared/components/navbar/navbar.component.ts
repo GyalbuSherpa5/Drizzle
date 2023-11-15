@@ -5,6 +5,7 @@ import {AuthComponent} from "../../../auth/auth.component";
 import {UserService} from "../../../../State/User/user.service";
 import {select, Store} from "@ngrx/store";
 import {AppState} from "../../../../Models/AppState";
+import {AuthService} from "../../../../State/Auth/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -20,23 +21,24 @@ export class NavbarComponent {
   constructor(
     private router: Router,
     private userService: UserService,
+    private authService: AuthService,
     private store: Store<AppState>,
     private dialog: MatDialog
   ) {
   }
 
   ngOnInit() {
-    if (localStorage.getItem("jwt")) {
-      this.userService.getUserProfile();
-      this.store.pipe(select((store) => store.user))
-        .subscribe((user) => {
-          this.userProfile = user.userProfile;
+    if (localStorage.getItem("jwt")) this.userService.getUserProfile();
 
-          if(user.userProfile){
-            this.dialog.closeAll();
-          }
-        })
-    }
+    this.store.pipe(select((store) => store.user))
+      .subscribe((user) => {
+        this.userProfile = user.userProfile;
+
+        if (user.userProfile) {
+          this.dialog.closeAll();
+        }
+      })
+
   }
 
   openNavbarContent(section: string) {
@@ -75,5 +77,9 @@ export class NavbarComponent {
       width: '400px',
       disableClose: false
     })
+  }
+
+  handleLogout = () => {
+    this.userService.logout();
   }
 }

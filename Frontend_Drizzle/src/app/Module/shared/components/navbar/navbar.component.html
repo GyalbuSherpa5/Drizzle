@@ -36,7 +36,7 @@
           <mat-menu #profileMenu="matMenu">
             <button mat-menu-item (click)="navigateTo('account/orders')">Orders</button>
             <button mat-menu-item>Profile</button>
-            <button mat-menu-item>Logout</button>
+            <button mat-menu-item (click)="handleLogout()">Logout</button>
           </mat-menu>
         </div>
       </div>

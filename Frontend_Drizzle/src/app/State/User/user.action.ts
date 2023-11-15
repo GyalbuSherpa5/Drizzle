@@ -8,3 +8,6 @@ export const getUserProfileSuccess
 
 export const getUserProfileFailure
   = createAction('[User] Get User Profile Failure', props<{ error: any }>())
+
+export const logoutSuccess
+  = createAction('[User] Logout Success')
