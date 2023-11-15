@@ -12,6 +12,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { OrderTrackerComponent } from './components/order-tracker/order-tracker.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatDialogModule} from "@angular/material/dialog";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -23,14 +24,15 @@ import {MatDialogModule} from "@angular/material/dialog";
     CartItemComponent,
     OrderTrackerComponent
   ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatDialogModule,
-  ],
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatDialogModule,
+        RouterLink,
+    ],
   exports: [
     NavbarComponent,
     FooterComponent,

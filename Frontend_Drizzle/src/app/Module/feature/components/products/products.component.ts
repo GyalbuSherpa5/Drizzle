@@ -23,6 +23,12 @@ export class ProductsComponent {
     this.filterData = filters;
     this.singleFilterData = SingleFilter;
     this.menPants = mensPantsPage1;
+
+    this.activatedRoute.paramMap.subscribe(
+      (params) => {
+        console.log(params);
+      }
+    )
   }
 
   handleMultipleSelectFilter(value: string, sectionId: string) {
@@ -47,7 +53,7 @@ export class ProductsComponent {
     this.router.navigate([], {queryParams}).then(r => console.log("route success"));
   }
 
-  handleSingleSelectFilter(value: string, sectionId: string){
+  handleSingleSelectFilter(value: string, sectionId: string) {
     const queryParams = {...this.activatedRoute.snapshot.queryParams};
     queryParams[sectionId] = value;
 
