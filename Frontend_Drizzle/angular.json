@@ -69,7 +69,8 @@
               "browserTarget": "Frontend_Drizzle:build:production"
             },
             "development": {
-              "browserTarget": "Frontend_Drizzle:build:development"
+              "browserTarget": "Frontend_Drizzle:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
