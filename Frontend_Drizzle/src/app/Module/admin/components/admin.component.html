@@ -1,6 +1,16 @@
 <div class="flex items-center h-screen">
   <div class="h-full w-[20%] border border-r-gray-500">
-    <p class="py-10">navigation</p>
+    <div *ngFor="let menu of model">
+      <div *ngFor="let item of menu.items; let last = last">
+        <a [routerLink]="item.routerLink" class="block p-4 border-b border-gray-300">
+          <span class="mr-2">{{ item.label }}</span>
+          <span class="{{ item.icon }}"></span>
+        </a>
+        <!-- Add a separator if it's not the last item -->
+        <div *ngIf="!last" class="border-b border-gray-300"></div>
+      </div>
+    </div>
+
   </div>
   <div class="w-[80%]">
     <router-outlet></router-outlet>
