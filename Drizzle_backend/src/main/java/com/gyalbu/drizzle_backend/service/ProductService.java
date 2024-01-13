@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    Product createProduct(CreateProductRequest request);
+    Product createProduct(CreateProductRequest request) throws ProductException;
 
     String deleteProduct(Long productId) throws ProductException;
 

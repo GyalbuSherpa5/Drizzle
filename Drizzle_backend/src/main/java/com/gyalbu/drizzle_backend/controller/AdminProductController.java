@@ -27,7 +27,7 @@ public class AdminProductController {
     private final ProductService productService;
 
     @PostMapping("/")
-    public ResponseEntity<Product> createProduct(@RequestBody CreateProductRequest request) {
+    public ResponseEntity<Product> createProduct(@RequestBody CreateProductRequest request) throws ProductException {
 
         Product product = productService.createProduct(request);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
@@ -61,7 +61,7 @@ public class AdminProductController {
     }
 
     @PostMapping("/creates")
-    public ResponseEntity<ApiResponse> createMultipleProduct(@RequestBody CreateProductRequest[] requests){
+    public ResponseEntity<ApiResponse> createMultipleProduct(@RequestBody CreateProductRequest[] requests) throws ProductException {
         for(CreateProductRequest productRequest: requests){
             productService.createProduct(productRequest);
         }

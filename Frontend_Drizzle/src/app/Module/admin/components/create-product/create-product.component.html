@@ -1,1 +1,142 @@
-<p class="py-10">create-product works!</p>
+<div class="rounded-md shadow-md p-10 box">
+  <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+
+      <div class="col-span-3">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title"
+                 placeholder="Enter title"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"
+                    placeholder="Enter description"
+                    autocomplete="given-name"
+                    rows="4"
+                    type="text"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Price</mat-label>
+          <input matInput formControlName="price"
+                 placeholder="Enter price"
+                 autocomplete="given-name"
+                 type="number">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Discounted Price</mat-label>
+          <input matInput formControlName="discountedPrice"
+                 placeholder="Enter discounted price"
+                 autocomplete="given-name"
+                 type="number">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Discount Percent</mat-label>
+          <input matInput formControlName="discountPercent"
+                 placeholder="Enter discount percent"
+                 autocomplete="given-name"
+                 type="number">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Quantity</mat-label>
+          <input matInput formControlName="quantity"
+                 placeholder="Enter quantity"
+                 autocomplete="given-name"
+                 type="number">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Brand</mat-label>
+          <input matInput formControlName="brand"
+                 placeholder="Enter brand"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Color</mat-label>
+          <input matInput formControlName="color"
+                 placeholder="Enter color"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Size</mat-label>
+          <mat-select formControlName="size" multiple>
+            <mat-option *ngFor="let size of availableSizes" [value]="size">{{ size }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Image URL</mat-label>
+          <input matInput formControlName="imageUrl"
+                 placeholder="Enter image URL"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Top Level Category</mat-label>
+          <input matInput formControlName="topLevelCategory"
+                 placeholder="Enter top level category"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Second Level Category</mat-label>
+          <input matInput formControlName="secondLevelCategory"
+                 placeholder="Enter second level category"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-1">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Third Level Category</mat-label>
+          <input matInput formControlName="thirdLevelCategory"
+                 placeholder="Enter third level category"
+                 autocomplete="given-name"
+                 type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="col-span-4">
+        <button mat-raised-button class="w-full" style="padding: 1.6rem;" color="accent">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

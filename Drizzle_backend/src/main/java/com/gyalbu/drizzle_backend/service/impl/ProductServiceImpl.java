@@ -17,6 +17,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,53 +31,47 @@ public class ProductServiceImpl implements ProductService {
     private final CategoryRepository categoryRepository;
 
     @Override
-    public Product createProduct(CreateProductRequest request) {
+    public Product createProduct(CreateProductRequest request) throws ProductException {
+        try {
+            log.info("Saving product to database");
 
-        log.info("Saving product to database");
+            Category topLevel = getCategory(request.getTopLevelCategory(), null, 1);
+            Category secondLevel = getCategory(request.getSecondLevelCategory(), topLevel, 2);
+            Category thirdLevel = getCategory(request.getThirdLevelCategory(), secondLevel, 3);
 
-        Category topLevel = categoryRepository.findByName(request.getTopLevelCategory());
-        if (topLevel == null) {
-            Category topLevelCategory = new Category();
-            topLevelCategory.setName(request.getTopLevelCategory());
-            topLevelCategory.setLevel(1);
+            Product product = new Product();
+            product.setTitle(request.getTitle());
+            product.setColor(request.getColor());
+            product.setDescription(request.getDescription());
+            product.setDiscountedPrice(request.getDiscountedPrice());
+            product.setDiscountPercent(request.getDiscountPercent());
+            product.setImageUrl(request.getImageUrl());
+            product.setBrand(request.getBrand());
+            product.setSizes(request.getSize());
+            product.setQuantity(request.getQuantity());
+            product.setCategory(thirdLevel);
+            product.setCreatedAt(LocalDateTime.now());
 
-            topLevel = categoryRepository.save(topLevelCategory);
+            return productRepository.save(product);
+        } catch (Exception e) {
+            log.error("Error creating product: {}", e.getMessage(), e);
+            throw new ProductException("Failed to create product");
+        }
+    }
+
+    private Category getCategory(String categoryName, Category parent, int level) {
+        Category category = categoryRepository.findByNameAndParent(categoryName, (parent != null) ? parent.getName() : null);
+
+        if (category == null) {
+            Category newCategory = new Category();
+            newCategory.setName(categoryName);
+            newCategory.setParentCategory(parent);
+            newCategory.setLevel(level);
+
+            return categoryRepository.save(newCategory);
         }
 
-        Category secondLevel = categoryRepository.findByNameAndParent(request.getSecondLevelCategory(), topLevel.getName());
-        if (secondLevel == null) {
-            Category secondLevelCategory = new Category();
-            secondLevelCategory.setName(request.getSecondLevelCategory());
-            secondLevelCategory.setParentCategory(topLevel);
-            secondLevelCategory.setLevel(2);
-
-            secondLevel = categoryRepository.save(secondLevelCategory);
-        }
-
-        Category thirdLevel = categoryRepository.findByNameAndParent(request.getThirdLevelCategory(), secondLevel.getName());
-        if (thirdLevel == null) {
-            Category thirdLevelCategory = new Category();
-            thirdLevelCategory.setName(request.getThirdLevelCategory());
-            thirdLevelCategory.setParentCategory(secondLevel);
-            thirdLevelCategory.setLevel(3);
-
-            thirdLevel = categoryRepository.save(thirdLevelCategory);
-        }
-
-        Product product = new Product();
-        product.setTitle(request.getTitle());
-        product.setColor(request.getColor());
-        product.setDescription(request.getDescription());
-        product.setDiscountedPrice(request.getDiscountedPrice());
-        product.setDiscountPercent(request.getDiscountPercent());
-        product.setImageUrl(request.getImageUrl());
-        product.setBrand(request.getBrand());
-        product.setSizes(request.getSize());
-        product.setQuantity(request.getQuantity());
-        product.setCategory(thirdLevel);
-        product.setCreatedAt(LocalDateTime.now());
-
-        return productRepository.save(product);
+        return category;
     }
 
     @Override
@@ -113,7 +108,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findProductByCategory(String category) {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override

@@ -49,7 +49,7 @@ public class Product {
     private String color;
 
     @ElementCollection
-    private Set<Size> sizes = new HashSet<>();
+    private List<String> sizes = new ArrayList<>();
 
     @Column(name = "image_url")
     private String imageUrl;

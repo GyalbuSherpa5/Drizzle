@@ -1,16 +1,14 @@
 package com.gyalbu.drizzle_backend.resources.request;
 
 import com.gyalbu.drizzle_backend.entity.Size;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class CreateProductRequest {
 
     private String title;
@@ -29,7 +27,7 @@ public class CreateProductRequest {
 
     private String color;
 
-    private Set<Size> size = new HashSet<>();
+    private List<String> size = new ArrayList<>();
 
     private String imageUrl;
 
