@@ -10,10 +10,15 @@ import {PaymentSuccessComponent} from "./Module/feature/components/payment-succe
 import {OrderComponent} from "./Module/feature/components/order/order.component";
 import {OrderDetailsComponent} from "./Module/feature/components/order-details/order-details.component";
 import {AdminRoutingModule} from "./Module/admin/admin-routing.module";
+import {authGuard} from "./config/auth.guard";
 
 const routes: Routes = [
-  {path: "admin", loadChildren: () => import("./Module/admin/admin-routing.module")
-      .then(m => AdminRoutingModule)},
+  {
+    path: "admin", loadChildren: () => import("./Module/admin/admin-routing.module")
+      .then(m => AdminRoutingModule), canActivate: [authGuard],data: {
+      roles: ['SUPER_ADMIN']
+    }
+  },
   {path: "", component: HomeComponent},
   {path: "cart", component: CartComponent},
   {path: "product-details/:id", component: ProductDetailsComponent},

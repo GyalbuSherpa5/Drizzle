@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {lehngacholiPage2} from "../../../../../Data/Saree/lenghaCholiPage2";
+import {camera} from "../../../../../Data/Saree/lenghaCholiPage2";
 import {Router} from "@angular/router";
 
 @Component({
@@ -18,7 +18,7 @@ export class ProductDetailsComponent {
   }
 
   ngOnInit(){
-    this.relatedProducts = lehngacholiPage2;
+    this.relatedProducts = camera;
   }
 
   handleAddToCart() {

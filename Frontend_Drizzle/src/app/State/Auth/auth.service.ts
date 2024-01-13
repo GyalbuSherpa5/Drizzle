@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {BASE_API_URL} from "../../config/api";
 import {HttpClient} from "@angular/common/http";
 import {Store} from "@ngrx/store";
-import {catchError, map, of} from "rxjs";
+import {catchError, map, of, retry} from "rxjs";
 import {loginFailure, loginSuccess, registerFailure, registerSuccess} from "./auth.actions";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,21 @@ export class AuthService {
     private http: HttpClient,
     private store: Store,
   ) {
+  }
+
+  decodedToken() {
+    const jwtHelper = new JwtHelperService();
+    const token = localStorage.getItem("jwt");
+    return jwtHelper.decodeToken(token!);
+  }
+
+  getRole() {
+    return this.decodedToken().role;
+  }
+
+  isLoggedIn() {
+    return !!localStorage.getItem("jwt");
+
   }
 
   login(loginData: any) {

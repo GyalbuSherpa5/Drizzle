@@ -1,57 +1,57 @@
-export const lehngacholiPage2=[
+export const camera=[
   {
-    imageUrl:
-      "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/y/g/m/l-sleeveless-shset95222-shae-by-sassafras-original-imaggjzkwyyyezzg.jpeg?q=70",
-    brand: "Shae by SASSAFRAS",
-    title: "Printed Stitched Lehenga Choli",
-    color: "Grey",
-    selling_price: "₹2,069",
-    price: "₹4,599",
-    disscount: "55% off",
+    image:
+      "https://static-01.daraz.com.np/p/78f7862a72166d39ad1eb4913c64bce8.jpg_750x750.jpg_.webp",
+    brand: "Canon",
+    title: "Canon Eos 250D 24.1Mp Digital Slr Camera",
+    color: "Black",
+    selling_price: "Rs. 97,999",
+    price: "Rs. 105,000",
+    disscount: "7% off",
     size: "",
   },
   {
-    imageUrl:
-      "https://rukminim1.flixcart.com/image/612/612/knyxqq80/salwar-kurta-dupatta/q/i/q/32-skd7385-biba-original-imag2jag2zzz3shw.jpeg?q=70",
-    brand: "BIBA",
-    title: "Solid Stitched Lehenga Choli",
-    color: "Yellow",
-    selling_price: "₹4,016",
-    price: "₹8,995",
-    disscount: "55% off",
+    image:
+      "https://static-01.daraz.com.np/p/ebcdd347c7b9b8813e96e18b61126796.jpg_750x750.jpg_.webp",
+      brand: "Canon",
+    title: "Canon DSLR EOS 200D II 18-55mm IS STM Lens",
+    color: "Black",
+    selling_price: "Rs. 99,990",
+    price: "Rs. 105,000",
+    disscount: "5% off",
     size: "",
   },
   {
-    imageUrl:
-      "https://rukminim1.flixcart.com/image/612/612/krme93k0/lehenga-choli/9/t/e/free-half-sleeve-ghaghra-choli-coconut-original-imag5df5ktsnnypv.jpeg?q=70",
-    brand: "ZAALIMA FASHION",
-    title: "Embroidered Semi Stitched Lehenga Choli",
-    color: "Green",
-    selling_price: "₹386",
-    price: "₹1,799",
-    disscount: "78% off",
+    image:
+      "https://static-01.daraz.com.np/p/c449fca193c974c78bf5ebbc34459936.jpg_750x750.jpg_.webp",
+    brand: "Canon",
+    title: "Canon EOS 90D",
+    color: "Black",
+    selling_price: "Rs. 188,000",
+    price: "Rs. 195,000",
+    disscount: "4% off",
     size: "",
   },
   {
-    imageUrl:
-      "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/l/x/d/free-full-sleeve-lehenga-lehenga-for-women-lehenga-choli-net-original-imaggcwfb3pjh2hf.jpeg?q=70",
-    brand: "Cute Fellow",
-    title: "Embroidered Semi Stitched Lehenga Choli",
-    color: "Purple",
-    selling_price: "₹615",
-    price: "₹3,499",
-    disscount: "82% off",
+    image:
+      "https://static-01.daraz.com.np/p/56e25faeaed41236bc4edf1e0baee2f9.jpg_750x750.jpg_.webp",
+    brand: "Canon",
+    title: "Canon EOS 850D EF-S 18-55mm is STM Kit",
+    color: "Black",
+    selling_price: "Rs. 138,999",
+    price: "Rs. 145,999",
+    disscount: "4% off",
     size: "",
   },
   {
-    imageUrl:
-      "https://rukminim1.flixcart.com/image/612/612/kp78e4w0/lehenga-choli/n/n/d/free-short-sleeve-baby-pink-choli-trivety-original-imag3hbpwczdj2hu.jpeg?q=70",
+    image:
+      "https://static-01.daraz.com.np/p/f424e6b434ffd220ad1f02807e9d17af.jpg_750x750.jpg_.webp",
     brand: "Trivety",
-    title: "Embroidered Semi Stitched Lehenga Choli",
-    color: "Pink",
-    selling_price: "₹439",
-    price: "₹1,999",
-    disscount: "78% off",
+    title: "Nikon D5600 DSLR Camera Body Only",
+    color: "Black",
+    selling_price: "Rs. 102,000",
+    price: "Rs. 102,000",
+    disscount: "0% off",
     size: "",
   },
   {

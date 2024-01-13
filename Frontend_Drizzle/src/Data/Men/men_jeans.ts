@@ -1,12 +1,12 @@
-export const menJeans = [
+export const iPhone = [
   {
-    "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/jean/h/y/g/34-jeans-bt008-laheja-original-imagqqbsfgmdhcvn.jpeg?q=70",
-    "brand": "LAHEJA",
-    "title": "Men Regular Mid Rise Black Jeans",
+    "image": "https://www.apple.com/v/iphone/home/br/images/overview/compare/compare_iphone_15_pro__c344odaqs5qq_large_2x.png",
+    "brand": "Apple",
+    "title": "iPhone 15 Pro",
     "color": "black",
-    "selling_price": 599,
-    "price": 1999,
-    "discountPersent": 70 ,
+    "selling_price": 999,
+    "price": 999,
+    "discountPersent": 10 ,
     "size": [
       {
         "name": "S",
@@ -22,19 +22,19 @@ export const menJeans = [
       }
     ],
     "quantity": 100,
-    "topLavelCategory": "Men",
-    "secondLavelCategory": "Clothing",
-    "thirdLavelCategory": "men_jeans",
-    "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
+    "topLavelCategory": "Electronics",
+    "secondLavelCategory": "Mobiles",
+    "thirdLavelCategory": "iphone",
+    "description":"The ultimate iPhone."
   },
   {
-    "image": "https://rukminim1.flixcart.com/image/612/612/kmns7m80/jean/9/5/o/36-black-36-coper-buck-original-imagfg9edbsneu2s.jpeg?q=70",
-    "brand": "COPER BUCK",
-    "title": "Men Regular Mid Rise Black Jeans",
+    "image": "https://www.apple.com/v/iphone/home/br/images/overview/compare/compare_iphone_15__cp3codzoxms2_large_2x.png",
+    "brand": "Apple",
+    "title": "iPhone 15",
     "color": "black",
-    "selling_price": 898,
-    "price": 2399,
-    "discountPersent": 62 ,
+    "selling_price": 799,
+    "price": 799,
+    "discountPersent": 10 ,
     "size": [
       {
         "name": "S",
@@ -50,19 +50,19 @@ export const menJeans = [
       }
     ],
     "quantity": 100,
-    "topLavelCategory": "Men",
-    "secondLavelCategory": "Clothing",
-    "thirdLavelCategory": "men_jeans",
-    "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
+    "topLavelCategory": "Electronics",
+    "secondLavelCategory": "Mobiles",
+    "thirdLavelCategory": "iphone",
+    "description":"A total powerhouse"
   },
   {
-    "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/jean/z/n/u/32-ecskn-01bb-002-spykar-original-imaghxqwuw67ywfy.jpeg?q=70",
-    "brand": "Spykar",
-    "title": "Men Skinny Low Rise Black Jeans",
+    "image": "https://www.apple.com/v/iphone/home/br/images/overview/compare/compare_iphone_14__ct4sjk962pea_large_2x.png",
+    "brand": "Apple",
+    "title": "iPhone 14",
     "color": "black",
-    "selling_price": 1099,
-    "price": 2799,
-    "discountPersent": 62 ,
+    "selling_price": 699,
+    "price": 699,
+    "discountPersent": 10 ,
     "size": [
       {
         "name": "S",
@@ -78,19 +78,19 @@ export const menJeans = [
       }
     ],
     "quantity": 100,
-    "topLavelCategory": "Men",
-    "secondLavelCategory": "Clothing",
-    "thirdLavelCategory": "men_jeans",
-    "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
+    "topLavelCategory": "Electronics",
+    "secondLavelCategory": "Mobiles",
+    "thirdLavelCategory": "iphone",
+    "description":"As amazing as ever."
   },
   {
-    "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/jean/a/w/t/30-ud0030-united-denim-original-imagf9n9efexz68u-bb.jpeg?q=70",
-    "brand": "UNITED DENIM",
-    "title": "Men Slim Mid Rise Black Jeans",
+    "image": "https://www.apple.com/v/iphone/home/br/images/overview/compare/compare_iphone_se__d5blqx1pgymq_large_2x.png",
+    "brand": "Apple",
+    "title": "iPhone SE",
     "color": "black",
     "selling_price": 429,
-    "price": 1749,
-    "discountPersent": 75 ,
+    "price": 429,
+    "discountPersent": 10 ,
     "size": [
       {
         "name": "S",
@@ -106,19 +106,18 @@ export const menJeans = [
       }
     ],
     "quantity": 100,
-    "topLavelCategory": "Men",
-    "secondLavelCategory": "Clothing",
-    "thirdLavelCategory": "men_jeans",
-    "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
-  },
-  {
-    "image": "https://rukminim1.flixcart.com/image/612/612/ky0g58w0/shopsy-jean/8/p/y/28-black-knee-cut-jeans-comfits-original-imagaccjjya9gqzn.jpeg?q=70",
-    "brand": "comfits",
-    "title": "Men Slim Mid Rise Black Jeans",
+    "topLavelCategory": "Electronics",
+    "secondLavelCategory": "Mobiles",
+    "thirdLavelCategory": "iphone",
+    "description":"Serious power. Serious value."
+  },{
+    "image": "https://www.apple.com/v/iphone/home/br/images/overview/compare/compare_iphone_se__d5blqx1pgymq_large_2x.png",
+    "brand": "Apple",
+    "title": "iPhone SE",
     "color": "black",
-    "selling_price": 399,
-    "price": 1299,
-    "discountPersent": 69 ,
+    "selling_price": 429,
+    "price": 429,
+    "discountPersent": 10 ,
     "size": [
       {
         "name": "S",
@@ -134,10 +133,10 @@ export const menJeans = [
       }
     ],
     "quantity": 100,
-    "topLavelCategory": "Men",
-    "secondLavelCategory": "Clothing",
-    "thirdLavelCategory": "men_jeans",
-    "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
+    "topLavelCategory": "Electronics",
+    "secondLavelCategory": "Mobiles",
+    "thirdLavelCategory": "iphone",
+    "description":"Serious power. Serious value."
   },
   {
     "image": "https://rukminim1.flixcart.com/image/612/612/kwfaj680/jean/3/c/s/38-hljn001891-highlander-original-imag93tpnjyyvpkg.jpeg?q=70",
