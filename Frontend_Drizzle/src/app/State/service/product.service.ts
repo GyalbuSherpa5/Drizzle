@@ -46,4 +46,8 @@ export class ProductService {
   findProductById(productId: any) {
     return this.http.get(`${this.apiUrl}/products/id/${productId}`, {});
   }
+
+  findProductByCategoryName(category: any) {
+    return this.http.get(`${this.apiUrl}/products/${category}`, {});
+  }
 }

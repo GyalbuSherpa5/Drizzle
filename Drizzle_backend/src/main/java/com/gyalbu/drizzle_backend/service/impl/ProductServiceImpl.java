@@ -107,7 +107,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findProductByCategory(String category) {
-        return Collections.emptyList();
+        return productRepository.findByCategoryName(category);
     }
 
     @Override

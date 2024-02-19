@@ -40,6 +40,11 @@ public class ProductController {
         return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/products/{category}")
+    public List<Product> findByCategoryName(@PathVariable String category) {
+        return productService.findProductByCategory(category);
+    }
+
     @GetMapping("/products/id/{productId}")
     public ResponseEntity<Product> findProductByIdHandler(@PathVariable Long productId) throws ProductException {
 

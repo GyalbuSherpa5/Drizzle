@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {filters, SingleFilter} from "./FilterData";
 import {mensPantsPage1} from "../../../../../Data/pants/men_page1";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProductService} from "../../../../State/service/product.service";
 
 @Component({
   selector: 'app-products',
@@ -12,9 +13,11 @@ export class ProductsComponent {
   filterData: any
   singleFilterData: any;
   menPants: any;
+  displayProduct: any;
 
   constructor(
     private router: Router,
+    private productService: ProductService,
     private activatedRoute: ActivatedRoute,
   ) {
   }
@@ -22,13 +25,17 @@ export class ProductsComponent {
   ngOnInit() {
     this.filterData = filters;
     this.singleFilterData = SingleFilter;
-    this.menPants = mensPantsPage1;
+    /*this.menPants = mensPantsPage1;*/
 
     this.activatedRoute.paramMap.subscribe(
       (params) => {
-        console.log(params);
+        this.productService.findProductByCategoryName(params.get('levelThree'))
+          .subscribe((value)=>{
+            console.log(value);
+            this.displayProduct = value;
+          });
       }
-    )
+    );
   }
 
   handleMultipleSelectFilter(value: string, sectionId: string) {

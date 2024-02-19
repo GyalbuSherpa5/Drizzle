@@ -22,4 +22,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             @Param("maxPrice") Integer maxPrice,
             @Param("minDiscount") Integer minDiscount,
             @Param("sort") String sort);
+
+    @Query("SELECT p FROM Product p JOIN p.category c WHERE c.name LIKE %:categoryName%")
+    List<Product> findByCategoryName(String categoryName);
 }
