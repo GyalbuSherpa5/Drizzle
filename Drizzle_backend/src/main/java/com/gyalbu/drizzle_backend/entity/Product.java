@@ -13,6 +13,7 @@ import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.util.Set;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -48,9 +49,6 @@ public class Product {
 
     private String color;
 
-    @ElementCollection
-    private List<String> sizes = new ArrayList<>();
-
     @Column(name = "image_url")
     private String imageUrl;
 
@@ -67,5 +65,6 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 }

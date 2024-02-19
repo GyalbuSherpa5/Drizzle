@@ -1,12 +1,6 @@
 package com.gyalbu.drizzle_backend.resources.request;
 
-import com.gyalbu.drizzle_backend.entity.Size;
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Data
 public class CreateProductRequest {
@@ -26,8 +20,6 @@ public class CreateProductRequest {
     private String brand;
 
     private String color;
-
-    private List<String> size = new ArrayList<>();
 
     private String imageUrl;
 

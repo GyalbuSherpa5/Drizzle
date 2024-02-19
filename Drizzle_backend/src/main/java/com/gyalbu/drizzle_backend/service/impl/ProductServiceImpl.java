@@ -1,5 +1,6 @@
 package com.gyalbu.drizzle_backend.service.impl;
 
+import com.fasterxml.jackson.core.PrettyPrinter;
 import com.gyalbu.drizzle_backend.entity.Category;
 import com.gyalbu.drizzle_backend.entity.Product;
 import com.gyalbu.drizzle_backend.exception.ProductException;
@@ -43,14 +44,13 @@ public class ProductServiceImpl implements ProductService {
             product.setTitle(request.getTitle());
             product.setColor(request.getColor());
             product.setDescription(request.getDescription());
+            product.setPrice(request.getPrice());
             product.setDiscountedPrice(request.getDiscountedPrice());
             product.setDiscountPercent(request.getDiscountPercent());
             product.setImageUrl(request.getImageUrl());
             product.setBrand(request.getBrand());
-            product.setSizes(request.getSize());
             product.setQuantity(request.getQuantity());
             product.setCategory(thirdLevel);
-            product.setCreatedAt(LocalDateTime.now());
 
             return productRepository.save(product);
         } catch (Exception e) {
@@ -78,7 +78,6 @@ public class ProductServiceImpl implements ProductService {
     public String deleteProduct(Long productId) throws ProductException {
 
         Product product = findProductById(productId);
-        product.getSizes().clear();
         productRepository.delete(product);
         return "Product deleted successfully";
     }

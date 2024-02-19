@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {BASE_API_URL} from "../../config/api";
+import {BASE_API_URL} from "../../../config/api";
 import {HttpClient} from "@angular/common/http";
-import {CreateProductRequestDTO} from "./models/adminModel";
+import {CreateProductRequestDTO} from "../models/adminModel";
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class AdminService {
 
   addProduct(reqData: CreateProductRequestDTO) {
     return this.http.post(`${this.adminProduct + "/"}`, reqData);
+  }
+
+  getAllProducts(){
+    return this.http.get(`${this.adminProduct + "/all"}`);
   }
 }

@@ -9,6 +9,7 @@ import com.gyalbu.drizzle_backend.resources.response.AuthResponse;
 import com.gyalbu.drizzle_backend.service.CartService;
 import com.gyalbu.drizzle_backend.service.impl.CustomUserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
@@ -52,6 +54,12 @@ public class AuthController {
         createdUser.setFirstName(firstName);
         createdUser.setLastName(lastName);
 
+        if(user.getRole() != null) {
+            createdUser.setRole(user.getRole());
+        } else {
+            createdUser.setRole("USER");
+        }
+
         User savedUser = userRepository.save(createdUser);
         cartService.createCart(savedUser);
 
@@ -62,6 +70,7 @@ public class AuthController {
 
         AuthResponse authResponse = new AuthResponse(token, "Sign-up success");
 
+        log.info("User with name : {} created successfully", firstName);
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 

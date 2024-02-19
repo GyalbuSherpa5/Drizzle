@@ -1,4 +1,7 @@
 <div class="rounded-md shadow-md p-10 box">
+
+  <h2>Add Products</h2>
+
   <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
 
@@ -29,7 +32,7 @@
           <input matInput formControlName="price"
                  placeholder="Enter price"
                  autocomplete="given-name"
-                 type="number">
+                 type="number" required>
         </mat-form-field>
       </div>
 
@@ -83,16 +86,7 @@
         </mat-form-field>
       </div>
 
-      <div class="col-span-1">
-        <mat-form-field appearance="fill" class="w-full">
-          <mat-label>Size</mat-label>
-          <mat-select formControlName="size" multiple>
-            <mat-option *ngFor="let size of availableSizes" [value]="size">{{ size }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
-      <div class="col-span-1">
+      <div class="col-span-2">
         <mat-form-field appearance="fill" class="w-full">
           <mat-label>Image URL</mat-label>
           <input matInput formControlName="imageUrl"
@@ -105,20 +99,18 @@
       <div class="col-span-1">
         <mat-form-field appearance="fill" class="w-full">
           <mat-label>Top Level Category</mat-label>
-          <input matInput formControlName="topLevelCategory"
-                 placeholder="Enter top level category"
-                 autocomplete="given-name"
-                 type="text">
+          <mat-select formControlName="topLevelCategory" (selectionChange)="onFirstLevelCategoryChange($event.value)">
+            <mat-option *ngFor="let category of topLevelCategory" [value]="category">{{ category }}</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
       <div class="col-span-1">
         <mat-form-field appearance="fill" class="w-full">
           <mat-label>Second Level Category</mat-label>
-          <input matInput formControlName="secondLevelCategory"
-                 placeholder="Enter second level category"
-                 autocomplete="given-name"
-                 type="text">
+          <mat-select formControlName="secondLevelCategory">
+            <mat-option *ngFor="let category of secondLevelCategory" [value]="category">{{ category }}</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
@@ -133,8 +125,8 @@
       </div>
 
       <div class="col-span-4">
-        <button mat-raised-button class="w-full" style="padding: 1.6rem;" color="accent">
-          Submit
+        <button mat-raised-button class="w-full" style="padding: 1.6rem;" color="accent" [disabled]="!myForm.valid">
+          Add Product
         </button>
       </div>
     </div>

@@ -82,4 +82,8 @@ export class NavbarComponent {
   handleLogout = () => {
     this.userService.logout();
   }
+
+  isSuperAdmin() {
+    return this.authService.getRole() == "SUPER_ADMIN";
+  }
 }

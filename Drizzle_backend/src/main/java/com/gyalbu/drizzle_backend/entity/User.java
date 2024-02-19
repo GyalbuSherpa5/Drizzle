@@ -16,6 +16,7 @@ import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstName;
@@ -60,5 +61,6 @@ public class User {
     @JsonIgnore
     private List<Review> reviews = new ArrayList<>();
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 }

@@ -14,6 +14,11 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {TableModule} from "primeng/table";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSortModule} from "@angular/material/sort";
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatSortModule
   ]
 })
 export class AdminModule { }

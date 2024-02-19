@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Store} from "@ngrx/store";
 import {catchError, map, of} from "rxjs";
 import {getUserProfileFailure, getUserProfileSuccess, logoutSuccess} from "./user.action";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class UserService {
   constructor(
     private http: HttpClient,
     private store: Store,
+    private router: Router,
   ) {
   }
 
@@ -22,7 +24,6 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/users/profile`, {})
       .pipe(
         map((user: any) => {
-          console.log("User Profile Success ", user)
           return getUserProfileSuccess({userProfile: user});
         }),
         catchError((error) => {
@@ -39,5 +40,6 @@ export class UserService {
   logout() {
     localStorage.removeItem("jwt");
     this.store.dispatch(logoutSuccess());
+    this.router.navigate(['']).then(value => console.log("route success"));
   }
 }

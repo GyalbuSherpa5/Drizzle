@@ -20,28 +20,28 @@ export class AdminComponent {
         items: [
           {
             label: 'Home',
-            icon: 'pi pi-home',
+            icon: 'home',
             // command: () => this.home()
           },
           {
             label: 'Orders',
-            icon: 'pi pi-arrow-circle-up',
+            icon: 'fastfood',
             routerLink: ['orders'],
           },
           {
             label: 'Products',
-            icon: 'pi pi-arrow-circle-up',
+            icon: 'shopping_basket',
             routerLink: ['products'],
           },
           {
             label: 'Customers',
-            icon: 'pi pi-spin pi-cog',
+            icon: 'supervised_user_circle',
             routerLink: ['customers'],
           }
           ,
           {
             label: 'Create Product',
-            icon: 'pi pi-database',
+            icon: 'add_box',
             routerLink: ['create-product'],
           }
         ]

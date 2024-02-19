@@ -4,6 +4,7 @@
   color: #fff;
   padding: 20px;
   box-sizing: border-box;
+  margin-left: 20px;
 }
 
 .sidebar-menu {
@@ -16,15 +17,26 @@
   padding: 10px 0;
 }
 
+.sidebar-menu ul {
+  padding-left: 20px;
+}
+
 .sidebar-menu a {
   text-decoration: none;
   color: #fff;
   display: flex;
   align-items: center;
+  transition: 0.3s;
 }
 
 .sidebar-menu i {
   margin-right: 10px;
+}
+
+.sidebar-separator {
+  height: 1px;
+  background-color: #555;
+  margin: 5px 0;
 }
 
 .content {
