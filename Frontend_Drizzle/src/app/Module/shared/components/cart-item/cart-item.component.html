@@ -2,19 +2,19 @@
   <div class="flex items-center">
     <div class="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
       <img class="w-full h-full object-cover object-top"
-           src="https://static-01.daraz.com.np/p/c85303cd92c6bf35789b52e2a31a6355.png"
+           [src]="cartDetail.product.imageUrl"
            alt="image">
     </div>
 
     <div class="ml-5 space-y-1">
-      <p class="font-semibold">Ultima Atom 192 Bluetooth</p>
-      <p class="text-gray-500">Color: black</p>
-      <p class="text-gray-500 mt-2">Seller : Ultima Lifestyle</p>
+      <p class="font-semibold">{{ cartDetail.product.title }}</p>
+      <p class="text-gray-500">Color: {{ cartDetail.product.color }}</p>
+      <p class="text-gray-500 mt-2">Seller : {{ cartDetail.product.brand }}</p>
 
       <div class="flex space-x-2 items-center pt-3">
-        <p class="text-gray-500 line-through">Rs 500</p>
-        <p class="font-semibold text-lg">Rs 300</p>
-        <p class="text-green-600 font-semibold">20% off</p>
+        <p class="text-gray-500 line-through">Rs {{ cartDetail.product.price }}</p>
+        <p class="font-semibold text-lg">Rs {{ cartDetail.product.discountedPrice }}</p>
+        <p class="text-green-600 font-semibold">{{ cartDetail.product.discountPercent }}% off</p>
       </div>
     </div>
   </div>
@@ -22,13 +22,13 @@
   <div *ngIf="showButton" class="flex items-center lg:space-x-10 pt-4 justify-between">
     <div class="flex items-center space-x-2">
       <div class="example-button-container">
-        <button mat-mini-fab color="accent" (click)="updateCartItem(-1)" [disabled]="true">
+        <button mat-mini-fab color="accent" (click)="updateCartItem(-1)" [disabled]="cartDetail.quantity === 1">
           <mat-icon>remove</mat-icon>
         </button>
       </div>
 
       <span class="py-1 px-7 border border-gray-800 rounded-sm">
-      1
+      {{ cartDetail.quantity }}
     </span>
 
       <div class="example-button-container">

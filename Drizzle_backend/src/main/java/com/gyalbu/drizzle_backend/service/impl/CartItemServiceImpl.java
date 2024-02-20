@@ -46,6 +46,8 @@ public class CartItemServiceImpl implements CartItemService {
             item.setPrice(item.getQuantity() * item.getProduct().getPrice());
             item.setDiscountedPrice(item.getProduct().getDiscountedPrice() * item.getQuantity());
         }
+
+        log.info("Updating cart item with id - " + id);
         return cartItemRepository.save(item);
     }
 
@@ -63,6 +65,7 @@ public class CartItemServiceImpl implements CartItemService {
         User reqUser = userService.findUserById(userId);
 
         if(user.getId().equals(reqUser.getId())){
+            log.info("Removing cart item with id - " + cartItemId);
             cartItemRepository.deleteById(cartItemId);
         }
         else{

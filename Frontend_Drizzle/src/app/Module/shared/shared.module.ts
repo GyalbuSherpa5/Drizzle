@@ -13,6 +13,7 @@ import { OrderTrackerComponent } from './components/order-tracker/order-tracker.
 import {MatDividerModule} from "@angular/material/divider";
 import {MatDialogModule} from "@angular/material/dialog";
 import {RouterLink} from "@angular/router";
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {RouterLink} from "@angular/router";
     ProductCardComponent,
     StarRatingComponent,
     CartItemComponent,
-    OrderTrackerComponent
+    OrderTrackerComponent,
+    ConfirmDialogComponent
   ],
     imports: [
         CommonModule,

@@ -56,6 +56,6 @@ export class ProductDetailsComponent {
       .subscribe(() => {
         this.messageService.showSuccessSnackBar('Item added to cart');
       });
-    this.router.navigate(['cart']).then(value => console.log("route success"));
+    // this.router.navigate(['cart']).then(value => console.log("route success"));
   }
 }

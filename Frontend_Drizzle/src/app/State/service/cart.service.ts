@@ -29,9 +29,9 @@ export class CartService {
     return this.http.delete(url, {});
   }
 
-  updateCartItem(reqData: any){
+  updateCartItem(reqData: any) {
     const url = `${this.apiUrl}/cart_items/${reqData.cartItemId}`;
     const body = reqData.data;
-    return this.http.put(url,{body});
+    return this.http.put(url, body);
   }
 }
