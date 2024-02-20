@@ -50,6 +50,7 @@ export class CartItemComponent {
         this.cartService.removeCartItem(this.cartDetail.id)
           .subscribe(() => {
             console.log("item removed");
+            this.cartUpdated.emit();
           });
       }
     });

@@ -1,7 +1,6 @@
-import {Component, TemplateRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {CartService} from "../../../../State/service/cart.service";
-import {NgIfContext} from "@angular/common";
 
 @Component({
   selector: 'app-cart',
@@ -26,7 +25,6 @@ export class CartComponent {
       this.discount = cartData.discount;
       this.totalDiscountedPrice = cartData.totalDiscountedPrice;
       this.totalPrice = cartData.totalPrice;
-      console.log(this.cart.length);
     });
   }
 
@@ -44,7 +42,12 @@ export class CartComponent {
     }
     // Otherwise, fetch the updated cart data from the service
     else {
-      // this.getCartData();
+      this.cartService.getCart().subscribe((cartData: any) => {
+        this.cart = cartData.cartItems;
+        this.discount = cartData.discount;
+        this.totalDiscountedPrice = cartData.totalDiscountedPrice;
+        this.totalPrice = cartData.totalPrice;
+      });
     }
   }
 }
