@@ -98,7 +98,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> usersOrderHistory(Long userId) {
-
+        log.info("Fetching order history for user with id - " + userId);
         return orderRepository.getUsersOrders(userId);
     }
 

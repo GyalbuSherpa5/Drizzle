@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BASE_API_URL} from "../../config/api";
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -29,13 +29,13 @@ export class OrderService {
       }))
   }
 
-  getOrderById(orderId: string) {
+  getOrderById(orderId: string): Observable<Order> {
     const url = `${this.apiUrl}/orders/${orderId}`;
-    return this.http.get(url, {});
+    return this.http.get<Order>(url, {});
   }
 
-  getOrderHistory() {
+  getOrderHistory(): Observable<Order[]> {
     const url = `${this.apiUrl}/orders/user`;
-    return this.http.get(url, {});
+    return this.http.get<Order[]>(url);
   }
 }

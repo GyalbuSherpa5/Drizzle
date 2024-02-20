@@ -11,8 +11,8 @@
     </div>
 
     <div class="space-y-6 mt-20">
-      <div *ngFor="let orderItem of orders">
-        <app-order-card></app-order-card>
+      <div *ngFor="let orderItem of orders.orderItems">
+        <app-order-card [orderItems]="orderItem"></app-order-card>
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {CartService} from "../../../../../State/service/cart.service";
 
 @Component({
   selector: 'app-order-card',
@@ -8,4 +10,5 @@ import {Router} from "@angular/router";
 })
 export class OrderCardComponent {
 
+  @Input() orderItems!: OrderItem;
 }
