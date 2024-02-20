@@ -1,4 +1,4 @@
-<div (click)="navigate()"
+<div (click)="navigate(product.id)"
      class="productCard w-[17rem] m-3 transition-all cursor-pointer">
   <div class="h-[20rem]">
     <img class="h-full w-full" [src]="product.imageUrl" alt="image">
@@ -12,9 +12,9 @@
     </div>
 
     <div class="flex flex-wrap space-x-2 items-center">
-      <p class="font-bold">Rs {{product.discountedPrice}}</p>
-      <p class="text-gray-600 line-through">{{product.price}}</p>
-      <p class="text-green-600 font-semibold">{{product.disscount}}%</p>
+      <p class="font-bold">Rs {{product.price}}</p>
+      <p class="text-gray-600 line-through">{{product.discountedPrice}}</p>
+      <p class="text-green-600 font-semibold">{{product.discountPercent}}%</p>
     </div>
   </div>
 </div>

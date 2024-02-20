@@ -37,17 +37,16 @@ public class CartServiceImpl implements CartService {
 
         Cart cart = cartRepository.findByUserId(userId);
         Product product = productService.findProductById(request.getProductId());
-        CartItem isPresent = cartItemService.isCartItemExist(cart, product, request.getSize(), userId);
-
-        if(isPresent == null){
+        CartItem isPresent = cartItemService.isCartItemExist(cart, product, userId);
+        if (isPresent == null) {
             CartItem cartItem = new CartItem();
             cartItem.setProduct(product);
             cartItem.setCart(cart);
             cartItem.setQuantity(request.getQuantity());
+            cartItem.setUserId(userId);
 
             int price = request.getQuantity() * product.getDiscountedPrice();
             cartItem.setPrice(price);
-            cartItem.setSize(request.getSize());
 
             CartItem createdCartItem = cartItemService.createCartItem(cartItem);
             cart.getCartItems().add(createdCartItem);
@@ -65,7 +64,7 @@ public class CartServiceImpl implements CartService {
         int totalDiscountPrice = 0;
         int totalItem = 0;
 
-        for(CartItem cartItem: cart.getCartItems()){
+        for (CartItem cartItem : cart.getCartItems()) {
             totalPrice += cartItem.getPrice();
             totalDiscountPrice += cartItem.getDiscountedPrice();
             totalItem += cartItem.getQuantity();

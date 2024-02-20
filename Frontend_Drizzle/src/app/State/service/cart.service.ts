@@ -16,7 +16,7 @@ export class CartService {
 
   addItemToCart(reqData: any) {
     const url = `${this.apiUrl}/cart/add`;
-    return this.http.put(url, {reqData});
+    return this.http.put(url, reqData);
   }
 
   getCart() {

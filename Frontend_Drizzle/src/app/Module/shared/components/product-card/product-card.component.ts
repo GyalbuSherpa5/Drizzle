@@ -14,8 +14,8 @@ export class ProductCardComponent {
   ) {
   }
 
-  navigate() {
-    this.router.navigate(['/product-details/' + 5])
+  navigate(productId: any) {
+    this.router.navigate(['/product-details/' + productId])
       .then(value => console.log("route success"));
   }
 }

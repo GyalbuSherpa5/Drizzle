@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../../service/admin.service";
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {MessageService} from "../../../shared/components/MessageService";
 
 @Component({
   selector: 'app-create-product',
@@ -37,7 +38,7 @@ export class CreateProductComponent {
   constructor(
     private fb: FormBuilder,
     private adminService: AdminService,
-    private snackBar: MatSnackBar
+    private messageService: MessageService,
   ) {
   }
 
@@ -47,29 +48,12 @@ export class CreateProductComponent {
       next: () => {
         this.myForm.reset();
         this.myForm.valid;
-        this.showSuccessSnackBar('Product added successfully');
+        this.messageService.showSuccessSnackBar('Product added successfully');
       },
       error: (error: any) => {
         console.log(error);
-        this.showErrorSnackBar('Error adding product');
+        this.messageService.showErrorSnackBar('Error adding product');
       }
-    });
-  }
-
-  private showSuccessSnackBar(message: string): void {
-    this.snackBar.open(message, 'Close', {
-      duration: 3000,
-      horizontalPosition: 'end',
-      verticalPosition: 'top',
-    });
-  }
-
-  private showErrorSnackBar(message: string): void {
-    this.snackBar.open(message, 'Close', {
-      duration: 3000,
-      horizontalPosition: 'end',
-      verticalPosition: 'top',
-      panelClass: ['error-snackbar']
     });
   }
 
