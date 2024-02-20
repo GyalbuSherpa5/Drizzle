@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-order-tracker',
@@ -7,6 +7,9 @@ import {Component, Input} from '@angular/core';
 })
 export class OrderTrackerComponent {
   @Input() activeStep: any;
-  @Input() steps: any;
+  @Input() steps: { id: number; title: string;}[] = [];
 
+  getActiveIndex(): number {
+    return this.steps.findIndex(step => step.title === this.activeStep);
+  }
 }

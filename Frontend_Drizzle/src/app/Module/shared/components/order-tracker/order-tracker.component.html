@@ -1,25 +1,24 @@
 <div class="flex justify-between space-x-8 w-full">
-  <div
-    class="flex justify-between items-center space-x-5"
-    *ngFor="let step of steps; let index =index; let last = last">
-    <div [ngClass]="{
-      'bg-green-500':(activeStep==step.title && index <=step.id),
-      'bg-green-200':(activeStep!=step.title && activeStep !== 'CONFIRMED'),
+  <ng-container *ngFor="let step of steps; let index = index; let last = last">
+    <div class="flex justify-between items-center space-x-5">
+      <div [ngClass]="{
+        'bg-green-500': index <= getActiveIndex(),
+        'bg-green-200': index > getActiveIndex()
       }"
-         class="h-8 w-8 rounded-full flex justify-center items-center">
-      <mat-icon>check_circle_outline</mat-icon>
-    </div>
+           class="h-8 w-8 rounded-full flex justify-center items-center">
+        <mat-icon>check_circle_outline</mat-icon>
+      </div>
 
-    <span>
-        {{step.title}}
+      <span>
+        {{ step.title }}
       </span>
 
-    <div *ngIf="!last" class="lg:w-[32vh]">
-      <mat-divider [ngClass]="{
-          'text-green-500':activeStep==step.title,
-          'text-gray-500':activeStep!=step.title
-        }"></mat-divider>
+      <div *ngIf="!last" class="lg:w-[32vh]">
+        <mat-divider [ngClass]="{
+            'text-green-500': index <= getActiveIndex(),
+            'text-gray-500': index > getActiveIndex()
+          }"></mat-divider>
+      </div>
     </div>
-  </div>
-
+  </ng-container>
 </div>
