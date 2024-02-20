@@ -18,8 +18,9 @@ export class OrderService {
 
   createOrder(reqData: any) {
     const url = `${this.apiUrl}/orders/`;
-    return this.http.post(url, {reqData})
+    return this.http.post(url, reqData)
       .pipe(map((data: any) => {
+        console.log(data);
         if (data.id) {
           this.router.navigate([`/checkout/payment/${data.id}`], {
             queryParams: {step: '3', order_id: data.id}

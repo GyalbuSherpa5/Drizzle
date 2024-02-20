@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {OrderService} from "../../../../../State/service/order.service";
 
 @Component({
   selector: 'app-address-form',
@@ -21,6 +22,7 @@ export class AddressFormComponent {
 
   constructor(
     private fb: FormBuilder,
+    private orderService: OrderService
   ) {
   }
   handleCreateOrder(item: any) {
@@ -29,6 +31,7 @@ export class AddressFormComponent {
 
   handleSubmit() {
     const formValue = this.myForm.value;
-    console.log(JSON.stringify(formValue));
+    this.orderService.createOrder(formValue)
+      .subscribe();
   }
 }

@@ -8,24 +8,24 @@
       <div class="col-span-2">
         <div class="space-y-3 box rounded-md">
           <div *ngFor="let product of products; let last = last">
-            <app-cart-item [showButton]="false"></app-cart-item>
+            <app-cart-item [showButton]="false" [cartDetail]="product"></app-cart-item>
             <mat-divider *ngIf="!last"></mat-divider>
           </div>
         </div>
       </div>
       <section class="col-span-1 px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0">
-        <ng-container *ngIf="cart">
+        <ng-container *ngIf="products">
           <div class="box p-5 rounded-md">
             <p class="font-bold text-gray-500 pb-4">PRICE DETAILS</p>
             <mat-divider></mat-divider>
             <div class="space-y-3">
               <div class="flex justify-between pt-3">
                 <span>Total price</span>
-                <span>Rs 6999</span>
+                <span>Rs {{totalPrice}}</span>
               </div>
               <div class="flex justify-between pt-3">
                 <span>Discount</span>
-                <span class="text-green-700">-Rs3999</span>
+                <span class="text-green-700">-Rs {{totalDiscountedPrice}}</span>
               </div>
 
               <div class="flex justify-between pt-3">
@@ -35,14 +35,14 @@
 
               <div class="flex justify-between font-semibold text-lg">
                 <span>Total Amount</span>
-                <span class="text-green-700">Rs2999</span>
+                <span class="text-green-700">Rs {{discount}}</span>
               </div>
             </div>
             <button mat-raised-button
                     (click)="navigateToCheckout()"
                     style="padding: 1.5rem;"
                     class="text-lg mt-8 p-28 px-10 w-full"
-                    color="accent">CHECKOUT
+                    color="accent"> Buy Now Pay Later
             </button>
           </div>
         </ng-container>

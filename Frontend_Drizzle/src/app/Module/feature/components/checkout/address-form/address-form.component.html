@@ -93,7 +93,10 @@
           </div>
 
           <div class="col-span-2">
-            <button mat-raised-button class="w-full" style="padding: 1.6rem;" color="accent">
+            <button mat-raised-button class="w-full"
+                    style="padding: 1.6rem;"
+                    [disabled]="!myForm.valid"
+                    color="accent">
               Deliver Here
             </button>
           </div>
