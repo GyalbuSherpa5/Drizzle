@@ -45,8 +45,9 @@ export class PaymentComponent {
     });
   }
 
-  navigateToCheckout() {
-
+  payViaDrizzle(orderId: string) {
+    this.route.navigate(['payment-bn-pl'], { queryParams: { order_id: orderId } })
+      .then(() => console.log("route success"));
   }
 
   createForm() {

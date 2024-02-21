@@ -11,6 +11,7 @@ import {OrderComponent} from "./Module/feature/components/order/order.component"
 import {OrderDetailsComponent} from "./Module/feature/components/order-details/order-details.component";
 import {AdminRoutingModule} from "./Module/admin/admin-routing.module";
 import {authGuard} from "./config/auth.guard";
+import {PaymentDrizzleComponent} from "./Module/feature/components/payment-drizzle/payment-drizzle.component";
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: "checkout", component: CheckoutComponent},
   {path: "checkout/payment/:id", component: PaymentComponent},
   {path: "payment-success", component: PaymentSuccessComponent},
+  {path: "payment-bn-pl", component: PaymentDrizzleComponent},
   {path: "account/orders", component: OrderComponent},
   {path: "order/:id", component: OrderDetailsComponent},
   {path: ':levelOne/:levelTwo/:levelThree', component: ProductsComponent},

@@ -72,7 +72,7 @@ public class OrderServiceImpl implements OrderService {
         createdorder.setShippingAddress(address);
         createdorder.setOrderDate(LocalDateTime.now());
         createdorder.setOrderStatus(OrderStatus.PENDING);
-        createdorder.getPaymentDetails().setStatus(PaymentStatus.PENDING);
+        createdorder.setPaymentStatus(PaymentStatus.PENDING);
         createdorder.setCreatedDate(LocalDateTime.now());
 
         Order savedOrder = orderRepository.save(createdorder);
@@ -107,7 +107,6 @@ public class OrderServiceImpl implements OrderService {
 
         Order order = findOrderById(orderId);
         order.setOrderStatus(OrderStatus.PLACED);
-        order.getPaymentDetails().setStatus(PaymentStatus.COMPLETED);
         return order;
     }
 
@@ -153,5 +152,12 @@ public class OrderServiceImpl implements OrderService {
 
         Order order = findOrderById(orderId);
         orderRepository.delete(order);
+    }
+
+    @Override
+    public Order updatePaymentStatus(Long orderId, String paymentStatus) throws OrderException {
+        Order order = findOrderById(orderId);
+        order.setPaymentStatus(PaymentStatus.valueOf(paymentStatus));
+        return orderRepository.save(order);
     }
 }

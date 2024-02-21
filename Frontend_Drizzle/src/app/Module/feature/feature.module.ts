@@ -30,6 +30,7 @@ import {AddressCardComponent} from './components/address-card/address-card.compo
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { OrderCardComponent } from './components/order/order-card/order-card.component';
+import { PaymentDrizzleComponent } from './components/payment-drizzle/payment-drizzle.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { OrderCardComponent } from './components/order/order-card/order-card.com
     ProductReviewCardComponent,
     AddressFormComponent,
     AddressCardComponent,
-    OrderCardComponent
+    OrderCardComponent,
+    PaymentDrizzleComponent
   ],
   imports: [
     CommonModule,

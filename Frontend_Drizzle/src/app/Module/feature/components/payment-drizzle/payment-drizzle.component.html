@@ -1,0 +1,35 @@
+<div class="pt-20 text-white px-5 lg:px-20">
+  <app-order-card [orderItems]="orders.orderItems[0]" [orderStatus]="'SD'"></app-order-card>
+</div>
+
+<div class="text-white px-5 lg:px-20" *ngFor="let item of items">
+  <div class="box px-10 lg:grid grid-cols-4 items-center rounded-2xl " style="background: #4CAF50">
+    <h1 class="text-lg font-semibold py-5">First installment</h1>
+    <div class="text-lg mt-2" style="font-size:18px">
+      <span>Amount to be paid: Rs 5000</span><br>
+      <span>Fine: Rs 0</span>
+    </div>
+    <div class="text-lg mt-2" style="font-size:18px">
+      <span>Next payment date: March 20</span><br>
+      <span>Status: PENDING</span>
+    </div>
+    <button mat-raised-button
+            style="padding: 1.5rem;"
+            class="text-lg mt-8 p-28 px-10 w-full"
+            [ngStyle]="{'background-color': '#3bddb0', 'color':'black'}"> Make First installment
+    </button>
+    <br>
+  </div>
+</div>
+<div class="text-white px-5 lg:px-20" *ngFor="let item of items">
+  <div class="box px-10 lg:grid grid-cols-4 items-center">
+    <h1 class="text-lg font-semibold py-5">First installment</h1>
+    <app-installment></app-installment>
+    <div class="text-lg mt-2" style="font-size:18px">
+      <span>due date march 20</span><br>
+      <span>PENDING</span>
+    </div>
+    <button mat-raised-button>Make payment</button>
+    <br>
+  </div>
+</div>

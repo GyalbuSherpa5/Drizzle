@@ -47,11 +47,12 @@
               </button>
               <span class="span-section">OR</span>
               <button mat-raised-button
-                      (click)="navigateToCheckout()"
+                      (click)="payViaDrizzle(order_id)"
                       style="padding: 1.5rem;"
                       class="text-lg mt-8 p-28 px-10 w-full"
                       [ngStyle]="{'background-color': '#f57224'}"> Buy Now Pay Later
               </button>
+              <span>By placing an order, you are agreeing to our privacy policy and terms of use.</span>
             </div>
           </div>
         </ng-container>

@@ -1,9 +1,9 @@
 package com.gyalbu.drizzle_backend.entity;
 
 import com.gyalbu.drizzle_backend.enums.OrderStatus;
+import com.gyalbu.drizzle_backend.enums.PaymentStatus;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,7 +15,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -50,9 +49,6 @@ public class Order {
     @OneToOne
     private Address shippingAddress;
 
-    @Embedded
-    private PaymentDetails paymentDetails = new PaymentDetails();
-
     private double totalPrice;
 
     private Integer totalDiscountedPrice;
@@ -61,6 +57,11 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
+
+    private double fineAmount;
 
     private int totalItem;
 

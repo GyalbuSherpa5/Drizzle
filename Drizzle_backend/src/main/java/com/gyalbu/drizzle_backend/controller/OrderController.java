@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,6 +52,13 @@ public class OrderController {
     public ResponseEntity<Order> findOrderById(@PathVariable("id") Long orderId) throws OrderException {
 
         Order order = orderService.findOrderById(orderId);
+        return new ResponseEntity<>(order, HttpStatus.ACCEPTED);
+    }
+
+    @PutMapping("/{orderId}/{paymentStatus}")
+    public ResponseEntity<Order> updatePaymentStatus(@PathVariable("orderId") Long orderId,
+                                                     @PathVariable("paymentStatus") String paymentStatus) throws OrderException {
+        Order order = orderService.updatePaymentStatus(orderId, paymentStatus);
         return new ResponseEntity<>(order, HttpStatus.ACCEPTED);
     }
 }

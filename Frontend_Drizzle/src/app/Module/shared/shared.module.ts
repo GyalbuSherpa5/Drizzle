@@ -14,6 +14,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatDialogModule} from "@angular/material/dialog";
 import {RouterLink} from "@angular/router";
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { InstallmentComponent } from './components/installment/installment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     StarRatingComponent,
     CartItemComponent,
     OrderTrackerComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    InstallmentComponent
   ],
     imports: [
         CommonModule,
@@ -41,7 +43,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     ProductCardComponent,
     StarRatingComponent,
     CartItemComponent,
-    OrderTrackerComponent
+    OrderTrackerComponent,
+    InstallmentComponent
   ]
 })
 export class SharedModule { }

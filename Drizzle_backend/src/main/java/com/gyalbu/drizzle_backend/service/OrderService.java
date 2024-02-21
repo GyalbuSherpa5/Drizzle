@@ -28,4 +28,6 @@ public interface OrderService {
     List<Order> getAllOrders();
 
     void deleteOrder(Long orderId) throws OrderException;
+
+    Order updatePaymentStatus(Long orderId, String paymentStatus) throws OrderException;
 }
