@@ -1,1 +1,129 @@
-<p>dashboard works!</p>
+<div class="row">
+  <div class="col-6">
+    <h1>RECENTLY ADDED PRODUCTS</h1>
+    <!-- Product Table -->
+    <table mat-table [dataSource]="productTable">
+      <!-- Define columns -->
+      <ng-container *ngFor="let col of productTableDisplay" [matColumnDef]="col">
+        <th mat-header-cell *matHeaderCellDef>{{ getColumnHeader(col) }}</th>
+        <td mat-cell *matCellDef="let element">
+          <!-- Display image in imageUrl column -->
+          <ng-container *ngIf="col === 'imageUrl'; else otherColumns">
+            <img class="circle" [src]="element[col]" alt="Product Image" style="max-width: 100px; max-height: 100px;">
+          </ng-container>
+          <ng-template #otherColumns>
+            <!-- Display delete button in delete column -->
+            <ng-container *ngIf="col !== 'delete'">
+              <!-- Modify to handle nested category -->
+              <ng-container *ngIf="col === 'category'">
+                {{ getCategoryName(element) }}
+              </ng-container>
+              <ng-container *ngIf="col !== 'category'">
+                {{ element[col] }}
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="col === 'delete'">
+              <button mat-raised-button color="warn" (click)="deleteProduct(element)">Delete</button>
+            </ng-container>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="productTableDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: productTableDisplay;"></tr>
+    </table>
+  </div>
+  <div class="col-6">
+    <h1>NEW CUSTOMERS</h1>
+    <!-- Customer Table -->
+    <table mat-table [dataSource]="customerTable" class="mat-elevation-z8">
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Image</th>
+        <td mat-cell *matCellDef="let customer">
+          <div class="circle">{{ getUserInitials(customer) }}</div>
+        </td>
+      </ng-container>
+
+      <!-- Other Columns -->
+      <ng-container *ngFor="let column of customerTableDisplay" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef> {{ getColumnHeader(column) }} </th>
+        <td mat-cell *matCellDef="let customer"> {{ customer[column] }} </td>
+      </ng-container>
+
+      <!-- Header Row Definition -->
+      <tr mat-header-row *matHeaderRowDef="allCustomerColumns"></tr>
+
+      <!-- Row Definition -->
+      <tr mat-row *matRowDef="let row; columns: allCustomerColumns;"></tr>
+    </table>
+  </div>
+
+  <div class="col-12">
+    <h1>RECENT ORDERS</h1>
+    <table mat-table [dataSource]="orderTable.data" class="mat-elevation-z8">
+
+      <!-- Image Column -->
+      <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef> Images</th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngFor="let image of element.imageUrl">
+            <img class="circle" [src]="image" alt="Product Image" width="50" height="50">
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Titles</th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngFor="let title of element.title">{{ title }}</div>
+        </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price</th>
+        <td mat-cell *matCellDef="let element"> {{ element.price }} </td>
+      </ng-container>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID</th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-stroked-button
+                  [ngClass]="element.status"
+                  [ngStyle]="{ 'background-color': mapOrderStatusColor(element.status), 'color': 'black','border-radius': '20px' }"
+                  [disabled]="true">{{ element.status }}</button>
+        </td>
+      </ng-container>
+
+      <!-- Update Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary">Update</button>
+        </td>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn">Delete</button>
+        </td>
+      </ng-container>
+
+      <!-- Define table rows -->
+      <tr mat-header-row *matHeaderRowDef="orderTableDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: orderTableDisplay;"></tr>
+    </table>
+
+  </div>
+</div>

@@ -9,12 +9,13 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./admin-products.component.scss']
 })
 export class AdminProductsComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'title', 'description', 'price', 'discountPercent', 'discountedPrice', 'quantity', 'brand', 'color', 'imageUrl', 'ratings', 'reviews', 'numRatings', 'category', 'createdAt'];
+  displayedColumns: string[] = ['imageUrl', 'title', 'category', 'price', 'quantity'];
   dataSource = new MatTableDataSource<any>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private adminService: AdminService) {}
+  constructor(private adminService: AdminService) {
+  }
 
   ngOnInit() {
     this.adminService.getAllProducts().subscribe((res: any) => {

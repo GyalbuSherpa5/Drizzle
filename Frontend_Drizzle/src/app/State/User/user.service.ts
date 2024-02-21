@@ -42,4 +42,8 @@ export class UserService {
     this.store.dispatch(logoutSuccess());
     this.router.navigate(['']).then(value => console.log("route success"));
   }
+
+  findAllUsers() {
+    return this.http.get(`${this.apiUrl}/users/all`)
+  }
 }

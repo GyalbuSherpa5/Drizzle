@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
@@ -22,6 +24,13 @@ public class UserController {
     public ResponseEntity<User> getUserProfileHandler(@RequestHeader("Authorization") String jwt) throws UserException {
 
         User user = userService.findUserProfileByJwt(jwt);
+        return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<User>> getAllUsersHandler() {
+
+        List<User> user = userService.findAllUsers();
         return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 }

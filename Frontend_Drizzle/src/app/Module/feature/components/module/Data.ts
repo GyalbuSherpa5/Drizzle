@@ -39,6 +39,15 @@ interface Product {
   createdAt: string;
 }
 
+interface AdminProduct {
+  id: number;
+  title: string;
+  category: { name: string };
+  price: number;
+  quantity: number;
+  imageUrl: string;
+}
+
 interface OrderItem {
   id: number;
   product: Product;

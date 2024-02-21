@@ -19,9 +19,9 @@ export class AdminComponent {
         label: '',
         items: [
           {
-            label: 'Home',
-            icon: 'home',
-            // command: () => this.home()
+            label: 'Dashboard',
+            icon: 'dashboard',
+            routerLink: ['dashboard'],
           },
           {
             label: 'Orders',

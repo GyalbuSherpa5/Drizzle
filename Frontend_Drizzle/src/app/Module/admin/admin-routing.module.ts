@@ -10,7 +10,7 @@ import {CreateProductComponent} from "./components/create-product/create-product
 const routes: Routes = [
   {
     path: "", component: AdminComponent, children: [
-      {path: "", component: DashboardComponent},
+      {path: "dashboard", component: DashboardComponent},
       {path: "orders", component: OrderTableComponent},
       {path: "products", component: AdminProductsComponent},
       {path: "customers", component: CustomersComponent},
