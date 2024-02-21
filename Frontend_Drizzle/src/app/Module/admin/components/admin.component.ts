@@ -24,14 +24,14 @@ export class AdminComponent {
             routerLink: ['dashboard'],
           },
           {
-            label: 'Orders',
-            icon: 'fastfood',
-            routerLink: ['orders'],
-          },
-          {
             label: 'Products',
             icon: 'shopping_basket',
             routerLink: ['products'],
+          },
+          {
+            label: 'Orders',
+            icon: 'fastfood',
+            routerLink: ['orders'],
           },
           {
             label: 'Customers',

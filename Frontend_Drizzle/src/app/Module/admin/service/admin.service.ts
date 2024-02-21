@@ -9,6 +9,7 @@ import {CreateProductRequestDTO} from "../models/adminModel";
 export class AdminService {
 
   private adminProduct = BASE_API_URL + "/api/admin/products";
+  private adminOrder = BASE_API_URL + "/api/admin/orders/";
 
   constructor(
     private http: HttpClient,
@@ -19,7 +20,11 @@ export class AdminService {
     return this.http.post(`${this.adminProduct + "/"}`, reqData);
   }
 
-  getAllProducts(){
+  getAllProducts() {
     return this.http.get(`${this.adminProduct + "/all"}`);
+  }
+
+  changeOrderStatus(orderId: number, status: string) {
+    return this.http.put(`${this.adminOrder + orderId + "/" + status}`, {});
   }
 }

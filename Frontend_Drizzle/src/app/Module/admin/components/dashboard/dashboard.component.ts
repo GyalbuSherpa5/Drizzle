@@ -24,14 +24,14 @@ export class DashboardComponent {
 
   constructor(
     private userService: UserService,
-    private adminProduct: AdminService,
+    private adminService: AdminService,
     private orderService: OrderService,
     private messageService: MessageService,
   ) {
   }
 
   ngOnInit() {
-    this.adminProduct.getAllProducts().subscribe({
+    this.adminService.getAllProducts().subscribe({
       next: (products: any) => {
         products.sort((a: any, b: any) => b.id - a.id);
         this.productTable.data = products.slice(0, 5);
@@ -53,6 +53,10 @@ export class DashboardComponent {
       }
     });
 
+    this.getAllOrders();
+  }
+
+  getAllOrders(){
     this.orderService.getOrderHistory().subscribe({
       next: (orders) => {
         console.log(orders);
@@ -132,5 +136,19 @@ export class DashboardComponent {
       default:
         return '#ff0505';
     }
+  }
+
+  onUpdateStatus(orderId: number, status: string){
+
+    this.adminService.changeOrderStatus(orderId, status).subscribe({
+      next: () => {
+        this.messageService.showSuccessSnackBar('Order status updated');
+        this.getAllOrders();
+      },
+      error: (error: any) => {
+        console.log(error);
+        this.messageService.showErrorSnackBar('Error updating order status');
+      }
+    });
   }
 }

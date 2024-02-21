@@ -36,9 +36,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "order_id")
-    private String orderId;
-
     @ManyToOne
     private User user;
 

@@ -19,6 +19,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSortModule} from "@angular/material/sort";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -30,20 +31,21 @@ import {MatSortModule} from "@angular/material/sort";
     AdminProductsComponent,
     CreateProductComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatSnackBarModule,
-    TableModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatSortModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatSnackBarModule,
+        TableModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatIconModule,
+        MatSortModule,
+        MatMenuModule
+    ]
 })
 export class AdminModule { }
