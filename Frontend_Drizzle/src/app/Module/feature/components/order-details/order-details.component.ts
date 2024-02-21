@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {OrderService} from "../../../../State/service/order.service";
+import {AdminService} from "../../../admin/service/admin.service";
 
 @Component({
   selector: 'app-order-details',
@@ -21,6 +22,7 @@ export class OrderDetailsComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private adminService: AdminService,
     private orderService: OrderService,
   ) {
   }
@@ -28,11 +30,34 @@ export class OrderDetailsComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
+
+      let data: any;
+      this.route.queryParamMap.subscribe(queryParams => {
+        data = queryParams.get('data');
+      });
+
+      if (data != undefined) {
+        this.adminService.changeOrderStatus(id, 'confirmed').subscribe({
+          next: () => {
+            this.orderService.getOrderById(id)
+              .subscribe((orderData: Order) => {
+                this.orders = orderData;
+                this.setActiveStep(orderData.orderStatus);
+              });
+          },
+          error: (error: any) => {
+            console.log(error);
+          }
+        });
+
+      }
+
       this.orderService.getOrderById(id)
         .subscribe((orderData: Order) => {
           this.orders = orderData;
           this.setActiveStep(orderData.orderStatus);
         });
+
     });
 
     this.router.events.subscribe(event => {
