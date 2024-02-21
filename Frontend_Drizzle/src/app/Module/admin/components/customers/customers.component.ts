@@ -14,7 +14,7 @@ export class CustomersComponent {
   customerTableDisplay: string[] = ['firstName', 'lastName', 'email'];
   allCustomerColumns: string[] = ['image', ...this.customerTableDisplay];
   customerTable = new MatTableDataSource<any>();
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) customerPaginator!: MatPaginator;
 
   constructor(
     private userService: UserService,
@@ -27,6 +27,7 @@ export class CustomersComponent {
       next: (customers: any) => {
         customers.sort((a: any, b: any) => b.id - a.id);
         this.customerTable.data = customers;
+        this.customerTable.paginator = this.customerPaginator;
       },
       error: (error: any) => {
         console.log(error);

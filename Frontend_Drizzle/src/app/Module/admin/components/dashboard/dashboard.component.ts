@@ -57,9 +57,8 @@ export class DashboardComponent {
   }
 
   getAllOrders(){
-    this.orderService.getOrderHistory().subscribe({
+    this.adminService.getAllOrders().subscribe({
       next: (orders) => {
-        console.log(orders);
         orders.sort((a: any, b: any) => b.id - a.id);
 
         this.orderTable.data = orders.slice(0, 5).map(order => {

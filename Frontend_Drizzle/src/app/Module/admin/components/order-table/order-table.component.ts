@@ -12,7 +12,7 @@ import {MatPaginator} from "@angular/material/paginator";
 })
 export class OrderTableComponent {
 
-  orderTableDisplay: string[] = ['imageUrl', 'title', 'price', 'id', 'status', 'update', 'delete'];
+  orderTableDisplay: string[] = ['imageUrl', 'title', 'price', 'id', 'username', 'status', 'update', 'delete'];
   orderTable = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -27,8 +27,8 @@ export class OrderTableComponent {
     this.getAllOrders();
   }
 
-  getAllOrders(){
-    this.orderService.getOrderHistory().subscribe({
+  getAllOrders() {
+    this.adminService.getAllOrders().subscribe({
       next: (orders) => {
         orders.sort((a: any, b: any) => b.id - a.id);
         this.orderTable.data = orders.map(order => {
@@ -42,11 +42,13 @@ export class OrderTableComponent {
             title: titles,
             price: order.discount,
             id: order.id,
+            username: order.user.firstName + " " + order.user.lastName,
             status: order.orderStatus,
             update: 'update',
             delete: 'delete'
           };
         });
+        this.orderTable.paginator = this.paginator;
       },
       error: (error: any) => {
         console.log(error);
@@ -72,7 +74,7 @@ export class OrderTableComponent {
     }
   }
 
-  onUpdateStatus(orderId: number, status: string){
+  onUpdateStatus(orderId: number, status: string) {
 
     this.adminService.changeOrderStatus(orderId, status).subscribe({
       next: () => {
