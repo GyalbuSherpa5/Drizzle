@@ -1,6 +1,22 @@
 server:
   port: 8080
 
+mail-sender:
+  # host: smtp.gmail.com
+  host: localhost
+  # port: 587
+  port: 25
+  url: http://localhost:4200/
+  token-expiry: 5
+  username: don@gmail.com
+  password: don1234
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/drizzle

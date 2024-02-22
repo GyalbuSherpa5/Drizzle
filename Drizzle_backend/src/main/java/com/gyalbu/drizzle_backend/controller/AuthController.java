@@ -7,6 +7,7 @@ import com.gyalbu.drizzle_backend.repository.UserRepository;
 import com.gyalbu.drizzle_backend.resources.request.LoginRequest;
 import com.gyalbu.drizzle_backend.resources.response.AuthResponse;
 import com.gyalbu.drizzle_backend.service.CartService;
+import com.gyalbu.drizzle_backend.service.EmailService;
 import com.gyalbu.drizzle_backend.service.impl.CustomUserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +36,7 @@ public class AuthController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final CustomUserServiceImpl customUserService;
+    private final EmailService emailService;
 
     @PostMapping("/sign_up")
     public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
@@ -106,5 +109,11 @@ public class AuthController {
         }
 
         return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+    }
+
+    @GetMapping("/send-email")
+    public ResponseEntity<String> sendEmailHandler() {
+//        emailService.email("gyalbu@gmail.com", "Test email", "This is a test email");
+        return new ResponseEntity<>("Email sent", HttpStatus.ACCEPTED);
     }
 }
