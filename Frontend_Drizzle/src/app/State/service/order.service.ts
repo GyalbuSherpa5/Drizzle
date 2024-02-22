@@ -39,6 +39,11 @@ export class OrderService {
     return this.http.get<Order[]>(url);
   }
 
+  getAllInstallmentOrders(): Observable<Order[]> {
+    const url = `${this.apiUrl}/orders/installments`;
+    return this.http.get<Order[]>(url);
+  }
+
   changePaymentStatus(orderId: string, paymentStatus: string) {
     const url = `${this.apiUrl}/orders/${orderId}/${paymentStatus}`;
     return this.http.put(url, {});

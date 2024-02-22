@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -61,4 +62,21 @@ public class OrderController {
         Order order = orderService.updatePaymentStatus(orderId, paymentStatus);
         return new ResponseEntity<>(order, HttpStatus.ACCEPTED);
     }
+
+    @GetMapping("/installments")
+    public ResponseEntity<List<Order>> getAllInstallments(
+            @RequestParam(required=false) Long userId,
+            @RequestHeader("Authorization") String jwt) throws UserException {
+
+        User user;
+        if(userId == null){
+            user = userService.findUserProfileByJwt(jwt);
+        } else {
+            user = userService.findUserById(userId);
+        }
+
+        List<Order> orders = orderService.getAllUserInstallments(user.getId());
+        return new ResponseEntity<>(orders, HttpStatus.ACCEPTED);
+    }
+
 }

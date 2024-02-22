@@ -1,14 +1,39 @@
-<div class="p-card">
-    <div class="p-card__header">
-        <h2 class="p-card__title">Title</h2>
+<div class="py-20 text-white px-5 lg:px-20">
+  <h1 class="text-lg font-bold text-center py-10">My Installments</h1>
+
+  <div class="col-span-3 space-y-5">
+    <div class="space-y-5" *ngFor="let item of orders">
+      <div class="cursor-pointer" (click)="navigateToDrizzleInstallment(item.id)"
+           *ngFor="let orderItems of item.orderItems">
+        <div class="box">
+          <div class="grid grid-cols-6">
+            <div class="col-span-3">
+              <div class="flex items-center w-full">
+                <img class="w-[5rem] h-[5rem] object-cover object-top"
+                     [src]="orderItems.product.imageUrl"
+                     alt="image">
+
+                <div class="ml-5">
+                  <p class="font-semibold text-lg">{{orderItems.product.title}}</p>
+                  <p class="text-sm text-gray-400">Quantity: {{orderItems.quantity}}</p>
+                  <p class="text-sm text-gray-400">Color: {{orderItems.product.color}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <p class="font-semibold text-lg">Rs {{item.totalDiscountedPrice}}</p>
+            </div>
+
+            <div class="col-span-2">
+              <p class="font-semibold text-lg">Expected Delivery on mar 30</p>
+              <p class="text-sm">Your Item has been {{item.orderStatus}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="p-card__body">
-        <p class="p-card__text">Text</p>
-    </div>
-    <div class="p-card__footer">
-        <a href="#" class="p-card__link">Link</a>
-    </div>
-    <div>
-        <button class="p-card__button">Button</button>
-    </div>
+  </div>
 </div>
+

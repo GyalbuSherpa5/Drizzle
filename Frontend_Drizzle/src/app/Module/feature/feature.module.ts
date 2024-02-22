@@ -68,11 +68,12 @@ import { PaymentDrizzleComponent } from './components/payment-drizzle/payment-dr
     MatFormFieldModule,
     MatInputModule,
   ],
-  exports: [
-    FeatureComponent,
-    HomeComponent,
-    ProductsComponent
-  ]
+    exports: [
+        FeatureComponent,
+        HomeComponent,
+        ProductsComponent,
+        OrderCardComponent
+    ]
 })
 export class FeatureModule {
 }
