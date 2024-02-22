@@ -2,3 +2,8 @@ button:disabled {
   cursor: not-allowed;
   pointer-events: all !important;
 }
+
+.hidden-form {
+  position: absolute;
+  left: -9999px; /* Move the form out of the viewport */
+}
