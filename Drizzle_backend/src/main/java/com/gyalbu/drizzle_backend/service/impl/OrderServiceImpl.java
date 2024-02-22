@@ -15,6 +15,7 @@ import com.gyalbu.drizzle_backend.repository.OrderRepository;
 import com.gyalbu.drizzle_backend.repository.UserRepository;
 import com.gyalbu.drizzle_backend.service.CartService;
 import com.gyalbu.drizzle_backend.service.OrderService;
+import com.gyalbu.drizzle_backend.util.ObjectUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -157,7 +158,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order updatePaymentStatus(Long orderId, String paymentStatus) throws OrderException {
         Order order = findOrderById(orderId);
-        order.setPaymentStatus(PaymentStatus.valueOf(paymentStatus));
+        String status = ObjectUtil.getDefaultWhenThrows(() ->
+                paymentStatus, null);
+        order.setPaymentStatus(PaymentStatus.valueOf(status));
+        log.info("Payment status updated to " + status + " for order with id - " + orderId);
         return orderRepository.save(order);
     }
 }

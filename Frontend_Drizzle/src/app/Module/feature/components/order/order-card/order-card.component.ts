@@ -9,4 +9,5 @@ export class OrderCardComponent {
 
   @Input() orderItems!: OrderItem;
   @Input() orderStatus!: any;
+  @Input() payingAmount!: any;
 }

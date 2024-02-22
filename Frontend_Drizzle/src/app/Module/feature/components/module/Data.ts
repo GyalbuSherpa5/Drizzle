@@ -80,7 +80,6 @@ interface PaymentDetails {
 
 interface Order {
   id: number;
-  orderId: any;
   user: {
     id: number;
     firstName: string;
@@ -98,7 +97,7 @@ interface Order {
   orderDate: string;
   deliveryDate: any;
   shippingAddress: ShippingAddress;
-  paymentDetails: PaymentDetails;
+  paymentStatus: string;
   totalPrice: number;
   totalDiscountedPrice: number;
   discount: number;

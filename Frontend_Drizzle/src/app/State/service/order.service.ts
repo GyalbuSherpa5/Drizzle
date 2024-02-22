@@ -38,4 +38,9 @@ export class OrderService {
     const url = `${this.apiUrl}/orders/user`;
     return this.http.get<Order[]>(url);
   }
+
+  changePaymentStatus(orderId: string, paymentStatus: string) {
+    const url = `${this.apiUrl}/orders/${orderId}/${paymentStatus}`;
+    return this.http.put(url, {});
+  }
 }
