@@ -34,8 +34,8 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 
-    @Scheduled(cron = "*/10 * * * * *")
-    void set() {
-        System.out.println("Hello");
-    }
+//    @Scheduled(cron = "*/10 * * * * *")
+//    void set() {
+//        System.out.println("Hello");
+//    }
 }

@@ -42,9 +42,11 @@ public class Order {
     @Column(name = "order_items")
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    private LocalDateTime orderDate;
+    private String orderDate;
 
-    private LocalDateTime deliveryDate;
+    private String deliveryDate;
+
+    private String dueDate;
 
     @OneToOne
     private Address shippingAddress;

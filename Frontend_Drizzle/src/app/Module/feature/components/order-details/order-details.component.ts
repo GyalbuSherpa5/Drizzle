@@ -39,6 +39,9 @@ export class OrderDetailsComponent {
       if (data != undefined) {
         this.adminService.changeOrderStatus(id, 'confirmed').subscribe({
           next: () => {
+            this.orderService.changePaymentStatus(id, 'COMPLETED')
+              .subscribe(() => {
+              });
             this.orderService.getOrderById(id)
               .subscribe((orderData: Order) => {
                 this.orders = orderData;

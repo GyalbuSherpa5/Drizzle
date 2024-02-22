@@ -95,7 +95,8 @@ interface Order {
   };
   orderItems: OrderItem[];
   orderDate: string;
-  deliveryDate: any;
+  deliveryDate: string;
+  dueDate: string;
   shippingAddress: ShippingAddress;
   paymentStatus: string;
   totalPrice: number;

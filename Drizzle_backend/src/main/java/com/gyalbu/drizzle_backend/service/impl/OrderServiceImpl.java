@@ -20,7 +20,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -71,7 +73,12 @@ public class OrderServiceImpl implements OrderService {
         createdorder.setTotalItem(cart.getTotalItem());
 
         createdorder.setShippingAddress(address);
-        createdorder.setOrderDate(LocalDateTime.now());
+
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd yyyy");
+        createdorder.setOrderDate(today.format(formatter));
+        createdorder.setDueDate(today.plusMonths(1).format(formatter));
+
         createdorder.setOrderStatus(OrderStatus.PENDING);
         createdorder.setPaymentStatus(PaymentStatus.PENDING);
         createdorder.setCreatedDate(LocalDateTime.now());
@@ -161,6 +168,30 @@ public class OrderServiceImpl implements OrderService {
         String status = ObjectUtil.getDefaultWhenThrows(() ->
                 paymentStatus, null);
         order.setPaymentStatus(PaymentStatus.valueOf(status));
+
+        if (paymentStatus.equals("COMPLETED") || paymentStatus.equals("FIRST")) {
+            String orderDate = order.getOrderDate();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd yyyy");
+            LocalDate parsedOrderDate = LocalDate.parse(orderDate, formatter);
+            LocalDate dayAfterTomorrow = parsedOrderDate.plusDays(2);
+
+            String deliveryDate = dayAfterTomorrow.format(formatter);
+            order.setDeliveryDate(deliveryDate);
+        }
+
+        if(paymentStatus.equals("SECOND") || paymentStatus.equals("THIRD")){
+            String dueDate = order.getDueDate();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd yyyy");
+            LocalDate parsedDueDate = LocalDate.parse(dueDate, formatter);
+            LocalDate addOneMonth = parsedDueDate.plusMonths(1);
+
+            String newDueDate = addOneMonth.format(formatter);
+            order.setDueDate(newDueDate);
+            order.setFineAmount(0);
+        }
+
         log.info("Payment status updated to " + status + " for order with id - " + orderId);
         return orderRepository.save(order);
     }
