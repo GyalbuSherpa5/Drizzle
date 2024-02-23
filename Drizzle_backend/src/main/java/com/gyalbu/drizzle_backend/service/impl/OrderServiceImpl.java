@@ -111,6 +111,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Order> getAllUserInstallments() {
+        log.info("Fetching all installments");
+        return orderRepository.getAllUserInstallments();
+    }
+
+    @Override
     public List<Order> getAllUserInstallments(Long id) {
         log.info("Fetching all installments for user with id - " + id);
         return orderRepository.getAllUserInstallments(id);

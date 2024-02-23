@@ -114,6 +114,7 @@ public class AuthController {
     @GetMapping("/send-email")
     public ResponseEntity<String> sendEmailHandler() {
 //        emailService.email("gyalbu@gmail.com", "Test email", "This is a test email");
+        emailService.set();
         return new ResponseEntity<>("Email sent", HttpStatus.ACCEPTED);
     }
 }

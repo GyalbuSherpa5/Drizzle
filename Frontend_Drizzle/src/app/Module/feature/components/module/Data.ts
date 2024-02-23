@@ -99,6 +99,7 @@ interface Order {
   dueDate: string;
   shippingAddress: ShippingAddress;
   paymentStatus: string;
+  fineAmount: number;
   totalPrice: number;
   totalDiscountedPrice: number;
   discount: number;

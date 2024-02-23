@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {OrderService} from "../../../../State/service/order.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import * as CryptoJS from "crypto-js";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-payment-drizzle',
@@ -15,6 +16,8 @@ export class PaymentDrizzleComponent {
   orders!: Order;
   installmentMoney: any;
   installmentStatus: any;
+  orderedDate: any;
+  currentFineIndex: number = -1;
 
   esewaForm!: FormGroup;
 
@@ -60,6 +63,7 @@ export class PaymentDrizzleComponent {
       this.orderService.getOrderById(this.order_id).subscribe((orderData: Order) => {
         this.orders = orderData;
         this.installmentMoney = orderData.totalDiscountedPrice / 4;
+        this.orderedDate = orderData.orderDate;
       });
 
       this.router.navigate(['payment-bn-pl'], { queryParams: { order_id: newUrl } })
@@ -67,7 +71,7 @@ export class PaymentDrizzleComponent {
     });
   }
 
-  getStatusBackgroundColor(index: number): string {
+  getStatusBackgroundColor(index: number): { color: string; displayFine: boolean } {
     const statusIndexMap: { [key: string]: number } = {
       'PENDING': 0,
       'FIRST': 1,
@@ -76,7 +80,10 @@ export class PaymentDrizzleComponent {
     };
 
     const status = this.orders?.paymentStatus || 'PENDING';
-    return statusIndexMap[status] === index ? '#4CAF50' : '';
+    return {
+      color: statusIndexMap[status] === index ? '#4CAF50' : '',
+      displayFine: statusIndexMap[status] === index
+    };
   }
 
   getInstallmentName(index: number): string {
@@ -111,6 +118,12 @@ export class PaymentDrizzleComponent {
     } else {
       return 'PENDING';
     }
+  }
+
+  getInstallmentDueDate(index: number): string {
+    const orderDate = new Date(this.orderedDate);
+    const dueDate = new Date(orderDate.setMonth(orderDate.getMonth() + index));
+    return formatDate(dueDate, 'MMMM d yyyy', 'en-US');
   }
 
   createForm() {

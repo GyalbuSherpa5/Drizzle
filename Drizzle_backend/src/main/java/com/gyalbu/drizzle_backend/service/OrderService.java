@@ -31,5 +31,7 @@ public interface OrderService {
 
     Order updatePaymentStatus(Long orderId, String paymentStatus) throws OrderException;
 
+    List<Order> getAllUserInstallments();
+
     List<Order> getAllUserInstallments(Long id);
 }
