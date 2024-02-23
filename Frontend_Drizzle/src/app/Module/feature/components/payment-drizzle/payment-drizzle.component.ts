@@ -41,6 +41,13 @@ export class PaymentDrizzleComponent {
         const retrievedString = localStorage.getItem('installmentStatus')!;
         this.orderService.changePaymentStatus(newOrderId, retrievedString)
           .subscribe(() => {
+
+            if(retrievedString === 'COMPLETED') {
+              localStorage.removeItem('installmentStatus');
+              this.router.navigate(['installments'])
+                .then(() => console.log("route success"));
+            }
+
             localStorage.removeItem('installmentStatus');
             this.orderService.getOrderById(this.order_id)
               .subscribe((orderData: Order) => {
@@ -170,5 +177,9 @@ export class PaymentDrizzleComponent {
     let hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
     this.esewaForm.patchValue({signature: hashInBase64});
+  }
+
+  viewOrderStatus(event: any) {
+    this.router.navigate([`/order/${this.order_id}`]).then(() => console.log("route success"));
   }
 }

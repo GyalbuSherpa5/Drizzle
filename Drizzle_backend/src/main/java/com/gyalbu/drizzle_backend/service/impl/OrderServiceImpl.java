@@ -184,6 +184,7 @@ public class OrderServiceImpl implements OrderService {
 
             String deliveryDate = dayAfterTomorrow.format(formatter);
             order.setDeliveryDate(deliveryDate);
+            order.setOrderStatus(OrderStatus.CONFIRMED);
         }
 
         if(paymentStatus.equals("SECOND") || paymentStatus.equals("THIRD")){

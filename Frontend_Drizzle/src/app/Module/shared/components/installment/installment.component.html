@@ -1,7 +1,11 @@
 <div class="py-20 text-white px-5 lg:px-20">
   <h1 class="text-lg font-bold text-center py-10">My Installments</h1>
 
-  <div class="col-span-3 space-y-5">
+  <div *ngIf="!orders || orders.length === 0" class="text-center text-gray-400">
+    No Installments pending!
+  </div>
+
+  <div *ngIf="orders && orders.length > 0" class="col-span-3 space-y-5">
     <div class="space-y-5" *ngFor="let item of orders">
       <div class="cursor-pointer" (click)="navigateToDrizzleInstallment(item.id)"
            *ngFor="let orderItems of item.orderItems">
@@ -36,4 +40,3 @@
     </div>
   </div>
 </div>
-
