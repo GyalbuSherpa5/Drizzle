@@ -33,6 +33,12 @@ public class RatingServiceImpl implements RatingService {
         rating.setRating(request.getRating());
         rating.setCreatedAt(LocalDateTime.now());
 
+        Rating rating1 = ratingRepository.findRatingByUserAndProductId(user.getId(),request.getProductId());
+
+        if(rating1 != null){
+            rating1.setRating(request.getRating());
+            return ratingRepository.save(rating1);
+        }
         return ratingRepository.save(rating);
     }
 

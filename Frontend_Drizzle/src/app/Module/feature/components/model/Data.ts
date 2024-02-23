@@ -68,16 +68,6 @@ interface ShippingAddress {
   mobile: string;
 }
 
-interface PaymentDetails {
-  paymentMethod: any;
-  status: string;
-  paymentId: any;
-  esewaPaymentId: any;
-  esewaPaymentLinkId: any;
-  esewaPaymentLinkStatus: any;
-  esewaPaymentLinkReferenceId: any;
-}
-
 interface Order {
   id: number;
   user: {
@@ -106,5 +96,31 @@ interface Order {
   orderStatus: string;
   totalItem: number;
   createdDate: string;
+}
+
+interface Rating{
+ id: number;
+ user: any;
+ product: any;
+ rating: number;
+ createdAt: any;
+}
+
+interface RatingRequest {
+  productId: number;
+  rating: number;
+}
+
+interface Review{
+  id: number;
+  review: string;
+  product: any;
+  user: any;
+  createdAt: any;
+}
+
+interface ReviewRequest{
+  productId: number;
+  review: string;
 }
 

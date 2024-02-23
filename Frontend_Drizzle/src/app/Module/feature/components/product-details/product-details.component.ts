@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../../../../State/service/product.service";
 import {CartService} from "../../../../State/service/cart.service";
 // @ts-ignore
-import {AddItemRequest} from "src/app/Module/feature/components/module/Data";
+import {AddItemRequest} from "src/app/Module/feature/components/model/Data";
 import {MessageService} from "../../../shared/components/MessageService";
 
 @Component({

@@ -1,7 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {OrderService} from "../../../../State/service/order.service";
 import {AdminService} from "../../../admin/service/admin.service";
+import {MatTabGroup} from "@angular/material/tabs";
+import {ReviewRatingService} from "../../../../State/service/review-rating.service";
 
 @Component({
   selector: 'app-order-details',
@@ -16,15 +18,30 @@ export class OrderDetailsComponent {
     {id: 1, title: "CONFIRMED"},
     {id: 2, title: "SHIPPED"},
     {id: 3, title: "DELIVERED"},
-  ]
+  ];
   activeStep: string = '';
+
+  review: string = '';
+
+  maxRatings = 5;
+  initialRating = 0;
+  currentRating = this.initialRating;
+  stars: any;
+  isRated = false;
+  clickedStarIndex: number | undefined;
+
+  @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
+
+  userRating!: Rating;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private adminService: AdminService,
     private orderService: OrderService,
+    private reviewRatingService: ReviewRatingService,
   ) {
+    this.stars = Array(this.maxRatings).fill(0).map((_, i) => i + 1);
   }
 
   ngOnInit() {
@@ -89,4 +106,33 @@ export class OrderDetailsComponent {
     }
   }
 
+  rate(rating: number, index: number) {
+    this.currentRating = rating;
+    this.isRated = true;
+    this.clickedStarIndex = index;
+
+    const reqData = {
+      productId: this.orders.orderItems[0].product.id,
+      rating: index + 1,
+    };
+
+    this.reviewRatingService.addRating(reqData)
+      .subscribe((rating: Rating) => {
+        this.userRating = rating;
+      });
+  }
+
+  submitReview() {
+
+    const reqData = {
+      productId: this.orders.orderItems[0].product.id,
+      review: this.review
+    };
+
+    this.reviewRatingService.addReview(reqData)
+      .subscribe((review: Review) => {
+        console.log(review);
+        this.tabGroup.selectedIndex = 1;
+      });
+  }
 }

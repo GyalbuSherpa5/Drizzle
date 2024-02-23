@@ -31,6 +31,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { OrderCardComponent } from './components/order/order-card/order-card.component';
 import { PaymentDrizzleComponent } from './components/payment-drizzle/payment-drizzle.component';
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -53,21 +54,22 @@ import { PaymentDrizzleComponent } from './components/payment-drizzle/payment-dr
     OrderCardComponent,
     PaymentDrizzleComponent
   ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatListModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    SharedModule,
-    FormsModule,
-    MatProgressBarModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatListModule,
+        MatIconModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        SharedModule,
+        FormsModule,
+        MatProgressBarModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTabsModule,
+    ],
     exports: [
         FeatureComponent,
         HomeComponent,

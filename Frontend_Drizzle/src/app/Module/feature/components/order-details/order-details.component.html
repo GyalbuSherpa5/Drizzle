@@ -16,4 +16,66 @@
       </div>
     </div>
   </div>
+
+  <div class="mt-20 bg-black text-white">
+    <h2 class="text-lg font-semibold py-5 text-center">My Reviews</h2>
+    <mat-tab-group #tabGroup>
+      <mat-tab label="To Review">
+        <div class="mt-10 bg-black text-white">
+          <div class="flex justify-center">
+            <div class="mb-4">
+              <h2 class="text-lg font-semibold py-5 text-center">Rate your experience: </h2>
+              <div class="flex items-center justify-evenly" style="cursor:pointer">
+                <span *ngFor="let star of stars; let i = index" class="star" (click)="rate(star, i)"
+                      [ngClass]="{'active': star <= currentRating}">
+                      <mat-icon>{{star <= currentRating ? 'star' : 'star_border'}}</mat-icon>
+                </span>
+              </div>
+              <div *ngIf="isRated">
+                <div class="mb-4 mt-5">
+                  <label class="block text-white text-sm font-medium mb-2" for="review">
+                    Write your review:
+                  </label>
+                  <textarea
+                    [(ngModel)]="review"
+                    name="review"
+                    class="shadow appearance-none border rounded h-20 w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                    id="reviews" placeholder="Your review..."></textarea>
+                </div>
+
+                <div class="flex items-center justify-between w-full">
+                  <button mat-raised-button class="text-white font-medium py-2 px-4 rounded w-full"
+                          [ngStyle]="{'background-color': '#30c2f8', 'color':'black'}"
+                          (click)="submitReview()"
+                          type="button">
+                    Submit Review
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="History">
+        <div class="mt-10 bg-black text-white">
+          <h2 class="text-lg font-semibold py-5 text-center">Your Review</h2>
+          <div class="flex justify-center">
+            <div class="w-full md:w-1/2">
+              <div class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                  <label class="block text-white text-sm font-bold mb-2" for="review">
+                    Your Review:
+                  </label>
+                  <textarea
+                    class="bg-transparent border border-white rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                    id="review" placeholder="Your review..." readonly>Your review content goes here...</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
 </div>
