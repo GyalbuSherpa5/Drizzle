@@ -5,6 +5,7 @@ import com.gyalbu.drizzle_backend.entity.User;
 import com.gyalbu.drizzle_backend.exception.ProductException;
 import com.gyalbu.drizzle_backend.exception.UserException;
 import com.gyalbu.drizzle_backend.resources.request.RatingRequest;
+import com.gyalbu.drizzle_backend.resources.response.ProductRatingResponse;
 import com.gyalbu.drizzle_backend.service.RatingService;
 import com.gyalbu.drizzle_backend.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -47,10 +48,10 @@ public class RatingController {
     }
 
     @GetMapping("/product/{productId}/average")
-    public ResponseEntity<Double> getProductsAverageRating(@PathVariable Long productId) {
+    public ResponseEntity<ProductRatingResponse> getProductsAverageRating(@PathVariable Long productId) throws ProductException {
 
-        Double averageRating = ratingService.getProductsAverageRating(productId);
-        return new ResponseEntity<>(averageRating, HttpStatus.CREATED);
+        ProductRatingResponse productRatingResponse = ratingService.getProductsAverageRating(productId);
+        return new ResponseEntity<>(productRatingResponse, HttpStatus.CREATED);
     }
 
     @GetMapping("/product/{productId}")

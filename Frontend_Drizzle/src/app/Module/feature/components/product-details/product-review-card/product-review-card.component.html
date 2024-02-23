@@ -12,16 +12,15 @@
     <div class="col-span-6 lg:col-span-9">
       <div class="space-y-2">
         <div>
-          <p>Drizzle</p>
-          <p>Nov 13, 2023</p>
+          <p>{{review.user.firstName}} {{review.user.lastName}}</p>
         </div>
 
         <div>
-          <app-star-rating [numberOfStars]="3"></app-star-rating>
+          <app-star-rating [numberOfStars]="rating.rating"></app-star-rating>
         </div>
 
         <p>
-          nice product, I like white
+          {{review.review}}
         </p>
       </div>
     </div>

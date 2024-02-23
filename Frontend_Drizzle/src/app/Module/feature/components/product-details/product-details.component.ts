@@ -5,6 +5,7 @@ import {CartService} from "../../../../State/service/cart.service";
 // @ts-ignore
 import {AddItemRequest} from "src/app/Module/feature/components/model/Data";
 import {MessageService} from "../../../shared/components/MessageService";
+import {ReviewRatingService} from "../../../../State/service/review-rating.service";
 
 @Component({
   selector: 'app-product-details',
@@ -12,11 +13,11 @@ import {MessageService} from "../../../shared/components/MessageService";
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
-  selectedSize: any;
-  reviews = [1, 1, 1];
   relatedProducts: any;
   productId!: number;
   selectedProduct: any;
+  productRatingResponse!: ProductRatingResponse;
+  totalRatingAverage: any;
 
   constructor(
     private router: Router,
@@ -24,6 +25,7 @@ export class ProductDetailsComponent {
     private cartService: CartService,
     private productService: ProductService,
     private messageService: MessageService,
+    private reviewRatingService: ReviewRatingService,
   ) {
   }
 
@@ -38,8 +40,13 @@ export class ProductDetailsComponent {
         category = this.selectedProduct.category.parentCategory.name;
         this.productService.findProductByCategoryName(category)
           .subscribe((value) => {
-            console.log(value);
             this.relatedProducts = value;
+          });
+
+        this.reviewRatingService.findAverageRatingByProductId(this.productId)
+          .subscribe((value: ProductRatingResponse) => {
+            this.totalRatingAverage = value.averageRatingCount;
+            this.productRatingResponse = value;
           });
       });
   }

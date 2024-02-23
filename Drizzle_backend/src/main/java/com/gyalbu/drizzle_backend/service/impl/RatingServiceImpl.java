@@ -6,6 +6,7 @@ import com.gyalbu.drizzle_backend.entity.User;
 import com.gyalbu.drizzle_backend.exception.ProductException;
 import com.gyalbu.drizzle_backend.repository.RatingRepository;
 import com.gyalbu.drizzle_backend.resources.request.RatingRequest;
+import com.gyalbu.drizzle_backend.resources.response.ProductRatingResponse;
 import com.gyalbu.drizzle_backend.service.ProductService;
 import com.gyalbu.drizzle_backend.service.RatingService;
 import lombok.RequiredArgsConstructor;
@@ -50,8 +51,49 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public Double getProductsAverageRating(Long productId) {
-        return null;
+    public ProductRatingResponse getProductsAverageRating(Long productId) throws ProductException {
+        log.info("Getting average rating");
+        Product product = productService.findProductById(productId);
+        List<Rating> ratings = product.getRatings();
+
+        int oneCount = 0;
+        int twoCount = 0;
+        int threeCount = 0;
+        int fourCount = 0;
+        int fiveCount = 0;
+        int totalRating = 0;
+        int numberOfRatings = product.getRatings().size();
+
+        for (Rating rating : ratings) {
+            totalRating += rating.getRating();
+            if (rating.getRating() == 1) {
+                oneCount++;
+            }
+            if(rating.getRating() == 2){
+                twoCount++;
+            }
+            if(rating.getRating() == 3){
+                threeCount++;
+            }
+            if(rating.getRating() == 4){
+                fourCount++;
+            }
+            if(rating.getRating() == 5){
+                fiveCount++;
+            }
+        }
+
+        int averageRating = numberOfRatings > 0 ? totalRating / numberOfRatings : 0;
+
+        ProductRatingResponse productRatingResponse = new ProductRatingResponse();
+        productRatingResponse.setTotalRatingCount(numberOfRatings);
+        productRatingResponse.setAverageRatingCount(averageRating);
+        productRatingResponse.setOneCount(oneCount);
+        productRatingResponse.setTwoCount(twoCount);
+        productRatingResponse.setThreeCount(threeCount);
+        productRatingResponse.setFourCount(fourCount);
+        productRatingResponse.setFiveCount(fiveCount);
+        return productRatingResponse;
     }
 
     @Override

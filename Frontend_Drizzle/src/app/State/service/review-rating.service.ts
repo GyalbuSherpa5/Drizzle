@@ -34,4 +34,19 @@ export class ReviewRatingService {
     const url = `${this.apiUrl}/reviews/product/${id}`;
     return this.http.get<Review>(url);
   }
+
+  getAllReviews(productId: number): Observable<any> {
+    const url = `${this.apiUrl}/reviews/product/${productId}`;
+    return this.http.get<any>(url);
+  }
+
+  getAllRatings(productId: number): Observable<any> {
+    const url = `${this.apiUrl}/ratings/product/${productId}`;
+    return this.http.get<any>(url);
+  }
+
+  findAverageRatingByProductId(productId: number):Observable<ProductRatingResponse> {
+    const url = `${this.apiUrl}/ratings/product/${productId}/average`;
+    return this.http.get<ProductRatingResponse>(url);
+  }
 }

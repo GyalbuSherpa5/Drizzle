@@ -124,3 +124,12 @@ interface ReviewRequest{
   review: string;
 }
 
+interface ProductRatingResponse{
+  averageRatingCount: number;
+  totalRatingCount: number;
+  oneCount: number;
+  twoCount: number;
+  threeCount: number;
+  fourCount: number;
+  fiveCount: number;
+}
