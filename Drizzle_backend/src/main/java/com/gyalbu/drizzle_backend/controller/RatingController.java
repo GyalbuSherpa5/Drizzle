@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -38,10 +39,32 @@ public class RatingController {
         return new ResponseEntity<>(rating, HttpStatus.CREATED);
     }
 
-    @GetMapping("/product/{productId}")
-    public ResponseEntity<List<Rating>> getProductsRating(@PathVariable Long productId){
+    @GetMapping("/products/{productId}")
+    public ResponseEntity<List<Rating>> getProductsRating(@PathVariable Long productId) {
 
         List<Rating> ratings = ratingService.getProductsRating(productId);
         return new ResponseEntity<>(ratings, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/product/{productId}/average")
+    public ResponseEntity<Double> getProductsAverageRating(@PathVariable Long productId) {
+
+        Double averageRating = ratingService.getProductsAverageRating(productId);
+        return new ResponseEntity<>(averageRating, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<Rating> getRatingByProductId(@PathVariable Long productId,
+                                                       @RequestParam(required = false) Long userId,
+                                                       @RequestHeader("Authorization") String jwt) throws UserException {
+        User user;
+        if (userId == null) {
+            user = userService.findUserProfileByJwt(jwt);
+        } else {
+            user = userService.findUserById(userId);
+        }
+
+        Rating rating = ratingService.getRatingByProductId(productId, user);
+        return new ResponseEntity<>(rating, HttpStatus.CREATED);
     }
 }

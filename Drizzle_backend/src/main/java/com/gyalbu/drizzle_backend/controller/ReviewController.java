@@ -1,5 +1,6 @@
 package com.gyalbu.drizzle_backend.controller;
 
+import com.gyalbu.drizzle_backend.entity.Rating;
 import com.gyalbu.drizzle_backend.entity.Review;
 import com.gyalbu.drizzle_backend.entity.User;
 import com.gyalbu.drizzle_backend.exception.ProductException;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -38,10 +40,25 @@ public class ReviewController {
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
 
-    @GetMapping("/product/{productId}")
+    @GetMapping("/products/{productId}")
     public ResponseEntity<List<Review>> getProductsRating(@PathVariable Long productId) {
 
         List<Review> reviews = reviewService.getAllReview(productId);
         return new ResponseEntity<>(reviews, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<Review> getRatingByProductId(@PathVariable Long productId,
+                                                       @RequestParam(required = false) Long userId,
+                                                       @RequestHeader("Authorization") String jwt) throws UserException {
+        User user;
+        if (userId == null) {
+            user = userService.findUserProfileByJwt(jwt);
+        } else {
+            user = userService.findUserById(userId);
+        }
+
+        Review review = reviewService.getReviewByProductId(productId, user);
+        return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
 }

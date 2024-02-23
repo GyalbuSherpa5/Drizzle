@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-star-rating',
@@ -7,14 +7,16 @@ import {Component} from '@angular/core';
 })
 export class StarRatingComponent {
 
-  maxRatings = 5;
-  initialRating = 3;
+  @Input() numberOfStars: number = 3;
   currentRating = 0;
-  stars: any;
+  stars: number[];
 
   constructor() {
-    this.stars = Array(this.maxRatings).fill(0).map((_, i) => i + 1);
-    this.currentRating = this.initialRating;
+    this.stars = [];
+  }
+
+  ngOnChanges() {
+    this.stars = Array(this.numberOfStars).fill(0).map((_, i) => i + 1);
   }
 
   rate(rating: number) {

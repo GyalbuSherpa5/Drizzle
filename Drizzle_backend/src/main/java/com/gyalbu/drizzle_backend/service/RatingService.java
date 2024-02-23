@@ -12,4 +12,8 @@ public interface RatingService {
     Rating createRating(RatingRequest request, User user) throws ProductException;
 
     List<Rating> getProductsRating(Long productId);
+
+    Double getProductsAverageRating(Long productId);
+
+    Rating getRatingByProductId(Long productId, User user);
 }

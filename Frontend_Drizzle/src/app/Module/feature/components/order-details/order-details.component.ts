@@ -32,7 +32,8 @@ export class OrderDetailsComponent {
 
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
 
-  userRating!: Rating;
+  rating: number = 0;
+  userReview!: string;
 
   constructor(
     private router: Router,
@@ -76,6 +77,14 @@ export class OrderDetailsComponent {
         .subscribe((orderData: Order) => {
           this.orders = orderData;
           this.setActiveStep(orderData.orderStatus);
+          this.reviewRatingService.getRatingByProductId(this.orders.orderItems[0].product.id)
+            .subscribe((rating: Rating) => {
+              this.rating = rating.rating;
+            });
+          this.reviewRatingService.getReviewByProductId(this.orders.orderItems[0].product.id)
+            .subscribe((review: Review) => {
+              this.userReview = review.review;
+            });
         });
 
     });
@@ -118,7 +127,7 @@ export class OrderDetailsComponent {
 
     this.reviewRatingService.addRating(reqData)
       .subscribe((rating: Rating) => {
-        this.userRating = rating;
+        this.rating = rating.rating;
       });
   }
 
@@ -131,7 +140,8 @@ export class OrderDetailsComponent {
 
     this.reviewRatingService.addReview(reqData)
       .subscribe((review: Review) => {
-        console.log(review);
+        this.userReview = review.review;
+        this.review = '';
         this.tabGroup.selectedIndex = 1;
       });
   }

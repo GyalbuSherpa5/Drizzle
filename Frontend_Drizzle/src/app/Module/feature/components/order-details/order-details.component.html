@@ -12,12 +12,14 @@
 
     <div class="space-y-6 mt-20">
       <div *ngFor="let orderItem of orders.orderItems">
-        <app-order-card [orderItems]="orderItem" [orderStatus]="orders.orderStatus"></app-order-card>
+        <app-order-card
+          [payingAmount]="orders.totalDiscountedPrice"
+          [orderItems]="orderItem" [orderStatus]="orders.orderStatus"></app-order-card>
       </div>
     </div>
   </div>
 
-  <div class="mt-20 bg-black text-white">
+  <div class="mt-20 bg-black text-white" *ngIf="orders.orderStatus === 'DELIVERED'">
     <h2 class="text-lg font-semibold py-5 text-center">My Reviews</h2>
     <mat-tab-group #tabGroup>
       <mat-tab label="To Review">
@@ -58,20 +60,12 @@
       </mat-tab>
       <mat-tab label="History">
         <div class="mt-10 bg-black text-white">
-          <h2 class="text-lg font-semibold py-5 text-center">Your Review</h2>
-          <div class="flex justify-center">
-            <div class="w-full md:w-1/2">
-              <div class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="mb-4">
-                  <label class="block text-white text-sm font-bold mb-2" for="review">
-                    Your Review:
-                  </label>
-                  <textarea
-                    class="bg-transparent border border-white rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                    id="review" placeholder="Your review..." readonly>Your review content goes here...</textarea>
-                </div>
-              </div>
-            </div>
+          <h2 class="text-lg font-semibold text-center">Your Review</h2>
+          <div class="custom-div">
+            <app-star-rating [numberOfStars]="rating"></app-star-rating>
+            <textarea
+              class="bg-transparent border border-white rounded py-2 px-3 text-white w-full"
+              id="review" placeholder="Your review..." readonly>{{userReview}}</textarea>
           </div>
         </div>
       </mat-tab>

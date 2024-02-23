@@ -22,6 +22,7 @@ public class RatingServiceImpl implements RatingService {
 
     private final ProductService productService;
     private final RatingRepository ratingRepository;
+
     @Override
     public Rating createRating(RatingRequest request, User user) throws ProductException {
 
@@ -33,9 +34,9 @@ public class RatingServiceImpl implements RatingService {
         rating.setRating(request.getRating());
         rating.setCreatedAt(LocalDateTime.now());
 
-        Rating rating1 = ratingRepository.findRatingByUserAndProductId(user.getId(),request.getProductId());
+        Rating rating1 = ratingRepository.findRatingByUserAndProductId(user.getId(), request.getProductId());
 
-        if(rating1 != null){
+        if (rating1 != null) {
             rating1.setRating(request.getRating());
             return ratingRepository.save(rating1);
         }
@@ -46,5 +47,15 @@ public class RatingServiceImpl implements RatingService {
     public List<Rating> getProductsRating(Long productId) {
         log.info("Getting all ratings");
         return ratingRepository.getAllProductsRating(productId);
+    }
+
+    @Override
+    public Double getProductsAverageRating(Long productId) {
+        return null;
+    }
+
+    @Override
+    public Rating getRatingByProductId(Long productId, User user) {
+        return ratingRepository.findRatingByUserAndProductId(user.getId(), productId);
     }
 }

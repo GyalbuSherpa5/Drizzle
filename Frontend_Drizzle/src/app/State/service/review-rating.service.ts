@@ -25,4 +25,13 @@ export class ReviewRatingService {
     return this.http.post<Review>(url, reqData);
   }
 
+  getRatingByProductId(id: number) {
+    const url = `${this.apiUrl}/ratings/product/${id}`;
+    return this.http.get<Rating>(url);
+  }
+
+  getReviewByProductId(id: number) {
+    const url = `${this.apiUrl}/reviews/product/${id}`;
+    return this.http.get<Review>(url);
+  }
 }
