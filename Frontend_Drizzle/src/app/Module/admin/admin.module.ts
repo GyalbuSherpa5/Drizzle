@@ -20,6 +20,10 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSortModule} from "@angular/material/sort";
 import {MatMenuModule} from "@angular/material/menu";
+import { AnalyticsDashboardComponent } from './components/analytics/analytics-dashboard/analytics-dashboard.component';
+import { AnalyticsGeographyComponent } from './components/analytics/analytics-geography/analytics-geography.component';
+import { AnalyticsSalesReportComponent } from './components/analytics/analytics-sales-report/analytics-sales-report.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 
 
 @NgModule({
@@ -30,22 +34,26 @@ import {MatMenuModule} from "@angular/material/menu";
     CustomersComponent,
     AdminProductsComponent,
     CreateProductComponent,
+    AnalyticsDashboardComponent,
+    AnalyticsGeographyComponent,
+    AnalyticsSalesReportComponent,
   ],
-    imports: [
-        CommonModule,
-        AdminRoutingModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatSnackBarModule,
-        TableModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatIconModule,
-        MatSortModule,
-        MatMenuModule
-    ]
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    TableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatSortModule,
+    MatMenuModule,
+    NgApexchartsModule
+  ]
 })
 export class AdminModule { }

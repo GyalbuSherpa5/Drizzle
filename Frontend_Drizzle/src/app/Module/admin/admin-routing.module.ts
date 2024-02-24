@@ -6,11 +6,13 @@ import {OrderTableComponent} from "./components/order-table/order-table.componen
 import {CustomersComponent} from "./components/customers/customers.component";
 import {AdminProductsComponent} from "./components/admin-products/admin-products.component";
 import {CreateProductComponent} from "./components/create-product/create-product.component";
+import {AnalyticsDashboardComponent} from "./components/analytics/analytics-dashboard/analytics-dashboard.component";
 
 const routes: Routes = [
   {
     path: "", component: AdminComponent, children: [
       {path: "dashboard", component: DashboardComponent},
+      {path: "analytics", component: AnalyticsDashboardComponent},
       {path: "orders", component: OrderTableComponent},
       {path: "products", component: AdminProductsComponent},
       {path: "customers", component: CustomersComponent},

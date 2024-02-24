@@ -24,6 +24,11 @@ export class AdminComponent {
             routerLink: ['dashboard'],
           },
           {
+            label: 'Analytics',
+            icon: 'analytic',
+            routerLink: ['analytics'],
+          },
+          {
             label: 'Products',
             icon: 'shopping_basket',
             routerLink: ['products'],
