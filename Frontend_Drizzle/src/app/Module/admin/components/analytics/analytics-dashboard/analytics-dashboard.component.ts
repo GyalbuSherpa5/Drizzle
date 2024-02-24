@@ -41,6 +41,16 @@ export type ChartOptionsFunnel = {
   title: ApexTitleSubtitle;
 };
 
+export type ChartOptionsDonut = {
+  series: any;
+  chart: any;
+  responsive: any;
+  labels: any;
+  fill: any;
+  legend: any;
+  dataLabels: any;
+};
+
 type UpdateOptionsData = {
   "1m": { xaxis: { min: number; max: number } };
   "6m": { xaxis: { min: number; max: number } };
@@ -103,6 +113,7 @@ export class AnalyticsDashboardComponent {
     legend: {},
     title: {}
   };
+  public chartOptionsDonut!: Partial<ChartOptionsDonut>;
 
   constructor() {
     this.initChart();
@@ -155,6 +166,38 @@ export class AnalyticsDashboardComponent {
         show: false
       }
     } as Partial<ChartOptionsFunnel>;
+
+    this.chartOptionsDonut = {
+      series: [44, 55, 41, 17, 15],
+      chart: {
+        width: 380,
+        type: "donut"
+      },
+      dataLabels: {
+        enabled: false
+      },
+      fill: {
+        type: "gradient"
+      },
+      legend: {
+        formatter: function (val: any, opts: any) {
+          return val + " - " + opts.w.globals.series[opts.seriesIndex];
+        }
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: "bottom"
+            }
+          }
+        }
+      ]
+    };
   }
 
   initChart(): void {

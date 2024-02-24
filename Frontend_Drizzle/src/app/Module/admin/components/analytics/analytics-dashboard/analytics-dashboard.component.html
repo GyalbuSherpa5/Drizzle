@@ -1,63 +1,90 @@
 <div class="mat-elevation-z8 mt-2">
-  <div class="revenue" style="background-color: white; color: black">
-    <button
-      (click)="updateOptions( '1m' )"
-      [class.active]="activeOptionButton=='1m'"
-    >
-      1M
-    </button>
-    <button
-      (click)="updateOptions( '6m' )"
-      [class.active]="activeOptionButton=='6m'"
-    >
-      6M
-    </button>
-    <button
-      (click)="updateOptions( '1y' )"
-      [class.active]="activeOptionButton=='1y'"
-    >
-      1Y
-    </button>
-    <button
-      (click)="updateOptions( '1yd' )"
-      [class.active]="activeOptionButton=='1yd'"
-    >
-      1YD
-    </button>
-    <button
-      (click)="updateOptions( 'all' )"
-      [class.active]="activeOptionButton=='all'"
-    >
-      All
-    </button>
-    <apx-chart
-      #chart
-      [series]="chartOptions.series"
-      [chart]="chartOptions.chart"
-      [colors]="chartOptions.colors"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [markers]="chartOptions.markers"
-      [stroke]="chartOptions.stroke"
-      [grid]="chartOptions.grid"
-      [xaxis]="chartOptions.xaxis"
-      [tooltip]="chartOptions.tooltip"
-      [annotations]="chartOptions.annotations"
-    ></apx-chart>
+  <div
+    class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="revenue" style="background-color: white; color: black; border-radius: 7px">
+      <button
+        (click)="updateOptions( '1m' )"
+        [class.active]="activeOptionButton=='1m'"
+      >
+        1M
+      </button>
+      <button
+        (click)="updateOptions( '6m' )"
+        [class.active]="activeOptionButton=='6m'"
+      >
+        6M
+      </button>
+      <button
+        (click)="updateOptions( '1y' )"
+        [class.active]="activeOptionButton=='1y'"
+      >
+        1Y
+      </button>
+      <button
+        (click)="updateOptions( '1yd' )"
+        [class.active]="activeOptionButton=='1yd'"
+      >
+        1YD
+      </button>
+      <button
+        (click)="updateOptions( 'all' )"
+        [class.active]="activeOptionButton=='all'"
+      >
+        All
+      </button>
+      <apx-chart
+        #chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [colors]="chartOptions.colors"
+        [yaxis]="chartOptions.yaxis"
+        [dataLabels]="chartOptions.dataLabels"
+        [markers]="chartOptions.markers"
+        [stroke]="chartOptions.stroke"
+        [grid]="chartOptions.grid"
+        [xaxis]="chartOptions.xaxis"
+        [tooltip]="chartOptions.tooltip"
+        [annotations]="chartOptions.annotations"
+      ></apx-chart>
+    </div>
   </div>
 
-  <div class="funnel" style="background-color: white; color:black">
-    <div id="chart">
-      <apx-chart
-        [series]="chartOptionsFunnel.series!"
-        [chart]="chartOptionsFunnel.chart!"
-        [dataLabels]="chartOptionsFunnel.dataLabels!"
-        [plotOptions]="chartOptionsFunnel.plotOptions!"
-        [xaxis]="chartOptionsFunnel.xaxis!"
-        [colors]="chartOptionsFunnel.colors!"
-        [title]="chartOptionsFunnel.title!"
-        [legend]="chartOptionsFunnel.legend!"
-      ></apx-chart>
+  <div class="grid grid-cols-2 gap-4 mt-2">
+
+    <div
+      class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="box" style="background-color: white; color:black; border-radius: 7px">
+        <div id="chart" style="cursor: pointer">
+          <apx-chart
+            [series]="chartOptionsFunnel.series!"
+            [chart]="chartOptionsFunnel.chart!"
+            [dataLabels]="chartOptionsFunnel.dataLabels!"
+            [plotOptions]="chartOptionsFunnel.plotOptions!"
+            [xaxis]="chartOptionsFunnel.xaxis!"
+            [colors]="chartOptionsFunnel.colors!"
+            [title]="chartOptionsFunnel.title!"
+            [legend]="chartOptionsFunnel.legend!"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="box" style="background-color: white; color:black; border-radius: 7px">
+        <h3 class="font-medium">Revenue Snapshot (All Products)</h3>
+        <div id="dount-chart">
+          <apx-chart
+            [series]="chartOptionsDonut.series"
+            [chart]="chartOptionsDonut.chart"
+            [labels]="chartOptionsDonut.labels"
+            [fill]="chartOptionsDonut.fill"
+            [dataLabels]="chartOptionsDonut.dataLabels"
+            [responsive]="chartOptionsDonut.responsive"
+          ></apx-chart>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
