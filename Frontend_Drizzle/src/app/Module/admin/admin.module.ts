@@ -24,6 +24,7 @@ import { AnalyticsDashboardComponent } from './components/analytics/analytics-da
 import { AnalyticsGeographyComponent } from './components/analytics/analytics-geography/analytics-geography.component';
 import { AnalyticsSalesReportComponent } from './components/analytics/analytics-sales-report/analytics-sales-report.component';
 import {NgApexchartsModule} from "ng-apexcharts";
+import {NgxEchartsDirective} from "ngx-echarts";
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {NgApexchartsModule} from "ng-apexcharts";
     MatIconModule,
     MatSortModule,
     MatMenuModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    NgxEchartsDirective
   ]
 })
 export class AdminModule { }

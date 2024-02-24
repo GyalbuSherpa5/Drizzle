@@ -12,6 +12,9 @@ import {authReducer} from "./State/Auth/auth.reducer";
 import {userReducer} from "./State/User/user.reducer";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./config/auth-interceptor";
+import {NgApexchartsModule} from "ng-apexcharts";
+import {NgxEchartsModule} from "ngx-echarts";
+import * as echarts from "echarts";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {AuthInterceptor} from "./config/auth-interceptor";
     AdminModule,
     AuthModule,
     StoreModule.forRoot({auth: authReducer, user: userReducer}),
-    HttpClientModule
+    HttpClientModule,
+    NgApexchartsModule,
+    NgxEchartsModule.forRoot({ echarts }),
   ],
   providers: [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
   bootstrap: [AppComponent]
