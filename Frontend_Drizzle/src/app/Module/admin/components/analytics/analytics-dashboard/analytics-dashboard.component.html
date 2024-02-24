@@ -49,10 +49,14 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-2 gap-4 mt-2">
+  <div class="mt-2">
+    <app-analytics-sales-report></app-analytics-sales-report>
+  </div>
 
+  <div class="grid grid-cols-2 gap-4 mt-2">
     <div
       class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <h3 class="font-medium">Most Sold (All Products)</h3>
       <div class="box" style="background-color: white; color:black; border-radius: 7px">
         <div id="chart" style="cursor: pointer">
           <apx-chart
@@ -62,7 +66,6 @@
             [plotOptions]="chartOptionsFunnel.plotOptions!"
             [xaxis]="chartOptionsFunnel.xaxis!"
             [colors]="chartOptionsFunnel.colors!"
-            [title]="chartOptionsFunnel.title!"
             [legend]="chartOptionsFunnel.legend!"
           ></apx-chart>
         </div>
@@ -71,28 +74,20 @@
 
     <div
       class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div class="box" style="background-color: white; color:black; border-radius: 7px">
-        <h3 class="font-medium">Revenue Snapshot (All Products)</h3>
+      <h3 class="font-medium">Revenue Snapshot (All Products)</h3>
+      <div class="flex align-middle items-center justify-center" style="background-color: white; color:black; border-radius: 7px; height:29rem">
         <div id="dount-chart">
           <apx-chart
             [series]="chartOptionsDonut.series"
             [chart]="chartOptionsDonut.chart"
             [labels]="chartOptionsDonut.labels"
             [fill]="chartOptionsDonut.fill"
-            [dataLabels]="chartOptionsDonut.dataLabels"
+            [dataLabels]="chartOptionsDonut.dataLabels!"
             [responsive]="chartOptionsDonut.responsive"
           ></apx-chart>
         </div>
 
       </div>
     </div>
-  </div>
-
-  <div class="mt-2">
-    <app-analytics-sales-report></app-analytics-sales-report>
-  </div>
-
-  <div class="mt-2">
-    <app-analytics-geography></app-analytics-geography>
   </div>
 </div>

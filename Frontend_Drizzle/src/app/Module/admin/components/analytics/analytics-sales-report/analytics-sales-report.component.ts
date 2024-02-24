@@ -132,21 +132,25 @@ export class AnalyticsSalesReportComponent {
     this.chartOptionsMixed = {
       series: [
         {
-          name: "TEAM A",
+          name: "Samsung",
           type: "column",
           data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
         },
         {
-          name: "TEAM B",
+          name: "Apple",
           type: "area",
           data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
         },
         {
-          name: "TEAM C",
+          name: "OnePlus",
           type: "line",
           data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
         }
       ],
+      title: {
+        text: "Product Statistics",
+        align: "left"
+      },
       chart: {
         height: 350,
         type: "line",
@@ -174,17 +178,18 @@ export class AnalyticsSalesReportComponent {
         }
       },
       labels: [
-        "01/01/2003",
-        "02/01/2003",
-        "03/01/2003",
-        "04/01/2003",
-        "05/01/2003",
-        "06/01/2003",
-        "07/01/2003",
-        "08/01/2003",
-        "09/01/2003",
-        "10/01/2003",
-        "11/01/2003"
+        "01/01/2024",
+        "02/01/2024",
+        "03/01/2024",
+        "04/01/2024",
+        "05/01/2024",
+        "06/01/2024",
+        "07/01/2024",
+        "08/01/2024",
+        "09/01/2024",
+        "10/01/2024",
+        "11/01/2024",
+        "12/01/2024"
       ],
       markers: {
         size: 0

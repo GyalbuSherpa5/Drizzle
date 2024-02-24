@@ -48,7 +48,7 @@ export type ChartOptionsDonut = {
   labels: any;
   fill: any;
   legend: any;
-  dataLabels: any;
+  dataLabels: ApexDataLabels;
 };
 
 type UpdateOptionsData = {
@@ -113,7 +113,10 @@ export class AnalyticsDashboardComponent {
     legend: {},
     title: {}
   };
-  public chartOptionsDonut!: Partial<ChartOptionsDonut>;
+
+  public chartOptionsDonut: Partial<ChartOptionsDonut> = {
+    dataLabels: {},
+  }
 
   constructor() {
     this.initChart();
@@ -147,20 +150,20 @@ export class AnalyticsDashboardComponent {
         },
       },
       title: {
-        text: "Recruitment Funnel",
+        text: "Product Funnel",
         align: "center"
       },
       xaxis: {
         categories: [
-          "Sourced",
-          "Screened",
-          "Assessed",
-          "HR Interview",
-          "Technical",
-          "Verify",
-          "Offered",
-          "Hired"
-        ]
+          "Smartphones",
+          "Laptops",
+          "Gaming Consoles",
+          "Smart Watches",
+          "Tablets",
+          "Accessories",
+          "Lows",
+          "a",
+        ],
       },
       legend: {
         show: false
@@ -174,14 +177,21 @@ export class AnalyticsDashboardComponent {
         type: "donut"
       },
       dataLabels: {
-        enabled: false
+        enabled: true
       },
       fill: {
         type: "gradient"
       },
       legend: {
         formatter: function (val: any, opts: any) {
-          return val + " - " + opts.w.globals.series[opts.seriesIndex];
+          const productNames = [
+            "Smartphones",
+            "Laptops",
+            "Tablets",
+            "Smart Watches",
+            "Headphones"
+          ];
+          return productNames[opts.seriesIndex] + " - " + opts.w.globals.series[opts.seriesIndex];
         }
       },
       responsive: [
@@ -197,7 +207,7 @@ export class AnalyticsDashboardComponent {
           }
         }
       ]
-    };
+    } as Partial<ChartOptionsDonut>;
   }
 
   initChart(): void {
