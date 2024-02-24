@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8 mt-2">
-  <div class="revenue">
+  <div class="revenue" style="background-color: white; color: black">
     <button
       (click)="updateOptions( '1m' )"
       [class.active]="activeOptionButton=='1m'"
@@ -44,5 +44,20 @@
       [tooltip]="chartOptions.tooltip"
       [annotations]="chartOptions.annotations"
     ></apx-chart>
+  </div>
+
+  <div class="funnel" style="background-color: white; color:black">
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptionsFunnel.series!"
+        [chart]="chartOptionsFunnel.chart!"
+        [dataLabels]="chartOptionsFunnel.dataLabels!"
+        [plotOptions]="chartOptionsFunnel.plotOptions!"
+        [xaxis]="chartOptionsFunnel.xaxis!"
+        [colors]="chartOptionsFunnel.colors!"
+        [title]="chartOptionsFunnel.title!"
+        [legend]="chartOptionsFunnel.legend!"
+      ></apx-chart>
+    </div>
   </div>
 </div>
