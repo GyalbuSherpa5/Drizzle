@@ -22,3 +22,13 @@ button:focus {
   max-width: 650px;
   margin: 35px auto;
 }
+
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Makes the div circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

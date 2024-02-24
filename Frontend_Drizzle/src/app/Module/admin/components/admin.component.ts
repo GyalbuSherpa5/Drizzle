@@ -25,7 +25,7 @@ export class AdminComponent {
           },
           {
             label: 'Analytics',
-            icon: 'analytic',
+            icon: 'trending_up',
             routerLink: ['analytics'],
           },
           {
