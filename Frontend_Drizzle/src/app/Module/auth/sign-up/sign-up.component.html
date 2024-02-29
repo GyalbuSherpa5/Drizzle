@@ -30,13 +30,32 @@
         </mat-error>
       </mat-form-field>
 
-      <div>
-        <button mat-raised-button
-                class="w-full"
-                style="padding:1.7rem"
-                color="accent">
-          REGISTER
-        </button>
+      <div class="flex flex-row align-justify">
+        <mat-checkbox [checked]="checkboxChecked" (change)="checkboxChange($event)"></mat-checkbox>
+        <span style="color: #a9a9a9">By continuing, I agree to receive text messages for service notifications and verification codes
+          Refer to our Drizzle <a routerLink="agreement" (click)="closeDialogBox()"><u>User Agreement</u></a> and
+          <a routerLink="policy" (click)="closeDialogBox()"><u>Privacy Policy.</u></a></span>
+      </div>
+
+      <div class="mt-3">
+        <div class="grid grid-cols-2 gap-1">
+          <button mat-raised-button
+                  class="w-full"
+                  id="user"
+                  style="padding:1.7rem"
+                  color="accent"
+                  [disabled]="!signUpForm.valid || !checkboxChecked">
+            Shopper Sign Up
+          </button>
+          <button mat-raised-button
+                  class="w-full"
+                  id="merchant"
+                  style="padding:1.7rem"
+                  color="accent"
+                  [disabled]="!signUpForm.valid || !checkboxChecked">
+            Merchant Sign Up
+          </button>
+        </div>
 
         <div class="pt-5">
           <span>Already have account?</span>

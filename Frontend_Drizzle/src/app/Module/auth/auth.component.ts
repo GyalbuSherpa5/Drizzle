@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +9,13 @@ import {Component} from '@angular/core';
 export class AuthComponent {
   isLoggedIn = true;
 
+  constructor(private dialogRef: MatDialogRef<AuthComponent>) { }
+
   toggleTemplate = () => {
     this.isLoggedIn = !this.isLoggedIn;
+  }
+
+  closeDialogBox() {
+    this.dialogRef.close();
   }
 }

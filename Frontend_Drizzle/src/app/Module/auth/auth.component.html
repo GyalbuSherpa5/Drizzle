@@ -3,5 +3,5 @@
 </ng-container>
 
 <ng-template #registerComponent>
-  <app-sign-up [changeTemplate]="toggleTemplate"></app-sign-up>
+  <app-sign-up [changeTemplate]="toggleTemplate" (closeDialog)="closeDialogBox()"></app-sign-up>
 </ng-template>

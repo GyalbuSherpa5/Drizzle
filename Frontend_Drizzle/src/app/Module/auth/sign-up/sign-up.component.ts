@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {AuthService} from "../../../State/Auth/auth.service";
@@ -10,6 +10,8 @@ import {AuthService} from "../../../State/Auth/auth.service";
 })
 export class SignUpComponent {
   @Input() changeTemplate: any;
+  @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
+  checkboxChecked: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,8 +30,20 @@ export class SignUpComponent {
   );
 
   submitForm() {
-    if (this.signUpForm.valid) {
+    if (this.signUpForm.valid && this.checkboxChecked) {
+
+      document.getElementById("user");
+      document.getElementById("merchant");
+
       this.authService.register(this.signUpForm.value);
     }
+  }
+
+  checkboxChange(event: any) {
+    this.checkboxChecked = event.checked;
+  }
+
+  closeDialogBox() {
+    this.closeDialog.emit();
   }
 }

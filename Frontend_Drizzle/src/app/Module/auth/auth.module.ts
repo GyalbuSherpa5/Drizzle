@@ -4,22 +4,31 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthComponent } from './auth.component';
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { UserAgreementComponent } from './user-agreement/user-agreement.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {RouterLink} from "@angular/router";
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
     SignInComponent,
     SignUpComponent,
-    AuthComponent
+    AuthComponent,
+    UserAgreementComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule,
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule,
+    FormsModule,
+    RouterLink
   ],
   exports:[
     AuthComponent

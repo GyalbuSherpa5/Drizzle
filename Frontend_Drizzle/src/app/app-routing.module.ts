@@ -13,6 +13,8 @@ import {AdminRoutingModule} from "./Module/admin/admin-routing.module";
 import {authGuard} from "./config/auth.guard";
 import {PaymentDrizzleComponent} from "./Module/feature/components/payment-drizzle/payment-drizzle.component";
 import {InstallmentComponent} from "./Module/shared/components/installment/installment.component";
+import {UserAgreementComponent} from "./Module/auth/user-agreement/user-agreement.component";
+import {PrivacyPolicyComponent} from "./Module/auth/privacy-policy/privacy-policy.component";
 
 const routes: Routes = [
   {
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path: "account/orders", component: OrderComponent},
   {path: "order/:id", component: OrderDetailsComponent},
   {path: ':levelOne/:levelTwo/:levelThree', component: ProductsComponent},
+  {path: 'agreement', component: UserAgreementComponent},
+  {path: 'policy', component: PrivacyPolicyComponent}
 ];
 
 @NgModule({

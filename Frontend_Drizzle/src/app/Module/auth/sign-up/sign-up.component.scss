@@ -3,3 +3,8 @@
   padding: 1rem;
   text-align: center;
 }
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
