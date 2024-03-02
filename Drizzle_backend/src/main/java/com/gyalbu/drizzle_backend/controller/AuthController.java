@@ -2,6 +2,7 @@ package com.gyalbu.drizzle_backend.controller;
 
 import com.gyalbu.drizzle_backend.config.JwtProvider;
 import com.gyalbu.drizzle_backend.entity.User;
+import com.gyalbu.drizzle_backend.enums.UserStatus;
 import com.gyalbu.drizzle_backend.exception.UserException;
 import com.gyalbu.drizzle_backend.repository.UserRepository;
 import com.gyalbu.drizzle_backend.resources.request.LoginRequest;
@@ -56,6 +57,7 @@ public class AuthController {
         createdUser.setPassword(passwordEncoder.encode(password));
         createdUser.setFirstName(firstName);
         createdUser.setLastName(lastName);
+        createdUser.setUserStatus(UserStatus.ACTIVE);
 
         if(user.getRole() != null) {
             createdUser.setRole(user.getRole());

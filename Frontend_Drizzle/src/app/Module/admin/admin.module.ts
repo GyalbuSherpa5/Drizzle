@@ -8,7 +8,7 @@ import {OrderTableComponent} from './components/order-table/order-table.componen
 import {CustomersComponent} from './components/customers/customers.component';
 import {AdminProductsComponent} from './components/admin-products/admin-products.component';
 import {CreateProductComponent} from './components/create-product/create-product.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
@@ -25,6 +25,7 @@ import { AnalyticsGeographyComponent } from './components/analytics/analytics-ge
 import { AnalyticsSalesReportComponent } from './components/analytics/analytics-sales-report/analytics-sales-report.component';
 import {NgApexchartsModule} from "ng-apexcharts";
 import {NgxEchartsDirective} from "ngx-echarts";
+import { KycDashboardComponent } from './components/kyc-dashboard/kyc-dashboard.component';
 
 
 @NgModule({
@@ -38,24 +39,26 @@ import {NgxEchartsDirective} from "ngx-echarts";
     AnalyticsDashboardComponent,
     AnalyticsGeographyComponent,
     AnalyticsSalesReportComponent,
+    KycDashboardComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatSnackBarModule,
-    TableModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatSortModule,
-    MatMenuModule,
-    NgApexchartsModule,
-    NgxEchartsDirective
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatSnackBarModule,
+        TableModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatIconModule,
+        MatSortModule,
+        MatMenuModule,
+        NgApexchartsModule,
+        NgxEchartsDirective,
+        FormsModule
+    ]
 })
 export class AdminModule { }

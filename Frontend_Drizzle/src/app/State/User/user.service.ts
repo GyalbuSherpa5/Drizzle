@@ -46,4 +46,12 @@ export class UserService {
   findAllUsers() {
     return this.http.get(`${this.apiUrl}/users/all`)
   }
+
+  getAllUnverifiedUser() {
+    return this.http.get(`${this.apiUrl}/users/getAllUnverifiedUsers`)
+  }
+
+  changeKycStatus(userId: number, kycStatus: string) {
+    return this.http.post(`${this.apiUrl}/users/${userId}/${kycStatus}`, {})
+  }
 }

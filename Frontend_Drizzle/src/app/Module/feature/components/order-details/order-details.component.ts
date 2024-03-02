@@ -145,4 +145,15 @@ export class OrderDetailsComponent {
         this.tabGroup.selectedIndex = 1;
       });
   }
+
+  cancelOrder() {
+
+  }
+
+  proceedOrder() {
+    const id = this.orders.id;
+    this.router.navigate([`/checkout/payment/${id}`], {
+      queryParams: {step: '3', order_id: id}
+    }).then(() => console.log("route success"));
+  }
 }

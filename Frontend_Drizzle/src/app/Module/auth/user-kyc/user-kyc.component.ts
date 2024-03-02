@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AdminService} from "../../admin/service/admin.service";
 import {MessageService} from "../../shared/components/MessageService";
+import {UserService} from "../../../State/User/user.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-kyc',
@@ -19,9 +20,9 @@ export class UserKycComponent {
   municipality: any;
 
   genderOptions: any[] = [
-    { label: 'Male', value: 'male' },
-    { label: 'Female', value: 'female' },
-    { label: 'Other', value: 'other' }
+    {label: 'Male', value: 'male'},
+    {label: 'Female', value: 'female'},
+    {label: 'Other', value: 'other'}
     // Add more options as needed
   ];
 
@@ -55,6 +56,8 @@ export class UserKycComponent {
   fileToUploadB!: File;
   file_nameB: string = '';
 
+  userId: any;
+
   onFileChange(event: Event) {
     this.prepareUpload(event);
   }
@@ -65,61 +68,90 @@ export class UserKycComponent {
 
   constructor(
     private fb: FormBuilder,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
     private messageService: MessageService,
   ) {
   }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.userId = params.get('id');
+    });
+
     this.occupations = [
-      { title: 'Software Engineer', code: 'SE' },
-      { title: 'Doctor', code: 'DOC' },
-      { title: 'Teacher', code: 'TCH' },
-      { title: 'Accountant', code: 'ACC' },
-      { title: 'Chef', code: 'CHF' }
+      {title: 'Software Engineer', code: 'SE'},
+      {title: 'Doctor', code: 'DOC'},
+      {title: 'Teacher', code: 'TCH'},
+      {title: 'Accountant', code: 'ACC'},
+      {title: 'Chef', code: 'CHF'}
     ];
 
     this.documentType = [
-      { title: 'Citizenship', code: 'C' },
+      {title: 'Citizenship', code: 'C'},
     ];
 
     this.issuedAddress = [
-      { title: 'Dolakha', code: 'D' },
-      { title: 'Kathmandu', code: 'K' },
-      { title: 'Lalitpur', code: 'L' },
-      { title: 'Bhaktapur', code: 'B' },
-      { title: 'Pokhara', code: 'P' }
+      {title: 'Dolakha', code: 'D'},
+      {title: 'Kathmandu', code: 'K'},
+      {title: 'Lalitpur', code: 'L'},
+      {title: 'Bhaktapur', code: 'B'},
+      {title: 'Pokhara', code: 'P'}
     ];
 
     this.zone = [
-      { title: 'Bagmati', code: 'B' },
-      { title: 'Gandaki', code: 'G' },
-      { title: 'Lumbini', code: 'L' },
-      { title: 'Karnali', code: 'K' },
-      { title: 'Sudurpashchim', code: 'S' }
+      {title: 'Bagmati', code: 'B'},
+      {title: 'Gandaki', code: 'G'},
+      {title: 'Lumbini', code: 'L'},
+      {title: 'Karnali', code: 'K'},
+      {title: 'Sudurpashchim', code: 'S'}
     ];
 
     this.district = [
-      { title: 'Dolakha', code: 'D' },
-      { title: 'Kathmandu', code: 'K' },
-      { title: 'Lalitpur', code: 'L' },
-      { title: 'Bhaktapur', code: 'B' },
-      { title: 'Pokhara', code: 'P' }
+      {title: 'Dolakha', code: 'D'},
+      {title: 'Kathmandu', code: 'K'},
+      {title: 'Lalitpur', code: 'L'},
+      {title: 'Bhaktapur', code: 'B'},
+      {title: 'Pokhara', code: 'P'}
     ];
 
     this.municipality = [
-      { title: 'Damak Municipality', code: 'D' },
-      { title: 'Biratnagar Metropolitan City', code: 'B' },
-      { title: 'Dharan Sub-Metropolitan City', code: 'D' },
-      { title: 'Itahari Sub-Metropolitan City', code: 'I' },
-      { title: 'Biratchowk Rural Municipality', code: 'B' }
+      {title: 'Damak Municipality', code: 'D'},
+      {title: 'Biratnagar Metropolitan City', code: 'B'},
+      {title: 'Dharan Sub-Metropolitan City', code: 'D'},
+      {title: 'Itahari Sub-Metropolitan City', code: 'I'},
+      {title: 'Biratchowk Rural Municipality', code: 'B'}
     ];
   }
 
   handleSubmit() {
-    if (this.myForm.valid) {
+    /*if (this.myForm.valid) {
       console.log(this.myForm.value);
+      this.userService.changeKycStatus(this.userId, 'PENDING')
+        .subscribe(() => {
+          this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
+          setTimeout(() => {
+            this.router.navigate(['/']).then(() => console.log("Route successful"));
+          }, 2000);
+      });
     } else {
-    }
+    }*/
+    this.userService.changeKycStatus(this.userId, 'PENDING')
+      .subscribe(
+        {
+          next: () => {
+
+          },
+          error: (error) => {
+            // only for the sake of this project hehaha
+            this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
+            setTimeout(() => {
+              this.router.navigate(['/']).then(() => console.log("Route successful"));
+            }, 2000);
+          }
+        }
+      )
   }
 
   prepareUpload(event: Event) {

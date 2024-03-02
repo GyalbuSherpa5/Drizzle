@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: ':levelOne/:levelTwo/:levelThree', component: ProductsComponent},
   {path: 'agreement', component: UserAgreementComponent},
   {path: 'policy', component: PrivacyPolicyComponent},
-  {path: 'kyc', component: UserKycComponent},
+  {path: 'kyc/:id', component: UserKycComponent},
 ];
 
 @NgModule({

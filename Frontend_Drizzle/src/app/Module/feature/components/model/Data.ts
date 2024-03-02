@@ -78,6 +78,7 @@ interface Order {
     email: string;
     mobile: any;
     userStatus: any;
+    kycStatus: any;
     role: string;
     address: UserAddress[];
     paymentInformation: any[];

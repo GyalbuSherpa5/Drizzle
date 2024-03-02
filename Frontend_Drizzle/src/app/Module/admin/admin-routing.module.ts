@@ -7,6 +7,7 @@ import {CustomersComponent} from "./components/customers/customers.component";
 import {AdminProductsComponent} from "./components/admin-products/admin-products.component";
 import {CreateProductComponent} from "./components/create-product/create-product.component";
 import {AnalyticsDashboardComponent} from "./components/analytics/analytics-dashboard/analytics-dashboard.component";
+import {KycDashboardComponent} from "./components/kyc-dashboard/kyc-dashboard.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path: "products", component: AdminProductsComponent},
       {path: "customers", component: CustomersComponent},
       {path: "create-product", component: CreateProductComponent},
+      {path: "user-kyc", component: KycDashboardComponent},
     ]
   }
 ];

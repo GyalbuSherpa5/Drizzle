@@ -1,6 +1,7 @@
 package com.gyalbu.drizzle_backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gyalbu.drizzle_backend.enums.KycStatus;
 import com.gyalbu.drizzle_backend.enums.UserStatus;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
@@ -45,6 +46,9 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
+
+    @Enumerated(EnumType.STRING)
+    private KycStatus kycStatus;
 
     private String role;
 

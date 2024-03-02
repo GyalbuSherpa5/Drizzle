@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CartService} from "../../../../State/service/cart.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import * as CryptoJS from "crypto-js";
+import {OrderService} from "../../../../State/service/order.service";
+import {MessageService} from "../../../shared/components/MessageService";
 
 @Component({
   selector: 'app-payment',
@@ -22,7 +24,9 @@ export class PaymentComponent {
     private route: Router,
     private router: ActivatedRoute,
     private fb: FormBuilder,
-    private cartService: CartService
+    private cartService: CartService,
+    private orderService: OrderService,
+    private messageService: MessageService,
   ) {
     this.createForm();
   }
@@ -46,8 +50,19 @@ export class PaymentComponent {
   }
 
   payViaDrizzle(orderId: string) {
-    this.route.navigate(['payment-bn-pl'], { queryParams: { order_id: orderId } })
-      .then(() => console.log("route success"));
+
+    this.orderService.getOrderById(orderId)
+      .subscribe((order: Order) => {
+        if (order.user.kycStatus != 'APPROVED') {
+          this.messageService.showErrorSnackBar('KYC not approved, redirecting to kyc verification page');
+          setTimeout(() => {
+            this.route.navigate(['kyc', order.user.id]).then(() => console.log("Route successful"));
+          }, 2000);
+        } else {
+          this.route.navigate(['payment-bn-pl'], {queryParams: {order_id: orderId}})
+            .then(() => console.log("route success"));
+        }
+      });
   }
 
   createForm() {

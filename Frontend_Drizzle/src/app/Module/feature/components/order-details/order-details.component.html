@@ -4,6 +4,23 @@
     <app-order-tracker [activeStep]="activeStep" [steps]="steps"></app-order-tracker>
   </div>
 
+  <div class="flex flex-row-reverse gap-2" *ngIf="orders.orderStatus === 'PENDING'">
+
+    <button mat-raised-button class="text-white font-medium py-2 px-4 rounded"
+            [ngStyle]="{'background-color': '#30f851', 'color':'black'}"
+            (click)="proceedOrder()"
+            type="button">
+      Proceed to Payment
+    </button>
+
+    <button mat-raised-button class="text-white font-medium py-2 px-4 rounded"
+            [ngStyle]="{'background-color': '#f83041', 'color':'black'}"
+            (click)="cancelOrder()"
+            type="button">
+      Cancel Order
+    </button>
+  </div>
+
   <div class="space-y-10 pt-10">
     <div class="box px-10">
       <h1 class="text-lg font-semibold py-5">Shipping Address</h1>
