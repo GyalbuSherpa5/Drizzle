@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -18,5 +21,17 @@ body {
 .hideScrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.input__item {
+  flex: 1 0 25%;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 45px;
+  width: 20rem;
+}
+.search__button {
+  align-self: flex-end;
+}
+
 
 html, body { height: 100%; }

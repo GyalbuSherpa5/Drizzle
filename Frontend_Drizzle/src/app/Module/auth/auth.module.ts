@@ -11,6 +11,10 @@ import { UserAgreementComponent } from './user-agreement/user-agreement.componen
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import {UserKycComponent} from "./user-kyc/user-kyc.component";
+import {CalendarModule} from "primeng/calendar";
+import {SelectButtonModule} from "primeng/selectbutton";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [
@@ -18,7 +22,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     SignUpComponent,
     AuthComponent,
     UserAgreementComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    UserKycComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,10 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
-    RouterLink
+    RouterLink,
+    CalendarModule,
+    SelectButtonModule,
+    DropdownModule
   ],
   exports:[
     AuthComponent

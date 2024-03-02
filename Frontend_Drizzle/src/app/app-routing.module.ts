@@ -15,6 +15,7 @@ import {PaymentDrizzleComponent} from "./Module/feature/components/payment-drizz
 import {InstallmentComponent} from "./Module/shared/components/installment/installment.component";
 import {UserAgreementComponent} from "./Module/auth/user-agreement/user-agreement.component";
 import {PrivacyPolicyComponent} from "./Module/auth/privacy-policy/privacy-policy.component";
+import {UserKycComponent} from "./Module/auth/user-kyc/user-kyc.component";
 
 const routes: Routes = [
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path: "order/:id", component: OrderDetailsComponent},
   {path: ':levelOne/:levelTwo/:levelThree', component: ProductsComponent},
   {path: 'agreement', component: UserAgreementComponent},
-  {path: 'policy', component: PrivacyPolicyComponent}
+  {path: 'policy', component: PrivacyPolicyComponent},
+  {path: 'kyc', component: UserKycComponent},
 ];
 
 @NgModule({

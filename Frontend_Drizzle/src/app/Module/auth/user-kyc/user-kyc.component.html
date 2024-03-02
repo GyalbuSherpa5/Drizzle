@@ -1,0 +1,102 @@
+<div class="grid p-5" style="color: black;text-align: justify;">
+  <div class="block p-6 bg-white border border-white-200 rounded-lg mt-4">
+    <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+      <div class="grid grid-cols-3 gap-4 mb-2 align-middle justify-center">
+        <div class="col-span-3">
+          <h2>Personal Details</h2>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Full Name</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="name"/>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Gender</span>
+            <p-selectButton [options]="genderOptions"
+                            [style]="{'border-color': 'black',
+              'border-width': '1px',
+              'border-radius': '8px',
+              'height': '45px',
+              'width': '270px',
+              'border-style': 'solid'}"
+                            formControlName="value" optionLabel="label"
+                            optionValue="value"></p-selectButton>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Birth Date</span>
+            <p-calendar
+              [showIcon]="true"
+              [style]="{'border-color': 'black',
+              'border-width': '1px',
+              'border-radius': '8px',
+              'height': '45px',
+              'width': '20rem',
+              'border-style': 'solid'}"
+              formControlName="birthDate"></p-calendar>
+          </div>
+        </div>
+
+        <div class="col-span-1 mt-2">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Father/Husband's Name</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="parentName"/>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Grand Father's or Father-in-law's Name</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="grandParentName"/>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Spouse Name: (Optional)</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="spouseName"/>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Occupation</span>
+            <p-dropdown formControlName="occupation"
+                        [options]="occupations" optionLabel="title"
+                        [style]="{'border-color': 'black',
+              'border-width': '1px',
+              'border-radius': '8px',
+              'height': '45px',
+              'width': '20rem',
+              'border-style': 'solid'}"
+                        placeholder="Select a Occupation"></p-dropdown>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">PAN Number: (Optional)</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="panNo"/>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <span class="block text-500 font-medium mb-3">Landline Number: (Optional)</span>
+            <input class="input__item" placeholder="Enter your name" type="text" formControlName="landLineNumber"/>
+          </div>
+        </div>
+
+      </div>
+      <div class="grid-cols-2"></div>
+      <div class="grid-cols-4"></div>
+      <div class="grid-cols-2"></div>
+    </form>
+  </div>
+</div>
