@@ -34,9 +34,6 @@ export class PaymentDrizzleComponent {
     this.activatedRoute.queryParams.subscribe(params => {
       const orderId = params['order_id'];
       this.order_id = orderId;
-      this.esewaForm.patchValue({
-        success_url: `http://localhost:4200/payment-bn-pl?order_id=${orderId}`
-      });
 
       console.log('order_id', orderId);
       if (orderId.includes('data')) {
@@ -64,6 +61,12 @@ export class PaymentDrizzleComponent {
         this.orders = orderData;
         this.installmentMoney = orderData.totalDiscountedPrice / 4;
         this.orderedDate = orderData.orderDate;
+
+        this.esewaForm.patchValue({
+          success_url: `http://localhost:4200/payment-bn-pl?order_id=${orderId}`,
+          amount: this.installmentMoney + this.orders.fineAmount,
+          total_amount: this.installmentMoney + this.orders.fineAmount
+        });
       });
 
       this.router.navigate(['payment-bn-pl'], { queryParams: { order_id: newUrl } })
@@ -130,9 +133,9 @@ export class PaymentDrizzleComponent {
     const orderId = this.order_id;
 
     this.esewaForm = this.fb.group({
-      amount: [100, Validators.required],
-      tax_amount: [10, Validators.required],
-      total_amount: [110, Validators.required],
+      amount: [0, Validators.required],
+      tax_amount: [0, Validators.required],
+      total_amount: [0, Validators.required],
       transaction_uuid: ['', Validators.required],
       product_code: ['EPAYTEST', Validators.required],
       product_service_charge: [0, Validators.required],

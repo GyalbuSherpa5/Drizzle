@@ -32,3 +32,22 @@
   font-size: 16px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+button:disabled:hover::after {
+  content: attr(title);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 999;
+}

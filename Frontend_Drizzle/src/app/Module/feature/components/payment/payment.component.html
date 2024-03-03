@@ -50,7 +50,9 @@
                       (click)="payViaDrizzle(order_id)"
                       style="padding: 1.5rem;"
                       class="text-lg mt-8 p-28 px-10 w-full"
-                      [ngStyle]="{'background-color': '#f57224'}"> Buy Now Pay Later
+                      [ngStyle]="{'background-color': '#f57224'}"
+                      [title]="getButtonTitle()"
+                      [disabled]="totalDiscountedPrice < 80000"> Buy Now Pay Later
               </button>
               <span>By placing an order, you are agreeing to our privacy policy and terms of use.</span>
             </div>
@@ -68,7 +70,7 @@
     <input type="text" id="amount" formControlName="amount" value="80" class="form" required><br>
 
     <label>Tax Amount</label>
-    <input type="text" id="tax_amount" formControlName="tax_amount" value ="10" class="form" required><br>
+    <input type="text" id="tax_amount" formControlName="tax_amount" value="10" class="form" required><br>
 
     <label>Total Amount</label>
     <input type="text" id="total_amount" formControlName="total_amount" value="100" class="form" required><br>
@@ -77,31 +79,37 @@
     <input type="text" id="transaction_uuid" formControlName="transaction_uuid" value="11-200-11" class="form" required><br>
 
     <label>Product Code</label>
-    <input type="text" id="product_code" formControlName="product_code" value ="EPAYTEST" class="form" required><br>
+    <input type="text" id="product_code" formControlName="product_code" value="EPAYTEST" class="form" required><br>
 
     <label>Product Service Charge</label>
-    <input type="text" id="product_service_charge" formControlName="product_service_charge" value="5" class="form" required><br>
+    <input type="text" id="product_service_charge" formControlName="product_service_charge" value="5" class="form"
+           required><br>
 
     <label>Product Delivery Charge</label>
-    <input type="text" id="product_delivery_charge" formControlName="product_delivery_charge" value="5" class="form" required><br>
+    <input type="text" id="product_delivery_charge" formControlName="product_delivery_charge" value="5" class="form"
+           required><br>
 
     <label>Success URL</label>
-    <input type="text" id="success_url" formControlName="success_url" value="https://esewa.com.np" class="form" required><br>
+    <input type="text" id="success_url" formControlName="success_url" value="https://esewa.com.np" class="form"
+           required><br>
 
     <label>Failure URL</label>
-    <input type="text" id="failure_url" formControlName="failure_url"  value="https://google.com" class="form" required><br>
+    <input type="text" id="failure_url" formControlName="failure_url" value="https://google.com" class="form"
+           required><br>
 
     <label>Signed Field Names</label>
-    <input type="text" id="signed_field_names" formControlName="signed_field_names" value="total_amount,transaction_uuid,product_code" class="form" required><br>
+    <input type="text" id="signed_field_names" formControlName="signed_field_names"
+           value="total_amount,transaction_uuid,product_code" class="form" required><br>
 
     <label>Signature</label>
-    <input type="text" id="signature" formControlName="signature" value="4Ov7pCI1zIOdwtV2BRMUNjz1upIlT/COTxfLhWvVurE=" class="form" required><br>
+    <input type="text" id="signature" formControlName="signature" value="4Ov7pCI1zIOdwtV2BRMUNjz1upIlT/COTxfLhWvVurE="
+           class="form" required><br>
   </form>
 </div>
 
-<table align="center"  class="hidden-form">
+<table align="center" class="hidden-form">
   <tr>
     <td>Secret Key:</td>
-    <td><input type="text" id="secret" name="secret" value="8gBm/:&EnhH.1/q" class="form"  required></td>
+    <td><input type="text" id="secret" name="secret" value="8gBm/:&EnhH.1/q" class="form" required></td>
   </tr>
 </table>

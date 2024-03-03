@@ -44,6 +44,7 @@
                   id="user"
                   style="padding:1.7rem"
                   color="accent"
+                  (click)="setRole('USER')"
                   [disabled]="!signUpForm.valid || !checkboxChecked">
             Shopper Sign Up
           </button>
@@ -52,6 +53,7 @@
                   id="merchant"
                   style="padding:1.7rem"
                   color="accent"
+                  (click)="setRole('SUPER_ADMIN')"
                   [disabled]="!signUpForm.valid || !checkboxChecked">
             Merchant Sign Up
           </button>

@@ -36,17 +36,25 @@ export class PaymentComponent {
     this.router.queryParams.subscribe(params => {
       const orderId = params['order_id'];
       this.order_id = orderId;
-      this.esewaForm.patchValue({
-        success_url: `http://localhost:4200/order/${orderId}`
+
+      this.orderService.getOrderById(this.order_id).subscribe((orderData: Order) => {
+        this.discount = orderData.discount;
+        this.totalDiscountedPrice = orderData.totalDiscountedPrice;
+        this.totalPrice = orderData.totalPrice;
+        this.products = orderData.orderItems;
+
+        let order = orderData;
+        this.esewaForm.patchValue({
+          success_url: `http://localhost:4200/payment-bn-pl?order_id=${orderId}`,
+          amount: orderData.totalDiscountedPrice,
+          total_amount: orderData.totalDiscountedPrice
+        });
       });
     });
+  }
 
-    this.cartService.getCart().subscribe((cartData: any) => {
-      this.products = cartData.cartItems;
-      this.discount = cartData.discount;
-      this.totalDiscountedPrice = cartData.totalDiscountedPrice;
-      this.totalPrice = cartData.totalPrice;
-    });
+  getButtonTitle(): string {
+    return this.totalDiscountedPrice < 80000 ? 'Total amount should be more than 80,000 to use this feature' : '';
   }
 
   payViaDrizzle(orderId: string) {
@@ -69,9 +77,9 @@ export class PaymentComponent {
     const orderId = this.order_id;
 
     this.esewaForm = this.fb.group({
-      amount: [100, Validators.required],
-      tax_amount: [10, Validators.required],
-      total_amount: [110, Validators.required],
+      amount: [0, Validators.required],
+      tax_amount: [0, Validators.required],
+      total_amount: [0, Validators.required],
       transaction_uuid: ['', Validators.required],
       product_code: ['EPAYTEST', Validators.required],
       product_service_charge: [0, Validators.required],

@@ -25,18 +25,21 @@ export class SignUpComponent {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      role: ['']
     }
   );
 
   submitForm() {
     if (this.signUpForm.valid && this.checkboxChecked) {
-
-      document.getElementById("user");
-      document.getElementById("merchant");
-
       this.authService.register(this.signUpForm.value);
     }
+  }
+
+  setRole(role: string): void {
+    this.signUpForm.patchValue({
+      role: role
+    });
   }
 
   checkboxChange(event: any) {

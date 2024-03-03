@@ -24,6 +24,11 @@ export class CartService {
     return this.http.get(url, {});
   }
 
+  getCartById(cartId: number) {
+    const url = `${this.apiUrl}/cart/${cartId}`;
+    return this.http.get(url, {});
+  }
+
   removeCartItem(cartItemId: number) {
     const url = `${this.apiUrl}/cart_items/${cartItemId}`;
     return this.http.delete(url, {});
