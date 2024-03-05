@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {UserService} from "../../../../State/User/user.service";
 import {MatTableDataSource} from '@angular/material/table';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-kyc-dashboard',
@@ -10,11 +11,14 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class KycDashboardComponent implements OnInit {
   customerTable!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'username', 'email', 'kycStatus', 'actions'];
+  displayedColumns: string[] = ['id', 'username', 'email', 'kycStatus', 'actions', 'more'];
 
   @ViewChild(MatPaginator) kycPaginator!: MatPaginator;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -48,5 +52,9 @@ export class KycDashboardComponent implements OnInit {
       default:
         return '#ff0505';
     }
+  }
+
+  redirectToAnotherComponent(id: any) {
+    this.router.navigate(['/verify-kyc', id]);
   }
 }

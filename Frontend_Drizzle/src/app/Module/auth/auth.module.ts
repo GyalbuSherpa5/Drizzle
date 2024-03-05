@@ -16,6 +16,7 @@ import {CalendarModule} from "primeng/calendar";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {DropdownModule} from "primeng/dropdown";
 import { ViewUserKycComponent } from './user-kyc/view-user-kyc/view-user-kyc.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ViewUserKycComponent } from './user-kyc/view-user-kyc/view-user-kyc.com
     RouterLink,
     CalendarModule,
     SelectButtonModule,
-    DropdownModule
+    DropdownModule,
+    MatIconModule
   ],
   exports:[
     AuthComponent
