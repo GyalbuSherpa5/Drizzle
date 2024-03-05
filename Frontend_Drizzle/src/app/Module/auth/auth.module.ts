@@ -15,6 +15,7 @@ import {UserKycComponent} from "./user-kyc/user-kyc.component";
 import {CalendarModule} from "primeng/calendar";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {DropdownModule} from "primeng/dropdown";
+import { ViewUserKycComponent } from './user-kyc/view-user-kyc/view-user-kyc.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {DropdownModule} from "primeng/dropdown";
     AuthComponent,
     UserAgreementComponent,
     PrivacyPolicyComponent,
-    UserKycComponent
+    UserKycComponent,
+    ViewUserKycComponent
   ],
   imports: [
     CommonModule,

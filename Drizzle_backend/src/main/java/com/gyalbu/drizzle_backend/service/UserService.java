@@ -22,4 +22,6 @@ public interface UserService {
     User updateKycStatus(Long userId, String kycStatus) throws UserException;
 
     UserKYC submitKycForm(User user, UserKycRequest userKycRequest, MultipartFile citizenFront, MultipartFile citizenBack) throws UserException;
+
+    UserKYC getUserKYC(Long userId) throws UserException;
 }

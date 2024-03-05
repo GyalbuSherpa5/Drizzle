@@ -67,4 +67,8 @@ export class UserService {
 
     return this.http.post(`${this.apiUrl}/users/kyc`, formData);
   }
+
+  getUserKyc(userId: any) {
+    return this.http.get(`${this.apiUrl}/users/kyc/${userId}`);
+  }
 }

@@ -127,50 +127,39 @@ export class UserKycComponent {
   }
 
   handleSubmit() {
-    /*if (this.myForm.valid) {
-      console.log(this.myForm.value);
-      this.userService.changeKycStatus(this.userId, 'PENDING')
-        .subscribe(() => {
-          this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
-          setTimeout(() => {
-            this.router.navigate(['/']).then(() => console.log("Route successful"));
-          }, 2000);
-      });
-    } else {
-    }*/
-    /*this.userService.changeKycStatus(this.userId, 'PENDING')
-      .subscribe(
-        {
-          next: () => {
 
-          },
-          error: (error) => {
-            // only for the sake of this project hehaha
-            this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
-            setTimeout(() => {
-              this.router.navigate(['/']).then(() => console.log("Route successful"));
-            }, 2000);
-          }
-        }
-      )*/
+    const modifiedFormValue = {
+      ...this.myForm.value,
+      occupation: this.myForm.value.occupation.title,
+      documentType: this.myForm.value.documentType.title,
+      issuedAddress: this.myForm.value.issuedAddress.title,
+      zoneP: this.myForm.value.zoneP.title,
+      districtP: this.myForm.value.districtP.title,
+      municipalityP: this.myForm.value.municipalityP.title,
+      zoneC: this.myForm.value.zoneC.title,
+      districtC: this.myForm.value.districtC.title,
+      municipalityC: this.myForm.value.municipalityC.title
+    };
 
-    this.userService.uploadKyc(this.myForm.value, this.fileToUpload, this.fileToUploadB)
+    this.userService.uploadKyc(modifiedFormValue, this.fileToUpload, this.fileToUploadB)
       .subscribe(
         {
           next: (value: any) => {
-            console.log(value.citizenBack);
-            console.log(value.citizenFront);
-
-            this.frontImage = 'data:image/jpg;base64,' + value.citizenFront;
-            this.backImage = value.citizenBack;
+            this.userService.changeKycStatus(this.userId, 'PENDING')
+              .subscribe(
+                {
+                  next: () => {
+                    this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
+                    setTimeout(() => {
+                      this.router.navigate(['/']).then(() => console.log("Route successful"));
+                    }, 2000);
+                  },
+                  error: (error) => {
+                  }
+                }
+              );
           },
           error: (error) => {
-            // console.log(error);
-            // // only for the sake of this project hehaha
-            // this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
-            // setTimeout(() => {
-            //   this.router.navigate(['/']).then(() => console.log("Route successful"));
-            // }, 2000);
           }
         }
       )

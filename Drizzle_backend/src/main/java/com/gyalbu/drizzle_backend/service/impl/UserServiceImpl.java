@@ -18,7 +18,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -103,13 +106,19 @@ public class UserServiceImpl implements UserService {
         return userKYCRepository.save(userKYC);
     }
 
+    @Override
+    public UserKYC getUserKYC(Long userId) throws UserException {
+        return userKYCRepository.findById(userId)
+                .orElseThrow(() -> new UserException("User KYC not found"));
+    }
+
     private UserKYC converter(UserKycRequest userKycRequest, Long userId) throws UserException {
         UserKYC userKYC = userKYCRepository.findById(userId)
                 .orElseThrow(() -> new UserException("User KYC not found"));
 
         userKYC.setName(userKycRequest.getName());
         userKYC.setGender(userKycRequest.getGender());
-        userKYC.setBirthDate(userKycRequest.getBirthDate());
+        userKYC.setBirthDate(cleanDate(userKycRequest.getBirthDate()));
         userKYC.setParentName(userKycRequest.getParentName());
         userKYC.setGrandParentName(userKycRequest.getGrandParentName());
         userKYC.setSpouseName(userKycRequest.getSpouseName());
@@ -125,8 +134,21 @@ public class UserServiceImpl implements UserService {
         userKYC.setDocumentType(userKycRequest.getDocumentType());
         userKYC.setCitizenNumber(userKycRequest.getCitizenNumber());
         userKYC.setIssuedAddress(userKycRequest.getIssuedAddress());
-        userKYC.setDateOfIssue(userKycRequest.getDateOfIssue());
+        userKYC.setDateOfIssue(cleanDate(userKycRequest.getDateOfIssue()));
 
         return userKYC;
+    }
+
+    private static String cleanDate(String garbageDate) {
+        SimpleDateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        SimpleDateFormat outputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            Date date = inputDateFormat.parse(garbageDate);
+            return outputDateFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

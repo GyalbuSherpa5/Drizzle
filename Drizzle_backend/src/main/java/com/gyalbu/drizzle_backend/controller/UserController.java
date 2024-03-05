@@ -66,4 +66,9 @@ public class UserController {
         User user = userService.findUserProfileByJwt(jwt);
         return userService.submitKycForm(user, userKycRequest, citizenFront, citizenBack);
     }
+
+    @GetMapping("/kyc/{userId}")
+    public UserKYC getUserKycHandler(@PathVariable Long userId) throws UserException {
+        return userService.getUserKYC(userId);
+    }
 }

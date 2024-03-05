@@ -16,6 +16,7 @@ import {InstallmentComponent} from "./Module/shared/components/installment/insta
 import {UserAgreementComponent} from "./Module/auth/user-agreement/user-agreement.component";
 import {PrivacyPolicyComponent} from "./Module/auth/privacy-policy/privacy-policy.component";
 import {UserKycComponent} from "./Module/auth/user-kyc/user-kyc.component";
+import {ViewUserKycComponent} from "./Module/auth/user-kyc/view-user-kyc/view-user-kyc.component";
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: 'agreement', component: UserAgreementComponent},
   {path: 'policy', component: PrivacyPolicyComponent},
   {path: 'kyc/:id', component: UserKycComponent},
+  {path: 'verify-kyc/:id', component: ViewUserKycComponent},
 ];
 
 @NgModule({
