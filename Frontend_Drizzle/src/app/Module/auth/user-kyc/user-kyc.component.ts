@@ -19,6 +19,9 @@ export class UserKycComponent {
   district: any;
   municipality: any;
 
+  frontImage: any;
+  backImage: any;
+
   genderOptions: any[] = [
     {label: 'Male', value: 'male'},
     {label: 'Female', value: 'female'},
@@ -29,7 +32,7 @@ export class UserKycComponent {
   myForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
     gender: ['', Validators.required],
-    birthDate: [new FormControl<Date | null>(null)],
+    birthDate: [''],
     parentName: [''],
     grandParentName: [''],
     spouseName: [''],
@@ -46,8 +49,6 @@ export class UserKycComponent {
     citizenNumber: ['', Validators.required],
     issuedAddress: ['', Validators.required],
     dateOfIssue: ['', Validators.required],
-    citizenFront: ['', Validators.required],
-    citizenBack: ['', Validators.required],
   });
 
   fileToUpload!: File;
@@ -137,7 +138,7 @@ export class UserKycComponent {
       });
     } else {
     }*/
-    this.userService.changeKycStatus(this.userId, 'PENDING')
+    /*this.userService.changeKycStatus(this.userId, 'PENDING')
       .subscribe(
         {
           next: () => {
@@ -149,6 +150,27 @@ export class UserKycComponent {
             setTimeout(() => {
               this.router.navigate(['/']).then(() => console.log("Route successful"));
             }, 2000);
+          }
+        }
+      )*/
+
+    this.userService.uploadKyc(this.myForm.value, this.fileToUpload, this.fileToUploadB)
+      .subscribe(
+        {
+          next: (value: any) => {
+            console.log(value.citizenBack);
+            console.log(value.citizenFront);
+
+            this.frontImage = 'data:image/jpg;base64,' + value.citizenFront;
+            this.backImage = value.citizenBack;
+          },
+          error: (error) => {
+            // console.log(error);
+            // // only for the sake of this project hehaha
+            // this.messageService.showSuccessSnackBar('KYC submitted successfully, please wait for verification.');
+            // setTimeout(() => {
+            //   this.router.navigate(['/']).then(() => console.log("Route successful"));
+            // }, 2000);
           }
         }
       )

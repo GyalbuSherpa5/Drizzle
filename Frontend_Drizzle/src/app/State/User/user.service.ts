@@ -54,4 +54,17 @@ export class UserService {
   changeKycStatus(userId: number, kycStatus: string) {
     return this.http.post(`${this.apiUrl}/users/${userId}/${kycStatus}`, {})
   }
+
+  uploadKyc(value: any, fileToUpload: File, fileToUploadB: File) {
+    const formData = new FormData();
+    if (fileToUpload && fileToUploadB) {
+
+      formData.append('citizenFront', fileToUpload);
+      formData.append('citizenBack', fileToUploadB);
+      formData.append('userKycRequest', new Blob([JSON.stringify(value)],
+        {type: 'application/json'}));
+    }
+
+    return this.http.post(`${this.apiUrl}/users/kyc`, formData);
+  }
 }

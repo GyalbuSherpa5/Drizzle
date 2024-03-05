@@ -2,8 +2,10 @@ package com.gyalbu.drizzle_backend.controller;
 
 import com.gyalbu.drizzle_backend.config.JwtProvider;
 import com.gyalbu.drizzle_backend.entity.User;
+import com.gyalbu.drizzle_backend.entity.UserKYC;
 import com.gyalbu.drizzle_backend.enums.UserStatus;
 import com.gyalbu.drizzle_backend.exception.UserException;
+import com.gyalbu.drizzle_backend.repository.UserKYCRepository;
 import com.gyalbu.drizzle_backend.repository.UserRepository;
 import com.gyalbu.drizzle_backend.resources.request.LoginRequest;
 import com.gyalbu.drizzle_backend.resources.response.AuthResponse;
@@ -35,6 +37,7 @@ public class AuthController {
     private final JwtProvider jwtProvider;
     private final CartService cartService;
     private final UserRepository userRepository;
+    private final UserKYCRepository userKYCRepository;
     private final PasswordEncoder passwordEncoder;
     private final CustomUserServiceImpl customUserService;
     private final EmailService emailService;
@@ -67,6 +70,10 @@ public class AuthController {
 
         User savedUser = userRepository.save(createdUser);
         cartService.createCart(savedUser);
+
+        UserKYC kycUser = new UserKYC();
+        kycUser.setUser(savedUser);
+        userKYCRepository.save(kycUser);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser.getEmail(), savedUser.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);

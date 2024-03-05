@@ -2,17 +2,25 @@ package com.gyalbu.drizzle_backend.service.impl;
 
 import com.gyalbu.drizzle_backend.config.JwtProvider;
 import com.gyalbu.drizzle_backend.entity.User;
+import com.gyalbu.drizzle_backend.entity.UserKYC;
 import com.gyalbu.drizzle_backend.enums.KycStatus;
 import com.gyalbu.drizzle_backend.exception.UserException;
+import com.gyalbu.drizzle_backend.repository.UserKYCRepository;
 import com.gyalbu.drizzle_backend.repository.UserRepository;
+import com.gyalbu.drizzle_backend.resources.request.UserKycRequest;
 import com.gyalbu.drizzle_backend.resources.response.UserKycResponse;
 import com.gyalbu.drizzle_backend.service.UserService;
 import com.gyalbu.drizzle_backend.util.mapper.UserToUserKycMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -23,6 +31,7 @@ public class UserServiceImpl implements UserService {
 
     private final JwtProvider jwtProvider;
     private final UserRepository userRepository;
+    private final UserKYCRepository userKYCRepository;
     private final UserToUserKycMapper userToUserKycMapper;
 
     @Override
@@ -61,14 +70,63 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String updateKycStatus(Long userId, String kycStatus) throws UserException {
+    public User updateKycStatus(Long userId, String kycStatus) throws UserException {
         User user = findUserById(userId);
 
-        if (user != null) {
-            user.setKycStatus(KycStatus.valueOf(kycStatus));
-            userRepository.save(user);
-            return "KYC status updated successfully";
+        if (user == null) {
+            throw new UserException("User not found with id - " + userId);
         }
-        return "user not found";
+        user.setKycStatus(KycStatus.valueOf(kycStatus));
+        return userRepository.save(user);
+    }
+
+    @Override
+    public UserKYC submitKycForm(User user, UserKycRequest userKycRequest, MultipartFile citizenFront, MultipartFile citizenBack) throws UserException {
+
+        UserKYC userKYC = converter(userKycRequest, user.getId());
+
+        String frontCitizenImageName = StringUtils.cleanPath(Objects.requireNonNull(citizenFront.getOriginalFilename()));
+        String backCitizenImageName = StringUtils.cleanPath(Objects.requireNonNull(citizenBack.getOriginalFilename()));
+
+        if (frontCitizenImageName.contains("..") || backCitizenImageName.contains("..")) {
+            log.error("Invalid file name");
+            throw new UserException("Invalid file name");
+        }
+
+        try {
+            userKYC.setCitizenFront(Base64.getEncoder().encodeToString(citizenFront.getBytes()));
+            userKYC.setCitizenBack(Base64.getEncoder().encodeToString(citizenBack.getBytes()));
+        } catch (IOException e) {
+            log.error("Error while converting image to base64");
+            throw new UserException(e.getMessage());
+        }
+        return userKYCRepository.save(userKYC);
+    }
+
+    private UserKYC converter(UserKycRequest userKycRequest, Long userId) throws UserException {
+        UserKYC userKYC = userKYCRepository.findById(userId)
+                .orElseThrow(() -> new UserException("User KYC not found"));
+
+        userKYC.setName(userKycRequest.getName());
+        userKYC.setGender(userKycRequest.getGender());
+        userKYC.setBirthDate(userKycRequest.getBirthDate());
+        userKYC.setParentName(userKycRequest.getParentName());
+        userKYC.setGrandParentName(userKycRequest.getGrandParentName());
+        userKYC.setSpouseName(userKycRequest.getSpouseName());
+        userKYC.setOccupation(userKycRequest.getOccupation());
+        userKYC.setPanNo(userKycRequest.getPanNo());
+        userKYC.setLandLineNumber(userKycRequest.getLandLineNumber());
+        userKYC.setZoneP(userKycRequest.getZoneP());
+        userKYC.setDistrictP(userKycRequest.getDistrictP());
+        userKYC.setMunicipalityP(userKycRequest.getMunicipalityP());
+        userKYC.setZoneC(userKycRequest.getZoneC());
+        userKYC.setDistrictC(userKycRequest.getDistrictC());
+        userKYC.setMunicipalityC(userKycRequest.getMunicipalityC());
+        userKYC.setDocumentType(userKycRequest.getDocumentType());
+        userKYC.setCitizenNumber(userKycRequest.getCitizenNumber());
+        userKYC.setIssuedAddress(userKycRequest.getIssuedAddress());
+        userKYC.setDateOfIssue(userKycRequest.getDateOfIssue());
+
+        return userKYC;
     }
 }
